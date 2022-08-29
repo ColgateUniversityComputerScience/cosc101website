@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>hw5</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="cosc-101-homework-5-fall-2020">COSC 101 Homework 5: Fall 2020</h1>
+<p>The due date for this homework is <strong>Friday, October 16, 5:00pm EDT</strong>.</p>
+<p>This homework will improve your skills with <code>for</code> loops (with <code>range</code>) and <code>if</code> statements by having you develop programs that use loops and conditionals to repeat code patterns that are similar but not exactly the same. Specifically, this assignment is designed to give you practice with the following topics:</p>
+<ul>
+<li>Conditional expressions and statements</li>
+<li><code>for</code> loops over integers with <code>range</code></li>
+<li>“accumulator patterns” with <code>for</code> loops</li>
+<li>functions</li>
+</ul>
+<p>As usual, we encourage you to start early.</p>
+<p>To get started, download <a href="hw5.zip"><code>hw5.zip</code></a> and unzip the compressed file to reveal the following files:</p>
+<ul>
+<li><code>hw5_water.py</code>: this file will be used for <a href="#part-1-water-billing">Part 1</a></li>
+<li><code>hw5_fish.py</code>: this file will be used for <a href="#part-2-text-art">Part 2</a> for the fish text art.</li>
+<li><code>hw5_spaceneedle.py</code>: this file will be used for <a href="#part-2-text-art">Part 2</a> for the space needle text art.</li>
+<li><code>hw5.pdf</code>: this description</li>
+</ul>
+<p>Note that all starter files have special headers at the top including form fields that you should fill out before submitting your assignment. Also, do not change the file names as the test program included with this homework (and test programs that we use) assume certain file names.</p>
+<h2 id="part-1-water-billing">Part 1: Water Billing</h2>
+<p>Clean water is an essential resource, and in most areas of the world it is not . In this part of the homework you’ll write a program to compute and display information for a utility company which supplies water to its customers. The program will compute water usage and the bill for some number of customers, and compute and print the total billing amount for all customers.</p>
+<p>Your program should prompt the user to enter three values (in the following order):</p>
+<ol type="1">
+<li>The number of customers for which billing information should be prompted.</li>
+</ol>
+<p>Then, for <em>each customer</em>, the program will ask:</p>
+<ol start="2" type="1">
+<li>The customer’s billing code (one character)</li>
+<li>The customer’s beginning meter reading (a positive integer value)</li>
+<li>The customer’s ending meter reading (a positive integer value)</li>
+</ol>
+<p>For each customer, the program will compute the number of gallons used, compute the bill amount, and print some summary information. Once information for all customers has been gathered, the total amount billed to customers will be printed.</p>
+<p>Below, some detail about the meaning and valid values for the above inputs is provided.</p>
+<h2 id="billing-code">Billing code</h2>
+<p>There are three valid billing codes: <code>r</code>, <code>c</code>, and <code>i</code>. If an invalid code is input, the program should print an error statement and continue with getting information for the <em>next</em> customer.</p>
+<h2 id="water-meter-readings">Water meter readings</h2>
+<p>The meter is read by a representative of the utility company at the start and at the end of the billing period, and the readings are taken from a meter which has <strong>nine digits</strong> and records <strong>tenths of a gallon</strong>. If an input is given that is not exactly 9 digits, an error message should be printed and the program should continue with getting information for the <em>next</em> customer.</p>
+<p>The meter’s dial has nine digits and records tenths of a gallon. For example, assuming that the beginning reading was <code>444400003</code> and the ending reading was <code>444400135</code>, then the customer used <code>13.2</code> gallons of water during the billing period.</p>
+<p>Since the meter’s dial only has nine digits, the reading at the end of the billing period may be less than the reading at the beginning of the billing period. For example, assuming that the beginning reading was <code>999999997</code> and the ending reading was <code>000000005</code>, then the customer used <code>0.8</code> gallons of water during the billing period.</p>
+<h2 id="computing-the-bill">Computing the bill</h2>
+<p>The bill amount depends on the billing code used, as follows:</p>
+<dl>
+<dt>Code ‘r’ (residential):</dt>
+<dd>$5.00 plus $0.0005 per gallon used
+</dd>
+<dt>Code ‘c’ (commercial):</dt>
+<dd>$1000.00 for 4 million gallons or less, and $0.00025 for each additional gallon used
+</dd>
+<dt>Code ‘i’ (industrial):</dt>
+<dd>$1000.00 if usage does not exceed 4 million gallons; $2000.00 if usage exceeds 4 million gallons but does not exceed 10 million gallons; and $2000.00 plus $0.00025 for each additional gallon if usage exceeds 10 million gallons.
+</dd>
+</dl>
+<p>Any prices printed should be rounded to the nearest cent (2 decimal places). You should use the <code>round</code> function for that task.</p>
+<h2 id="program-structure">Program structure</h2>
+<p>In <code>hw5_water.py</code>, a set of <em>five</em> functions to help you solve this problem has already been started. In particular:</p>
+<ol type="1">
+<li><p>The <code>valid_meter_reading</code> function should accept a <strong>string</strong> and return True or False, depending whether the string represents a valid 9-digit meter reading. The function should return True if the reading consists of exactly 9 digit characters, and False otherwise.</p></li>
+<li><p>The <code>water_used</code> function should accept a beginning meter reading and an ending meter reading (which are both <strong>valid</strong> meter reading <strong>strings</strong>) and compute and return the water usage represented by the readings. The value returned should be a floating point number.</p></li>
+<li><p>The <code>compute_bill_amount</code> function should accept a billing code and an amount of water in gallons, and compute and return the bill amount.</p></li>
+<li><p>The <code>one_customer</code> function should accept one parameter — a customer number to use when creating input prompts. The function should do the following:</p></li>
+</ol>
+<ul>
+<li>It should first ask for a billing code for the customer. If the billing code is invalid, the function should print an error message and return 0 .</li>
+<li>It should then ask for the beginning meter reading for the customer and check if the reading is valid using the <code>valid_meter_reading</code> function. If the reading is invalid, the function should print an error message and return 0.</li>
+<li>The function should then ask for the ending meter reading for the customer, and do the same things as with getting the beginning meter reading.</li>
+<li>The function should then compute the amount of water used using the <code>water_used</code> function.</li>
+<li>After that, it should compute the bill amount using the <code>compute_bill_amount</code> function.</li>
+<li>Finally, the function should print a summary for the customer, including the billing code, water usage in gallons rounded to the nearest tenth of a gallon, and print the bill amount. It should then <em>return</em> the bill amount.</li>
+</ul>
+<ol start="5" type="1">
+<li>Finally, the <code>main</code> function should prompt the user for the number of customers to input information for, then call the <code>one_customer</code> function exactly that many times. It should compute and print the total billing amount (for all customers) based on results of calling <code>one_customer</code> for each customer.</li>
+</ol>
+<h2 id="example-output">Example output</h2>
+<p>Here is an example of how your program’s output should look. Notice below that both customers have valid information:</p>
+<pre><code>How many customers? 2
+Code for customer 1: r
+Beginning meter reading for customer 1: 000001000
+Ending meter reading for customer 1: 000002005
+Customer 1: 
+  Code: r
+  Usage: 100.5
+  Bill: $5.05
+Code for customer 2: c
+Beginning meter reading for customer 2: 100000000
+Ending meter reading for customer 2: 200000000
+Customer 2: 
+  Code: c
+  Usage: 10000000.0
+  Bill: $2500.0
+Total amount billed: $2505.05</code></pre>
+<p>Here is another example of how your program’s output should look. Notice below that all three customers have invalid information so the total amount billed is $0.</p>
+<pre><code>How many customers? 3
+Code for customer 1: x
+Invalid customer code
+Code for customer 2: r
+Beginning meter reading for customer 2: 10000000 # only 8 characters
+Invalid begin reading
+Code for customer 3: r
+Beginning meter reading for customer 3: 100000000
+Ending meter reading for customer 3: 99999kale # not all digits     
+Invalid end reading
+Total amount billed: $0</code></pre>
+<p>Credit: <em>This problem was inspired by a problem created by R. Enbody at Michigan State University.</em></p>
+<h2 id="part-2-text-art">Part 2: Text art</h2>
+<p>Your task for this part is write two programs, each one drawing a particular text-art pattern. Your text art must be <strong>scalable</strong>, meaning that the art is not a fixed sequence of characters, but a pattern that can be drawn at a variety of scales.</p>
+<p>Each program must ask the user for a positive number and then scale the text pattern accordingly. Note that the scale captures some notion of the size of the art, but it is not necessarily equal to the width or height. For example, in the fish, the scale is the number of rows in the tail of the fish (not including the row with just one <code>v</code>); in the space needle, it is the number of rows in the spire at the very top. You will need to analyze each figure and decide how to use the scale to correctly size and “draw” different features of each picture.</p>
+<p>Write two separate programs for the following two patterns (listed in order of difficulty):</p>
+<ol type="1">
+<li><p><a href="https://colgateuniversitycomputerscience.github.io/cosc101/hw/hw05/fish.html">Fish</a>: write your program in the provided file <code>hw5_fish.py</code>.</p></li>
+<li><p><a href="https://colgateuniversitycomputerscience.github.io/cosc101/hw/hw05/spaceneedle.html">Space Needle</a>: write your program in the provided file <code>hw5_spaceneedle.py</code>.</p></li>
+</ol>
+<p>Click on the names above (e.g., <a href="https://colgateuniversitycomputerscience.github.io/cosc101/hw/hw05/fish.html">Fish</a>) to see examples of each pattern at different scales.</p>
+<p><strong>Note</strong>: You <strong>must</strong> create separate functions for drawing the text art. You should have a separate function for each distinct feature of the fish and the space needle (you will need to think carefully about what the separate features are). You do not need to organize your tree text art into functions, although you are welcome to do so.</p>
+<h3 id="text-art-hints">Text Art Hints</h3>
+<p>For each pattern, examine the pictures carefully, taking note of spacing and patterns.</p>
+<p>Break each problem down into two major steps: (1) write code to draw the pattern, (2) get the pattern to scale with user input. To complete step 1, choose a scale, say scale 3, and write a program that reproduces the scale 3 pattern exactly. At this point, the program should not take any user input. Once you have this working, figure out how the pattern changes with user input.</p>
+<p>Printing the backslash character <code>\</code> is tricky because python uses the backslash to produce special characters. For example, the string <code>"\t"</code> is a tab and <code>"\n"</code> is a newline. A single backslash character is represented by a string of two backslash characters (<code>"\\"</code>). For example:</p>
+<pre><code>print(&quot;/\\/\\&quot;)</code></pre>
+<p>will print: <code>/\/\</code></p>
+<h2 id="challenge-problem">Challenge Problem</h2>
+<p>Challenge problems are entirely optional extensions to the homework. If you complete them successfully, you are rewarded with a sense of accomplishment and a small number of extra points on the homework. They are intended for students who want to explore a little further; only pursue the challenge problem after you have successfully completed the homework.</p>
+<p>For this week, the challenge problem is to create your own text art. Design your own <em>scalable</em> pattern. For inspiration, you can take a look at the <a href="https://en.wikipedia.org/wiki/ASCII_art">Wikipedia page on ASCII Art</a>.</p>
+<p>If you choose to do the challenge problem, please write your scalable text art in the file <code>hw5_challenge.py</code>. Have fun!</p>
+<h1 id="testing">Testing</h1>
+<p>As with some other homeworks, we are providing a program that you can use to test that your homework is meeting the basic specifications of the assignment.</p>
+<p>Please note:</p>
+<ul>
+<li><p>The test program is <strong>extremely</strong> picky about spacing in the output (from print statements) your program produces. If it reports an error, it might just be the difference of a single space.</p></li>
+<li><p>The test program is <strong>NOT</strong> a complete test. You will still need to take responsibility for thoroughly testing your code before submitting. However, our hope is that this test program will at least catch minor errors and make it easier for our grading process and more likely for you to receive full credit.</p></li>
+</ul>
+<p>To use the test program, follow these steps:</p>
+<ol type="1">
+<li><p>Find the test program that is inside the zip file for this homework. The file name is <code>hw5tester.py</code>. Make sure that this file is in <em>exactly</em> the same folder as the homework files for this assignment.</p></li>
+<li><p>Make sure your homework files are named exactly as described in assignment.</p></li>
+<li><p>Open <code>hw5tester.py</code> in IDLE.</p></li>
+<li><p>In IDLE, select <code>Run</code> -&gt; <code>Run module</code></p></li>
+<li><p>Read the test messages that are printed and revise your work accordingly. If the output of your program does not precisely match the expected output, a test will fail. An HTML file (a web page) will be created to show the exact differences between what your program prints and the expected output; if output does not match, you will see a message such as <code>View a detailed output comparison in hw5_tree.py.html.</code> indicating the name of the file that you can open in your web browser.</p></li>
+</ol>
+<p>We hope you find this helpful!</p>
+<h1 id="submission-instructions">Submission Instructions</h1>
+<p>Submit your completed assignment on <a href="https://moodle.colgate.edu">Moodle</a> under your course section’s homework 5. You should upload the following files:</p>
+<ul>
+<li><code>hw5_water.py</code></li>
+<li><code>hw5_fish.py</code></li>
+<li><code>hw5_spaceneedle.py</code></li>
+</ul>
+<p>If you’ve done the challenge problem, also upload <code>hw5_challenge.py</code>.</p>
+<p>Remember to complete the questions at the top of the provided files and that the files you submit need to have these exact filenames.</p>
+<h1 id="grading">Grading</h1>
+<p>Your assignment will be graded on two criteria:</p>
+<ol type="1">
+<li><p>Correctness: this document contains details for how you must complete each letter, including examples. Be sure that you run your program once for each example and make sure it works correctly for each one. Be sure to test each program to verify that it works for other inputs, too — you can be sure that we will do that! [90%]</p>
+<p>The correctness part of your grade is broken down as follows:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Category</th>
+<th>Portion of grade</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Part 1 (water billing)</td>
+<td>30%</td>
+</tr>
+<tr class="even">
+<td>Part 2 (fish)</td>
+<td>30%</td>
+</tr>
+<tr class="odd">
+<td>Part 2 (space needle)</td>
+<td>30%</td>
+</tr>
+</tbody>
+</table></li>
+<li><p>Program design and style [10%]: style and program design become increasingly important the more complex your program becomes. For these programs, adhere to the following guidelines:</p>
+<ul>
+<li><p>Variable names should be meaningful</p></li>
+<li><p>Programs should contain at least a few descriptive comments. Do <em>not</em> comment every line of code with low level explanations of what each line does. Focus on high level ideas.</p></li>
+<li><p>The fish and space needle text art <strong>must</strong> have separate functions created to draw each separate feature of these pictures.</p></li>
+<li><p>All functions must have docstrings with give a brief description of what they do.</p></li>
+</ul></li>
+</ol>
+</body>
+</html>

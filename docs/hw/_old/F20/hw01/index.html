@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>hw1</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="cosc-101-homework-1-fall-2020">COSC 101 Homework 1: Fall 2020</h1>
+<p>The due date for this homework is <strong>Friday, September 11, 5pm EDT</strong>. Upload your solution files to moodle.</p>
+<h2 id="introduction">Introduction</h2>
+<p>This assignment is designed to give you a first introduction to writing programs in Python! By completing this assignment you will demonstrate that you understand a number of important concepts:</p>
+<ul>
+<li>print function calls and creating well-formatted output</li>
+<li>working with different data types, including using type conversion functions and operators</li>
+<li>working with basic arithmetic and string expressions</li>
+</ul>
+<p>We encourage you to start early.</p>
+<h2 id="your-assignment">Your assignment</h2>
+<p>Your task is to complete following steps:</p>
+<ol start="0" type="1">
+<li>Download the <a href="hw1.zip">hw1.zip</a> file from the course website and open it. You will see that it contains three python files: <code>hw1_types.py</code>, <code>hw1_madlibs.py</code> and <code>hw1_dogage.py</code>. You are expected to write your programs in these files.</li>
+<li>Complete <code>hw1_types.py</code>. This file is used in <a href="#part-1">Part 1</a>.</li>
+<li>Complete <code>hw1_madlibs.py</code>. This file is used in <a href="#part-2">Part 2</a>.</li>
+<li>Complete <code>hw1_dogage.py</code>. This file is used in <a href="#part-3">Part 3</a>.</li>
+<li>(OPTIONAL) Use the testing program to help check your work.</li>
+<li>Review the grading criteria at the end of this assignment.</li>
+<li>(OPTIONAL) Do the challenge problem for this homework.</li>
+</ol>
+<p>Notice that each starter <code>.py</code> file has a header with some information for you to fill in. Please do so. Your feedback helps the instructors to understand better your experiences with doing the homeworks and where we can provide better assistance.</p>
+<h2 id="part-1">Part 1</h2>
+<p>In the <code>hw1_types.py</code> file, several variables are already defined. You will sometimes receive starter files that already contain some code, this is an example of what that might look like. This starter code will be denoted by comments and instructions as to whether you should modify the code or not. In this case the code should not be modified. You should write the rest of your code in the area designated by the comments.</p>
+<p>Write code to print the type of each of the existing variables, in same order in which they were assigned.</p>
+<p>Write code to convert the value of <code>b</code> to a float, add the value of <code>a</code>, and display the type of the result, <em>without</em> modifying the values of any of the variables.</p>
+<p>Next, write code to convert <code>c</code> to a string, concatenate it with <code>d</code>, repeat by the integer value of <code>e</code>, and save the result to a new variable named <code>z</code>.</p>
+<p>Print the value of the variable <code>z</code>.</p>
+<p>Update the variable <code>a</code> to be the remainder when <code>a</code> is divided by <code>b</code>.</p>
+<p>Print the new value of the variable <code>a</code>.</p>
+<p>The full output of your program should be exactly equivalent to the following:</p>
+<pre><code>&lt;class &#39;int&#39;&gt;
+&lt;class &#39;int&#39;&gt;
+&lt;class &#39;int&#39;&gt;
+&lt;class &#39;str&#39;&gt;
+&lt;class &#39;str&#39;&gt;
+&lt;class &#39;float&#39;&gt;
+18b18b18b18b18b18b
+0</code></pre>
+<h2 id="part-2">Part 2</h2>
+<p>In the <code>hw1_madlibs.py</code> file, write a short program that asks for a noun (string) and two verbs (both strings). (You can assume that both verbs are in third person form.) Using the three inputs, your program should print the sentence:</p>
+<p><code>If it &lt;verb 1&gt; like a &lt;noun&gt; and &lt;verb 2&gt; like a &lt;noun&gt;, it probably is a &lt;noun&gt;.</code></p>
+<p>For example:</p>
+<pre><code>What&#39;s the noun? duck
+What&#39;s the first verb? walks
+What&#39;s the second verb? talks
+If it walks like a duck and talks like a duck, it probably is a duck.</code></pre>
+<p>Here’s another example:</p>
+<pre><code>What&#39;s the noun? dragon
+What&#39;s the first verb? eats tacos
+What&#39;s the second verb? breathes fire
+If it eats tacos like a dragon and breathes fire like a dragon, it probably is a dragon.</code></pre>
+<p><strong>Note</strong>: the key challenge for this problem is to <em>get the spacing correct in the output</em>. Notice where there is a space following one of the nouns or verbs, and where there is punctuation (and no space between the word and punctuation). To get full credit on this problem you need to get those details correct.</p>
+<h2 id="part-3">Part 3</h2>
+<p>Finally, in the <code>hw1_dogage.py</code> file, write a short program to ask for a dog’s name and its age in human years. You can assume that the dog’s age in human years is an integer.</p>
+<p>Print out the age of the dog in dog years (human age divided by 7). The dog age you print should be a <em>floating point number</em>.</p>
+<p>Here’s an example for how your program’s output should look:</p>
+<pre><code>What&#39;s the name of your dog? Fido
+How old is your dog in human years? 43
+Fido&#39;s age in dog years is 6.142857142857143.</code></pre>
+<p><strong>Note</strong>: similar to the madlibs for part 3, constructing the last line requires some care. In particular, notice that the dog’s name is follows by <code>'s</code> (with no space) and that the dog age is followed by a period (again, with no space).</p>
+<h2 id="testing">Testing</h2>
+<p>For this homework, we are providing a program that you can use to test that your homework is meeting the basic specifications of the assignment.</p>
+<p>Please note:</p>
+<ul>
+<li><p>The test program is <strong>extremely</strong> and intentionally picky about spacing in the output (from print statements) your program produces. If it reports an error, it might just be the difference of a single space.</p></li>
+<li><p>The test program is <strong>NOT</strong> a complete test. You will still need to take responsibility for thoroughly testing your code before submitting. However, our hope is that this test program will at least catch minor errors and make it easier for our grading process and more likely for you to receive full credit.</p></li>
+</ul>
+<p>To use the test program, follow these steps:</p>
+<ol type="1">
+<li><p>Find the test program that is inside the zip file for this homework. The file name is <code>hw1tester.py</code>. Make sure that this file is in <em>exactly</em> the same folder as the three homework files for this assignment.</p></li>
+<li><p>Make sure your homework files are named exactly as described in assignment. This <em>should</em> happen automatically when you decompress the zip file.</p></li>
+<li><p>Open <code>hw1tester.py</code> in IDLE.</p></li>
+<li><p>In IDLE, select <code>Run</code> -&gt; <code>Run module</code></p></li>
+<li><p>Read the test messages that are printed and revise your work accordingly. If the output of your program does not precisely match the expected output, a test will fail. An text file will be created to show the exact differences between what your program prints and the expected output; if output does not match, you will see a message such as <code>View a detailed output comparison in hw1_types.py.html.</code> indicating the name of the file that you can open in your web browser.</p></li>
+</ol>
+<p>We hope you find this helpful!</p>
+<h2 id="grading">Grading</h2>
+<p>Your assignment will be graded on two criteria:</p>
+<ol type="1">
+<li><p>Correctness: this document contains several examples for each program. Be sure that you run your program once for each example and make sure it works correctly for each one (run the <code>hw2tester.py</code> program, as described above)! [90%]</p>
+<p>The correctness part of your grade is broken down as follows:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Category</th>
+<th>Portion of grade</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Types</td>
+<td>30%</td>
+</tr>
+<tr class="even">
+<td>Madlibs</td>
+<td>30%</td>
+</tr>
+<tr class="odd">
+<td>Dog age</td>
+<td>30%</td>
+</tr>
+</tbody>
+</table></li>
+<li><p>Program design and style [10%]: style and program design become increasingly important the more complex your program becomes. For these first programs, adhere to the following guidelines:</p>
+<ul>
+<li>Variable names should be meaningful</li>
+<li>Programs should contain at least a few descriptive comments. Each of the programs for this homework involves multiple conceptual steps and should have comments that indicate to a reader what’s going on at a high level.</li>
+</ul></li>
+</ol>
+<h2 id="challenge-problem-optional">Challenge Problem (OPTIONAL)</h2>
+<p>Challenge problems are entirely optional extensions to the homework. If you complete them successfully, you are rewarded with a sense of accomplishment and a small number of extra points on the homework. Note that any extra points apply only to the homework on which the challenge problem is attempted, not to other homeworks or other grading categories. They are intended for students who want to explore a little further; only pursue the challenge problem after you have successfully completed the homework.</p>
+<p>For this challenge problem, you should write a program that prompts the user for a floating point number which stands for gallons of gasoline. You will reprint that value along with other information about gasoline and gasoline usage. In particular, you should print:</p>
+<ul>
+<li>The equivalent number of liters</li>
+<li>The equivalent number of barrels of oil required</li>
+<li>The number of pounds of <span class="math inline"><em>C</em><em>O</em><sub>2</sub></span> produced</li>
+</ul>
+<p>Some relevant conversion factors are:</p>
+<ul>
+<li>1 gallon is equivalent to 3.7854 liters</li>
+<li>1 barrel of oil produces 19.5 gallons of gas (approximately, can vary depending on the oil source). A barrel is 42 gallons.</li>
+<li>1 gallon of gas produces approximately 20 pounds of <span class="math inline"><em>C</em><em>O</em><sub>2</sub></span>.</li>
+</ul>
+<p>If you decide to do the challenge problem, please create a new file <code>hw1_challenge.py</code> and write your code inside that file.</p>
+<p>An example run of your program might be:</p>
+<pre><code>Please enter the number of gallons of gasoline: 100
+Original number of gallons is: 100.0
+100.0 gallons is equivalent to 378.54 liters
+100.0 gallons of gasoline requires 5.12820512821 barrels of oil
+100.0 gallons of gasoline produces 2000.0 pounds of CO2</code></pre>
+<p>Credit: this problem was adapted from one created by Rich Enbody at Michigan State University.</p>
+</body>
+</html>

@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>hw8</title>
+  <style>
+    html {
+      line-height: 1.7;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 40em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin-top: 1.7em;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.7em;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1.7em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1.7em 0 1.7em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      font-style: italic;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      background-color: #f0f0f0;
+      font-size: 85%;
+      margin: 0;
+      padding: .2em .4em;
+    }
+    pre {
+      line-height: 1.5em;
+      padding: 1em;
+      background-color: #f0f0f0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin-top: 1.7em;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+    }
+    th, td {
+      border-bottom: 1px solid lightgray;
+      padding: 1em 3em 1em 0;
+    }
+    header {
+      margin-bottom: 6em;
+      text-align: center;
+    }
+    nav a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="cosc-101-homework-8-fall-2020">COSC 101 Homework 8: Fall 2020</h1>
+<p>Due date: <strong>Friday, 6 November 2020, 5:00pm</strong></p>
+<h1 id="introduction">Introduction</h1>
+<p>The goal of this homework is to create a <em>well-designed</em> game to play Hangperson (yes, that’s a gender-neutral version of “Hangman”). If you’re unsure how to play, please talk to your instructor or a fellow student and play a practice game or two. It’s pretty important that you have a clear image in mind for how the game works before diving in to the assignment.</p>
+<p>Please write your code in the template file <code>hw8_hangperson.py</code> included with this homework. Note that the file includes a function (already written!) for drawing the gallows, a <code>main</code> function for your program, and the start of a function called <code>one_game</code>.</p>
+<h2 id="required-functionality">Required functionality</h2>
+<p>Here are the basic guidelines for how your program should behave:</p>
+<ul>
+<li><p>The “gallows” that you draw will be in low-tech ASCII (just letter, numbers and/or symbols). (We won’t be using Turtle or another graphics package.) A function called <code>print_gallows</code> is provided in the <code>hw8_hangperson.py</code> template file. Given an integer <code>misses</code> representing the number of missed guesses, it prints the gallows and <code>misses</code> number of body parts.</p>
+<p>There should be exactly <strong>seven</strong> missed guesses allowed before declaring that a player has lost.</p></li>
+<li><p>Before you ask for a new letter to guess, you should display the letters that have been previously guessed, and the current “state” of guessing. For the current guess state, you can display the actual letters that have been correctly guessed, and underscores for letters that are yet to be guessed correctly. For example, if the secret word is “SUNNY” and the player has correctly guessed the “N”, you should print something like:</p>
+<p><code>_ _ N N _</code></p>
+<p>Note that the blanks are formed with underscore characters. Note also that the output is rather nicely formatted.</p></li>
+<li><p>Keeping track of the <em>guess state</em>, or information about the word a user is trying to guess and which letters have been correctly guessed is a key challenge for this homework. You can do this with a string or a list. If you do this as a string, you could do the following:</p>
+<ul>
+<li><p>Initiate a new guess state by creating a string of the same length as the secret word, but with all underscore characters. For example, if the secret word is <code>PUMPKIN</code>, your initial guess state could be <code>'_______'</code> (seven underscores).</p></li>
+<li><p>When a valid guess is obtained, you can iterate through the indexes of the secret word and employ an accumulator pattern to build the new “guess state”. For each index, if the letter in the secret word at that index is the same as the guess, concatenate the letter that was guessed correctly, otherwise concatenate a <code>_</code>.</p></li>
+<li><p>Note that when you print out the guess state you will want to print a space between each letter so that it is clear how many letters are to be guessed. For example, if the secret word is <code>PUMPKIN</code> and the player has correctly <code>P</code>, the guess state should be <code>'P__P___'</code>. Instead of printing <code>'P__P___'</code>, though, you should print <code>'P _ _ P _ _ _'</code> (spaces between each letter/underscore). A recipe for accomplishing this is (assuming a string variable named <code>game_state</code> holds the game state):</p>
+<pre><code>print(&#39; &#39;.join(list(game_state)))</code></pre></li>
+</ul></li>
+<li><p>There is also a <code>main</code> function started in the <code>hw8_hangperson.py</code> template. You’ll notice that there is a list of words and the <code>random.choice()</code> function is used to randomly select one of the words for playing the game. You are welcome to modify this list of words if you’d like.</p></li>
+<li><p>Your program should just play one game of hangperson. When a game ends because of a win or a loss by the player, the program should end.</p></li>
+<li><p>When you ask for the next guess from a player, you should only accept a single letter as a valid guess; all other inputs should be treated as invalid. Your program must be able to handle the (invalid) cases when a player enters a non-letter, more than one letter, or some other bogus guess. The program should not crash, an appropriate error message should be shown, and the game should continue. <strong>Any invalid guesses should <em>not</em> count against a player</strong>.</p></li>
+<li><p>When you obtain a new valid guess (one letter), <strong>it is strongly suggested that you convert any inputs to upper-case</strong> for handling the rest of the game logic. Handling all strings in upper case will simplify logic in your code.</p></li>
+<li><p>Any duplicate guesses should <em>not</em> count against a player. For example, if a player has already guessed “A” and they guess it again, you should print a message like “You’ve already guessed A”, but otherwise do nothing.</p></li>
+<li><p>Once that you’re sure about how the game is played and you understand the basic requirements listed above, you’ll need to think carefully about how to design and implement the game in Python. Ensure that all your functions are SOFA: that they are short, do one thing, take few arguments, and are pitched at a consistent level of abstraction. Moreover, make sure that your functions contain well-formed docstrings and that you include comments next to portions of code that need some further explanation.</p></li>
+</ul>
+<h2 id="suggested-program-structure">Suggested program structure</h2>
+<p>The design of the program to play hangperson is up to you, but here is a suggested structure. This is a <em>suggestion</em>; if you deviate from it, that’s up to you, but for all functions you write you should try to make sure that:</p>
+<ul>
+<li>any function you write does <em>one</em> thing (i.e., one specific task);</li>
+<li>any function function you write just takes parameters and returns a return value (or return values), but does <em>not</em> modify any global state or global variables;</li>
+<li>any function you write is fairly <em>short</em>; it is possible to write <em>all</em> the code to play a game in a single function but that’s a bad design.</li>
+</ul>
+<p>If you go with the suggested structure below, a further strong suggestion is to write a little bit of code at a time (one function at most, but maybe just a couple lines in a function) and test as you go. Writing most all the code you think you need and testing afterward is a strategy that will often lead to frustration. Do a little bit at a time.</p>
+<h3 id="a-function-to-get-the-next-guess.">1. A function to get the next guess.</h3>
+<p>A key task in this game is to ask the user for their next guess (a single letter). This function should repeatedly ask the user for their guess until they type a single letter.</p>
+<p>Some specific suggestions about this function:</p>
+<ul>
+<li>Use a <code>while</code> loop for repeatedly asking the user for new input until valid (one letter) input is given.<br />
+</li>
+<li>Don’t worry about whether the user has guessed a particular letter before or not in this function.<br />
+</li>
+<li>Return the (valid) letter guessed as an <em>upper case</em> letter. That way, you can just deal with upper-case letters and strings elsewhere in the program which will simplify things a lot.</li>
+</ul>
+<p>An example function header might be:</p>
+<pre><code>def get_guess():</code></pre>
+<h3 id="a-function-to-print-the-current-game-state.">2. A function to print the current “game state”.</h3>
+<p>There are three aspects to the game state:</p>
+<ul>
+<li>the number of “misses” (letter guesses that aren’t in the secret word) a user has made — you need this number for calling the function to print the gallows,</li>
+<li>all the previous guesses made by the user, whether or not those guesses were valid or not,</li>
+<li>some representation of which letters have been correctly guessed and which have not yet been guessed (the “guess state”) — see notes in the section above about how you might consider storing the guess state.</li>
+</ul>
+<p>This function would print this information nicely to the screen (see the game traces linked below for examples of how your output might look). This function wouldn’t need to return anything.</p>
+<p>An example function header might be:</p>
+<pre><code>def print_game_state(misses, previous_guesses, guess_state):</code></pre>
+<h3 id="a-function-to-take-a-valid-and-correct-guess-and-update-the-guessing-state.">3. A function to take a valid and correct guess, and <em>update</em> the guessing state.</h3>
+<p>For this function, you would accept the secret word, the guessed letter, and the current guess state, then update the guess state. As noted in the previous section, if the secret word was <code>PUMPKIN</code>, and the user guessed <code>K</code>, and the current guess state was <code>P__P___</code>, this function would create the string <code>P__PK__</code> and return it.</p>
+<p>An example function header might be:</p>
+<pre><code>def update_game_state(secret_word, letter, guess_state):</code></pre>
+<h3 id="a-function-to-tie-together-the-other-functions-and-coordinate-playing-one-game-of-hangperson.">4. A function to tie together the other functions and coordinate playing one game of hangperson.</h3>
+<p>If you have the above three functions written, a function called <code>one_game</code> could tie everything together by doing the following:</p>
+<ul>
+<li><p>Initialize the guess state, including a variable to hold the number of misses, a string to hold previous (valid) guesses, and a string to hold which letters have been correctly guessed.</p></li>
+<li><p>Have a <code>while</code> loop that will execute as long as the game is in progress; remember that the game ends when a player either has 7 misses or correctly guesses the word.</p>
+<ul>
+<li>Within the <code>while</code> loop, you could first print the current game state.</li>
+<li>Next, you could ask for the next guess.</li>
+<li>You could then handle the new guess by updating the guess state if it had not been previously guessed and was a letter in the secret word, otherwise you could handle the guess in another appropriate way.</li>
+</ul></li>
+</ul>
+<p>A function header for <code>one_game</code> could be as follows (this is already written in the <code>hw8_hangperson.py</code> template):</p>
+<pre><code>def one_game(secret):</code></pre>
+<h2 id="example-output">Example output</h2>
+<p>The following pages demonstrate what a correctly working hangperson game should look like. Study these examples closely! Your code must exhibit the same logic, but you are free to revise the particular language used in the prompts to the user.</p>
+<ul>
+<li><p><a href="https://colgateuniversitycomputerscience.github.io/cosc101/hw/hw08/game_trace1.html">Game Trace 1</a></p></li>
+<li><p><a href="https://colgateuniversitycomputerscience.github.io/cosc101/hw/hw08/game_trace2.html">Game Trace 2</a></p></li>
+</ul>
+<h1 id="grading">Grading</h1>
+<p>Your assignment will be graded on two criteria:</p>
+<ol type="1">
+<li><p>Correctness (75%): your hangperson game must be implemented correctly. Refer to the example output above to help ensure that your program works the way it should.</p></li>
+<li><p>Program design and style (25%): program design is particularly important for this assignment. Organize your functions so that each one is relatively short does <em>one</em> thing and takes few arguments. Think about how to break down the problem of “playing hangperson” into smaller subtasks. And as usual:</p>
+<ul>
+<li>Functions should have meaningful docstrings</li>
+<li>Variable names should be meaningful</li>
+<li>Programs should contain at least a few descriptive comments. Do <em>not</em> comment every line of code with low level explanations of what each line does. Focus on high level ideas.</li>
+<li>All code should be structured so that the logic is clear and easy to follow.</li>
+<li>There should be <em>no global variables</em>. Any information needed inside a function should be passed as parameters; anything done by a function that needs to be used by the caller of the function should be returned from the function.</li>
+</ul></li>
+</ol>
+<h1 id="testing">Testing</h1>
+<p>There are no automated tests for this homework. You’ll need to run your code and test it in a variety of ways to ensure that it behaves according to the specifications above. You are strongly encouraged to write <code>doctest</code> tests for your functions, but you are not required to do so.</p>
+<h1 id="submission">Submission</h1>
+<p>Just upload your <code>hw8_hangperson.py</code> file to Moodle.</p>
+<h1 id="challenge-problems">Challenge problems</h1>
+<p>There are two options for challenge problems for this homework, as described below.</p>
+<h2 id="challenge-problem-option-1-evil-hangperson">Challenge problem option 1: Evil hangperson</h2>
+<p>If you complete the hangperson game as described, you can try to complete this optional challenge problem. Modify the hangperson to have an “evil” option. Prompt the user to play evil or regular hangperson. If the user chooses to play evil hangperson, then the computer does something really sneaky: it avoids committing to a secret word for as long as possible. (You’ll need to create a larger set of secret words in order to make evil hangperson truly evil.)</p>
+<p>Here’s how it might work. The computer has a list of words to choose from. Each time the user guesses a letter, the computer can tell the user that the letter is not in the word, provided that the computer still has some words left in its list that don’t have that letter. If eventually every word in the evil computer player’s list has the guessed letter, then the computer can finally commit to a word (by choosing one at random). To get full credit, your evil player can cheat in this way but must ultimately still play a game that appears to be fair. For instance, at the end of the game, win or lose, the computer player must expose its secret word. So, if the player guesses ‘a’ then ‘e’ then ‘o’ then ‘u’ then ‘i’ then ‘y’ and the computer says that none of those letters are in the word, then the computer player is in trouble unless it can come up with a word that has no vowels in it!</p>
+<h2 id="challenge-problem-option-2-fancy-gallows">Challenge problem option 2: Fancy gallows</h2>
+<p>You’ll notice that the gallows printed by the <code>print_gallows</code> function is pretty … bland. For this challenge problem, you could design a new, fancier gallows to be printed as part of game play. For example: you could use Emoji for some parts of the gallows, or you could print some features in color. The design is entirely up to you.</p>
+<p>For printing Emoji, you will either need to copy/paste particular emoji into your program, or (better) you can use the Unicode character code for a particular symbol or emoji. To use a character code in Python, you’ll need to first look up a symbol and its code equivalent; you can do this using code charts available from unicode.org. There is a page with <em>all</em> code charts (http://www.unicode.org/charts/), and specific pages linked from that index show Emoticons (https://www.unicode.org/charts/PDF/U1F600.pdf), miscellaneous symbols (https://www.unicode.org/charts/PDF/U2600.pdf) and more. For example, the first Emoticon face on the Emoticons table (https://www.unicode.org/charts/PDF/U1F600.pdf) lists a character code of 1F600. To use that code in Python, you need to prefix the code with <code>'\U000'</code>, like:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\U0001F600</span><span class="st">&quot;</span>)</span></code></pre></div>
+<p>Any Unicode character code can be printed in that way. (Note that the number of characters after <code>'\U'</code> must be 8, so if the character code is only 4 characters, you need to prefix it with <code>'\U0000'</code>.)</p>
+<p>For printing text in color, you can refer to the following web page for examples of using “ANSI Escape Codes”: https://www.lihaoyi.com/post/BuildyourownCommandLinewithANSIescapecodes.html. The first part of that page gives some guidance on emitting specific special codes with <code>print</code> to cause text to be shown in different colors.</p>
+</body>
+</html>

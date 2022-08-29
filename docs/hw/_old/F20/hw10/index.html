@@ -1,0 +1,199 @@
+<h1 id="cosc-101-homework-10-spring-2020">COSC 101 Homework 10; Fall 2020</h1>
+<p>The due date for this homework is <strong>Monday, December 7, 5:00pm EDT</strong>.</p>
+<p>This assignment is designed to give you practice with the following topics:</p>
+<ul>
+<li>Program design</li>
+<li>File I/O</li>
+<li>Dictionaries</li>
+</ul>
+<h1 id="instructions">Instructions</h1>
+<p>Download <a href="hw10.zip"><code>hw10.zip</code></a> and unzip the compressed file to reveal the following files included with this assignment:</p>
+<ul>
+<li><code>hw10.pdf</code>: this description</li>
+<li><code>hw10_small_train.txt</code>: a text file with written comments and
+numeric ratings; used for debugging your code for training a sentiment model</li>
+<li><code>hw10_small_analyze.txt</code>: a text file with just written comments;
+used for debugging your code for applying a sentiment model</li>
+<li><code>hw10_amazon_labeled.txt</code>: a text file with written comments and numeric
+ratings for products from Amazon; used for training a sentiment model</li>
+<li><code>hw10_amazon_analyze.txt</code>: a text file with written comments for products 
+from Amazon; used for applying a sentiment model</li>
+<li><code>hw10_yelp_train.txt</code>: a text file with written comments and numeric
+ratings for restaurants from Yelp; used for training a sentiment model</li>
+<li><code>hw10_yelp_analyze.txt</code>: a text file with written comments for restaurants
+from Yelp; used for applying a sentiment model</li>
+</ul>
+<p>All of your work for this assignment will be completed in the file
+<code>hw10_sentiment.py</code>.  As with other assignments, this file has a special header at the top with form fields that you should fill out before submitting the code for this assignment.  Also, do not change the file name as we sometimes
+use programs to test your code and they will not be able to find your program
+and give you any credit if your file is named incorrectly.</p>
+<h2 id="background-sentiment-analysis">Background: Sentiment Analysis</h2>
+<p>Sentiment analysis is a form of natural language processing (NLP) that is used
+to determine the opinion conveyed in a piece of text. For example, sentiment
+analysis can be used to determine whether a written product review is
+positive, negative, or neutral.</p>
+<p>Conducting sentiment analysis on a review requires identifying features that
+make a review a positive or negative. For example, a review containing the
+word &quot;good&quot; is likely positive, while a review containing the word &quot;bad&quot; is
+likely negative. The context of the word is also often important. For example,
+&quot;this is not as good as product X&quot; contains the word &quot;good&quot;, but &quot;good&quot; is
+actually referring to a different product and the sentiment for the product
+being reviewed is negative.</p>
+<p>Manually writing a set of rules to determine the sentiment of a review is a
+difficult task. As an alternative, we can make our sentiment analyzer <em>learn</em>
+the sentiment of a word (positive, negative, or neutral) by analyzing existing
+reviews. In particular, we can take a set of reviews that include both written
+comments and numeric ratings (e.g., 1 to 5 stars)--we call this our <em>training
+set</em>--and identify which words are included more often in 5-star reviews, and
+hence likely convey a positive sentiment, and which words are included more
+often in 1-star reviews, and hence likely convey a negative sentiment. </p>
+<p>More precisely, we can compute a sentiment score for each word in a training
+set based on the average score of all reviews in which the word occurs. We
+simply sum the numeric ratings of the reviews in which the word occurs and
+divide by the total number of occurrences. (Note: if the same word appears more
+than once in a single review, then we count the word multiple times.) We call
+the computed word scores our <em>sentiment model</em>.</p>
+<p>Given a sentimental model, we can compute a numeric rating for a written
+review without a reviewer-assigned numeric rating. In particular, we compute
+the average score (from the sentiment model) of all words in the written
+review. A written review with a high average word score is likely positive,
+whereas a review with a low average word score is likely negative.</p>
+<h2 id="required-functionality">Required functionality</h2>
+<p>Your sentiment analysis program must perform two tasks:</p>
+<ol>
+<li>Train (i.e., create) a sentiment model using a file of written comments and
+numeric ratings </li>
+<li>Apply the sentiment model to a file of written comments to compute a
+numeric rating for each review</li>
+</ol>
+<h2 id="task-1-train">Task 1: Train</h2>
+<p>The program <strong>must</strong> contain a function called <code>train</code> that takes the name of a
+file containing training data (i.e., written comments and numeric ratings) and
+returns a sentiment model (i.e., a dictionary whose keys are words appearing
+in the training reviews and whose values are the sentiment scores for
+each word). Each word&#39;s sentiment score should be computed using the
+<a href="#background-sentiment-analys">methodology described above</a>.</p>
+<p>Assume the file of training data contains one review per line. Each line
+contains a numeric rating, followed by a space, followed by the written
+comment. See <code>hw10_small_train.txt</code> for an example. If the training file
+cannot be read (i.e., an exception occurs), then the <code>train</code> function <strong>must</strong>
+print the error message <code>Unable to read the training file</code> and  return an
+empty sentiment model (i.e., an empty dictionary).</p>
+<p>You can use the provided <code>get_words</code> function to get a list of words (in
+lowercase without punctuation) from a string.</p>
+<p>Your program <strong>must</strong> contain at least one additional <em>helper function</em> that is called by the <code>train</code> function.</p>
+<h1 id="task-2-analyze">Task 2: Analyze</h1>
+<p>The program <strong>must</strong> contain a function called <code>analyze</code> that takes the
+sentiment model (i.e., the dictionary of words and sentiment scores) and the
+name of a file containing written comments (without numeric ratings). The
+function should return a list of tuples, where each tuple contains a numeric
+rating--computed using the <a href="#background-sentiment-analys">methodology described
+above</a>--and the (original) written comment.
+Ignore words in a written comment that do not appear in the model.</p>
+<p>Assume the file of written comments contains one review per line. See
+<code>hw10_small_analyze.txt</code> for an example.  If the file cannot be read (i.e., an
+exception occurs), then the <code>analyze</code> function <strong>must</strong> print the error
+message <code>Unable to read analyze file</code> and return an empty list.</p>
+<p>Your program <strong>must</strong> contain at least one additional <em>helper function</em> that
+is called by the <code>analyze</code> function.</p>
+<h2 id="main">Main</h2>
+<p>The program <strong>must</strong> contain a <code>main</code> function that asks for the name of the
+file of training data and the name of the file of written comments to which
+the sentiment model should be applied.</p>
+<p>The program <strong>must</strong> output:</p>
+<ol>
+<li>The word and sentiment score for every word in the sentiment model. The
+words <strong>must</strong> be displayed in alphabetical order.</li>
+<li>The numeric rating and (original) written comment for every review to which
+the sentiment was applied. The reviews <strong>must</strong> be displayed in the order they
+appear in the file of written comments, and the numeric rating <strong>must</strong> be
+rounded to a single decimal point.</li>
+</ol>
+<p>Your program <strong>must</strong> contain at least one additional <em>helper function</em>
+(besides <code>train</code> and <code>analyze</code>) that is called by the <code>main</code> function.</p>
+<p>Here is an  example of how the output from your <code>main</code> function should look.
+(<code>hw10_small_train.txt</code> and <code>hw10_small_analyze.txt</code> are inputs entered by the
+ user.).</p>
+<pre><code><span class="hljs-selector-tag">Enter</span> <span class="hljs-selector-tag">training</span> <span class="hljs-selector-tag">filename</span>: <span class="hljs-selector-tag">hw10_small_train</span><span class="hljs-selector-class">.txt</span>
+<span class="hljs-selector-tag">a</span> 3<span class="hljs-selector-class">.0</span>
+<span class="hljs-selector-tag">advertised</span> 1<span class="hljs-selector-class">.0</span>
+<span class="hljs-selector-tag">am</span> 2<span class="hljs-selector-class">.0</span>
+<span class="hljs-selector-tag">as</span> 1<span class="hljs-selector-class">.0</span>
+<span class="hljs-selector-tag">broke</span> 2<span class="hljs-selector-class">.0</span>
+<span class="hljs-selector-tag">dissatisfied</span> 2<span class="hljs-selector-class">.0</span>
+<span class="hljs-selector-tag">does</span> 1<span class="hljs-selector-class">.0</span>
+<span class="hljs-selector-tag">function</span> 1<span class="hljs-selector-class">.0</span>
+<span class="hljs-selector-tag">functions</span> 4<span class="hljs-selector-class">.0</span>
+<span class="hljs-selector-tag">good</span> 5<span class="hljs-selector-class">.0</span>
+<span class="hljs-selector-tag">i</span> 2<span class="hljs-selector-class">.0</span>
+<span class="hljs-selector-tag">is</span> 3<span class="hljs-selector-class">.5</span>
+<span class="hljs-selector-tag">junk</span> 1<span class="hljs-selector-class">.0</span>
+<span class="hljs-selector-tag">made</span> 5<span class="hljs-selector-class">.0</span>
+<span class="hljs-selector-tag">mediocre</span> 3<span class="hljs-selector-class">.0</span>
+<span class="hljs-selector-tag">not</span> 1<span class="hljs-selector-class">.0</span>
+<span class="hljs-selector-tag">product</span> 3<span class="hljs-selector-class">.0</span>
+<span class="hljs-selector-tag">this</span> 3<span class="hljs-selector-class">.0</span>
+<span class="hljs-selector-tag">well</span> 4<span class="hljs-selector-class">.5</span>
+<span class="hljs-selector-tag">Enter</span> <span class="hljs-selector-tag">analyze</span> <span class="hljs-selector-tag">filename</span>: <span class="hljs-selector-tag">hw10_small_analyze</span><span class="hljs-selector-class">.txt</span>
+3<span class="hljs-selector-class">.5</span> <span class="hljs-selector-tag">This</span> <span class="hljs-selector-tag">product</span> <span class="hljs-selector-tag">works</span> <span class="hljs-selector-tag">very</span> <span class="hljs-selector-tag">well</span>.
+2<span class="hljs-selector-class">.7</span> <span class="hljs-selector-tag">This</span> <span class="hljs-selector-tag">product</span> <span class="hljs-selector-tag">is</span> <span class="hljs-selector-tag">a</span> <span class="hljs-selector-tag">piece</span> <span class="hljs-selector-tag">of</span> <span class="hljs-selector-tag">junk</span>.
+4<span class="hljs-selector-class">.0</span> <span class="hljs-selector-tag">Very</span> <span class="hljs-selector-tag">poorly</span> <span class="hljs-selector-tag">made</span> <span class="hljs-selector-tag">product</span>!
+</code></pre><h2 id="challenge-problems">Challenge Problems</h2>
+<p><em>Stop words</em> are a set of commonly used words: e.g., &#39;the&#39;, &#39;is&#39;, &#39;a&#39;. These
+words are typically ignored when performing sentiment analysis, because they
+occur frequently in both positive and negative reviews. Modify the <code>train</code> and
+<code>apply</code> functions to take a list of stop words, and ignore these stop words in
+written comments. Also modify the main function to ask for the name of a file
+containing stop words, with one stop word per line. (You will need to create
+or download a file of stop words to test your code.)</p>
+<h1 id="testing">Testing</h1>
+<p>There is no &quot;separate&quot; testing program for this homework, but there are doctests
+written for the <code>get_words</code>, <code>train</code>, and <code>analyze</code> functions in the <code>hw10_sentiment.py</code> file. </p>
+<p>You may choose to add to the existing doctests, but you are not
+required to do so.  Note that the <code>main</code> function is set up to invoke the
+doctests.</p>
+<h1 id="submission-instructions">Submission Instructions</h1>
+<p>Submit your completed assignment on <a href="https://moodle.colgate.edu">Moodle</a> under
+your course section&#39;s homework 10.  You should upload <code>hw10_sentiment.py</code>.</p>
+<p>Remember to complete the questions at the top of the <code>hw10_sentiment.py</code> file and that the file you submit needs to have this exact filename.</p>
+<h1 id="grading">Grading</h1>
+<p>Your assignment will be graded on two criteria:</p>
+<ol>
+<li><p>Correctness: [75%].
+The correctness part of your grade is broken down as follows:</p>
+<table>
+<thead>
+<tr>
+<th>Category (function)</th>
+<th>Portion of grade</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Correctly trains a sentiment model</td>
+<td>30%</td>
+</tr>
+<tr>
+<td>Correctly applies a sentiment model</td>
+<td>30%</td>
+</tr>
+<tr>
+<td>Correctly displays the sentiment model and the reviews to which it was applied</td>
+<td>15%</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p>Program design and style [25%]. For this assignment, you are tasked with
+completing three functions and writing <strong>at least</strong> three additional helper
+functions.  Within each function:</p>
+<ul>
+<li><p>Variable names should be meaningful</p>
+</li>
+<li><p>Code should contain at least a few descriptive comments if it is complex.  Do <em>not</em> comment every line of code with low level explanations of what each line does.  Focus on high level ideas.  You will <strong>lose points</strong> if you document every line of the file.</p>
+</li>
+<li><p>Functions should contain meaningful docstrings.</p>
+</li>
+</ul>
+</li>
+</ol>

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>hw6</title>
+  <style>
+    html {
+      line-height: 1.7;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 40em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin-top: 1.7em;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.7em;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1.7em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1.7em 0 1.7em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      font-style: italic;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      background-color: #f0f0f0;
+      font-size: 85%;
+      margin: 0;
+      padding: .2em .4em;
+    }
+    pre {
+      line-height: 1.5em;
+      padding: 1em;
+      background-color: #f0f0f0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin-top: 1.7em;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+    }
+    th, td {
+      border-bottom: 1px solid lightgray;
+      padding: 1em 3em 1em 0;
+    }
+    header {
+      margin-bottom: 6em;
+      text-align: center;
+    }
+    nav a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="cosc-101-homework-6-spring-2021">COSC 101 Homework 6: Spring 2021</h1>
+<p>The due date for this homework is <strong>Thursday, March 25, 5:00pm</strong>.</p>
+<p>This homework will improve your skills with nested <code>for</code> loops, functions and modules by having you develop programs that use nested loops to repeat code patterns that are similar but not exactly the same. Your program will uses the <code>cImage</code> module, <a href="https://runestone.academy/runestone/books/published/thinkcspy/MoreAboutIteration/ImageProcessingonYourOwn.html">described in the textbook</a>. Specifically, this assignment is designed to give you practice with the following topics:</p>
+<ul>
+<li>Nested for loops</li>
+<li>Functions</li>
+<li>Modules</li>
+</ul>
+<p>To get started, download <a href="hw6.zip"><code>hw6.zip</code></a> and unzip the compressed file to reveal the following files:</p>
+<ul>
+<li><code>hw6_images.py</code> this file will be used for all of your code</li>
+<li><code>cImage.py</code> an image manipulation module described in the textbook and used by your program</li>
+<li><code>img</code> a folder of images you can use to test your <code>hw6_images.py</code> program</li>
+<li><code>hw6.pdf</code> this description</li>
+</ul>
+<p>Note that all starter files have special headers at the top including form fields that you should fill out before submitting your assignment. Also, do not change the file names as the test program included with this homework (and test programs that we use) assume certain file names.</p>
+<h2 id="part-1-image-effects">Part 1: Image effects</h2>
+<p>Your first task is to complete five functions that manipulate digital images.</p>
+<p>Open and attempt to run the <code>hw6_images.py</code> file in IDLE. Note that the <code>cImage.py</code> module described in the textbook has been included in the zip file for this homework; the <code>hw6_images.py</code> file uses this module to manipulate and display the images. Note that to close the image window, you can just click anywhere on it.</p>
+<p>You will write all of your code for this part of the homework in the <code>hw6_images.py</code> file. Carefully read through all of the comments in the file to make sure you understand what sections of the file you do not need to modify and where your code should go.</p>
+<p>We have provided three image file examples that you can work with for this assignment: <code>colgate.gif</code>, <code>rose.gif</code>, and <code>grid.gif</code>. It is strongly recommended that you test your code with multiple images to help ensure that it works for any image. Some code has been added to the <code>main</code> function that will call the various functions you need to write; you are welcome to modify the code in <code>main</code> as you run and test your code.</p>
+<p><img src="img/colgate.gif" alt="colgate.gif" /> <img src="img/rose.gif" alt="rose.gif" /> <img src="img/grid.gif" alt="grid.gif" />  </p>
+<p>You will write <strong>five functions</strong> that take an image object, create a copy, perform a pixel-by-pixel manipulation, and return the manipulated copy. We have provided three helper functions (<code>open_image</code>, <code>display_image</code>, and <code>save_image</code>) that you can use to test your code. You may write any additional helper functions that you find useful. Below there are descriptions and sample images for each of the required manipulations.</p>
+<p>The best way to test your image functions is to modify the <code>main</code> function at the bottom of <code>hw6_images.py</code>. You can add calls to the various image functions and use the helper functions to display and save the new/modified image.</p>
+<p>The code for an example function, <code>red_filter</code>, is provided in <code>hw6_images.py</code>; images to show the effect of this filter are shown below.</p>
+<p><img src="img/colgate_red.gif" alt="red_filter(‘colgate.gif’)" /> <img src="img/rose_red.gif" alt="red_filter(‘rose.gif’)" /> <img src="img/grid_red.gif" alt="red_filter(‘grid.gif’)" /></p>
+<p>The five functions you must write are as follows:</p>
+<h3 id="flip_horizontal">1. <code>flip_horizontal</code></h3>
+<p>“Flip” the image horizontally so that pixels on the left column and right column are swapped, pixels on the second column and next-to-last column are swapped, etc</p>
+<p><img src="img/colgate_flip_horizontal.gif" alt="flip_horizontal(‘colgate.gif’)" /> <img src="img/rose_flip_horizontal.gif" alt="flip_horizontal(‘rose.gif’)" /> <img src="img/grid_flip_horizontal.gif" alt="flip_horizontal(‘grid.gif’)" />  </p>
+<h3 id="flip_vertical">2. <code>flip_vertical</code></h3>
+<p>“Flip” the image vertically so that pixels on the top row and bottom row are swapped, pixels on the second row and the next-to-last row are swapped, etc</p>
+<p><img src="img/colgate_flip_vertical.gif" alt="flip_vertical(‘colgate.gif’)" /> <img src="img/rose_flip_vertical.gif" alt="flip_vertical(‘rose.gif’)" /> <img src="img/grid_flip_vertical.gif" alt="flip_vertical(‘grid.gif’)" />  </p>
+<h3 id="to_grayscale">3. <code>to_grayscale</code></h3>
+<p>Convert each pixel to grayscale. A pixel will be gray if each of the RGB components are equivalent. You should take the average of the three color components for each pixel, and then set each color component to the computed average value in order to obtain an appropriate grayscale pixel.</p>
+<p><img src="img/colgate_to_grayscale.gif" alt="to_grayscale(‘colgate.gif’)" /> <img src="img/rose_to_grayscale.gif" alt="to_grayscale(‘rose.gif’)" /> <img src="img/grid_to_grayscale.gif" alt="to_grayscale(‘grid.gif’)" />  </p>
+<h3 id="scale_up">4. <code>scale_up</code></h3>
+<p>Create a new image in which each dimension has been doubled. Note that each pixel in the old image will map to <em>four</em> pixels in the new image (draw this if that’s not clear). Each of the four pixels in the new image should have the same color as the pixel from the original image.</p>
+<p><img src="img/colgate_scale_up.gif" alt="scale_up(‘colgate.gif’)" /> <img src="img/rose_scale_up.gif" alt="scale_up(‘rose.gif’)" /> <img src="img/grid_scale_up.gif" alt="scale_up(‘grid.gif’)" />  </p>
+<h3 id="scale_down">5. <code>scale_down</code></h3>
+<p>Create a new image in which each dimension in the new image is cut in half. To do this, scale each block of four pixels in the old image down to one pixel in the new image (again, draw this out if that’s not clear). The RGB components of the resulting (new) pixel should be computed using the average of the corresponding components from the four original pixels.</p>
+<p>Note that you’ll need to be careful about images that have an odd number of rows and/or columns: for those images, you should use as many pixels as possible to compute the averaging (it may only be 2 pixels, or in the worst case just 1).</p>
+<p><img src="img/colgate_scale_down.gif" alt="scale_down(‘colgate.gif’)" /> <img src="img/rose_scale_down.gif" alt="scale_down(‘rose.gif’)" /> <img src="img/grid_scale_down.gif" alt="scale_down(‘grid.gif’)" />  </p>
+<h2 id="part-2-image-merge">Part 2: Image merge</h2>
+<p>Your second task is to write a function to merge multiple images to create a single average image. This technique is used by researchers in a number of different fields. For example, <a href="https://www.theguardian.com/lifeandstyle/2015/oct/18/why-we-find-average-faces-most-attractive">psychologists have found</a> that people find averaged faces to be more attractive than the individual faces that make up the average. And artificial intelligence researchers use many images to automatically generate new images. For example, see these websites that use AI to generate images of imaginary <a href="https://www.thispersondoesnotexist.com/">people</a>, <a href="https://thiscatdoesnotexist.com/">cats</a>, and <a href="https://thisartworkdoesnotexist.com/">art</a>.</p>
+<p>You are to create a function called <code>merge</code> which takes four image objects as parameters and returns an image object which is the average of those four images. You can assume that all images passed to the function will have the same dimensions. Each pixel color in the merged image should be the average of the pixel colors at that position in the four given images.</p>
+<p>Note that averaging four pixels to create one is exactly what you have to do when scaling down an image with the <code>scale_down</code> function. You should be sure to have a helper function that accepts four pixel objects and computes and returns a new (averaged) pixel and use that function in both your <code>scale_down</code> and <code>merge</code> functions. Don’t copy-paste the code!</p>
+<p>For example, given the following four faces:</p>
+<p><img src="img/alex.gif" alt="alex.gif" /> <img src="img/igor.gif" alt="igor.gif" /> <img src="img/mike.gif" alt="mike.gif" /> <img src="img/vincent.gif" alt="vincent.gif" />  </p>
+<p>This averaged face is created:</p>
+<p><img src="img/face_merge.gif" alt="average of above four faces" />  </p>
+<p><strong>Note: You can modify the main function to display the merged faces, but you will not be able to save the merged faces image, because the cImage library only supports saving images with fewer than 256 unique colors.</strong></p>
+<p>The above four face images have been included in the <code>img</code> folder provided with this homework. You can download a .zip file containing more faces to try <a href="faces.zip">here</a>. These faces come from a <a href="https://osf.io/a3947/">dataset</a> released by the team from University of Glasgow. They have <a href="http://faceresearch.org/demos/average">a website</a> where you can select photos of people and view the average of those faces.</p>
+<p>This problem is based on an assignment created by Evan Peck at Bucknell University.</p>
+<h2 id="challenge-problem">Challenge Problem</h2>
+<p>Challenge problems are entirely optional extensions to the homework. If you complete them successfully, you are rewarded with a sense of accomplishment and a small number of extra points on the homework. They are intended for students who want to explore a little further; only pursue the challenge problem after you have successfully completed the homework.</p>
+<p>For this week, the challenge problem is to create your own image manipulation. For inspiration, you can investigate different filters and manipulations in apps or programs that modify photos. You can also create a new image by combining the various functions you’ve written for image manipulation.</p>
+<p>Here are some specific ideas you could consider: - A filter that detects edges and either highlights or only draws detected edges. - A kaleidoscope-like filter (think about how to mirror the image in different ways to achieve an interesting affect). - A filter to create a swirl effect in the image. - Some kind of creative color manipulation.</p>
+<p>If you choose to do the challenge problem, please write your additional function in the file <code>hw6_images.py</code>. The function should be called <code>challenge</code>, be sure to explain what your function does in the docstring! Have fun!</p>
+<h1 id="submission-instructions">Submission Instructions</h1>
+<p>Please upload only your <code>hw6_images.py</code> file. Remember to complete the questions at the top of the file and that the file you submit must have this exact filename.</p>
+<h1 id="grading">Grading</h1>
+<p>Your assignment will be graded on two criteria:</p>
+<ol type="1">
+<li><p>Correctness: Be sure that you run your programs and make sure they work correctly. Be sure to test more than one image to verify that the image transformation works for other inputs, too — you can be sure that we will do that! [85%]</p>
+<p>The correctness part of your grade is broken down as follows:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Category</th>
+<th>Portion of grade</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Part 1 (image manipulation)</td>
+<td>70%</td>
+</tr>
+<tr class="even">
+<td>Part 2 (image merge)</td>
+<td>15%</td>
+</tr>
+</tbody>
+</table></li>
+<li><p>Program design and style [15%]: style and program design become increasingly important the more complex your program becomes. For these programs, adhere to the following guidelines:</p>
+<ul>
+<li><p>Variable names should be meaningful</p></li>
+<li><p>Programs should contain at least a few descriptive comments. Do <em>not</em> comment every line of code with low level explanations of what each line does. Focus on high level ideas.</p></li>
+<li><p>Any functions must have appropriate docstrings</p></li>
+</ul></li>
+</ol>
+</body>
+</html>
