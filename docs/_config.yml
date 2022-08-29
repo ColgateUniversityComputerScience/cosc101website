@@ -7,7 +7,7 @@ inst: "Colgate University"
 insturl: "http://www.colgate.edu"
 description: Course website for Intro to Computing I at Colgate University
 url: "https://colgateuniversitycomputerscience.github.io"
-baseurl: "/cosc101"
+baseurl: "/cosc101website"
 google_analytics: UA-83277168-2
 font-awesome-include: true
 permalink: /404.html
