@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>HW07</title>
+</head>
+<body>
+  <h1 id="cosc-101-homework-7-fall-2020">COSC 101 Homework 7: Fall 2020</h1>
+<p>The due date for this homework is <strong>Friday, October 30, 7:00pm</strong>.</p>
+<p>This homework will improve your skills with nested <code>for</code> loops, functions and modules by having you develop programs that use nested loops to repeat code patterns that are similar but not exactly the same. Your program will uses the <code>cImage</code> module, <a href="https://runestone.academy/runestone/books/published/thinkcspy/MoreAboutIteration/ImageProcessingonYourOwn.html">described in the textbook</a>. Specifically, this assignment is designed to give you practice with the following topics:</p>
+<ul>
+<li>Nested for loops</li>
+<li>Functions</li>
+<li>Modules</li>
+</ul>
+<p>To get started, download <a href="hw7.zip"><code>hw7.zip</code></a> and unzip the compressed file to reveal the following files:</p>
+<ul>
+<li><code>hw7_images.py</code> this file will be used for all of your code</li>
+<li><code>cImage.py</code> an image manipulation module described in the textbook and used by your program</li>
+<li><code>img</code> a folder of images you can use to test your <code>hw7_images.py</code> program</li>
+</ul>
+<p>Note that all starter files have special headers at the top including form fields that you should fill out before submitting your assignment. Also, do not change the file names as the test program included with this homework (and test programs that we use) assume certain file names.</p>
+<h2 id="part-1-image-effects">Part 1: Image effects</h2>
+<p>Your first task is to write two functions that manipulate digital images.</p>
+<p>Open and attempt to run the <code>hw7_images.py</code> file in IDLE. Note that the <code>cImage.py</code> module described in the textbook has been included in the zip file for this homework; the <code>hw7_images.py</code> file uses this module to manipulate and display the images. Note that to close the image window, you can just click anywhere on it.</p>
+<p>You will write all of your code for this part of the homework in the <code>hw7_images.py</code> file. Carefully read through all of the comments in the file to make sure you understand what sections of the file you do not need to modify and where your code should go.</p>
+<p>We have provided three image file examples that you can work with for this assignment: <code>colgate.gif</code>, <code>rose.gif</code>, and <code>grid.gif</code>. It is strongly recommended that you test your code with multiple images to help ensure that it works for any image.</p>
+<p><img src="figs/colgate.gif" alt="colgate.gif">
+<img src="figs/rose.gif" alt="rose.gif">
+<img src="figs/grid.gif" alt="grid.gif">
+&nbsp;</p>
+<p>You will write <strong>two functions</strong> that take an image object, create a copy, perform a pixel-by-pixel manipulation, and return the manipulated copy. We have provided three helper functions (<code>open_image</code>, <code>display_image</code>, and <code>save_image</code>) that you can use to test your code. You may write any additional helper functions that you find useful. Below there are descriptions and sample images for each of the required manipulations.</p>
+<p>The best way to test your image functions is to modify the <code>main</code> function at the bottom of <code>hw7_images.py</code>. You can add calls to the various image functions and use the helper functions to display and save the new/modified image.</p>
+<p>The code for an example function, <code>red_filter</code>, is provided in <code>hw7_images.py</code>; images to show the effect of this filter are shown below.</p>
+<p><img src="figs/colgate_red.gif" alt="red_filter(&#39;colgate.gif&#39;)">
+<img src="figs/rose_red.gif" alt="red_filter(&#39;rose.gif&#39;)">
+<img src="figs/grid_red.gif" alt="red_filter(&#39;grid.gif&#39;)"></p>
+<p>The two functions you must write are as follows:</p>
+<h3 id="1-negative-">1. <code>negative</code></h3>
+<p>Create a negative of the image by inverting all of the color values. Recall that the minimum color value is <code>0</code> and the maximum is <code>255</code>. So a color value of <code>255</code> becomes <code>0</code> and a value of <code>33</code> becomes <code>222</code>.</p>
+<p><img src="figs/colgate_negative.gif" alt="negative(&#39;colgate.gif&#39;)">
+<img src="figs/rose_negative.gif" alt="negative(&#39;rose.gif&#39;)">
+<img src="figs/grid_negative.gif" alt="negative(&#39;grid.gif&#39;)">
+&nbsp;</p>
+<h3 id="2-flip_horizontal-">2. <code>flip_horizontal</code></h3>
+<p>&quot;Flip&quot; the image horizontally so that pixels on the left column and right column are swapped, pixels on the second column and next-to-last column are swapped, etc.</p>
+<p><img src="figs/colgate_flip_horizontal.gif" alt="flip_horizontal(&#39;colgate.gif&#39;)">
+<img src="figs/rose_flip_horizontal.gif" alt="flip_horizontal(&#39;rose.gif&#39;)">
+<img src="figs/grid_flip_horizontal.gif" alt="flip_horizontal(&#39;grid.gif&#39;)">
+&nbsp;</p>
+<h2 id="part-2-image-merge">Part 2: Image merge</h2>
+<p>Your second task is to write a function to merge multiple images to create a single average image. This technique is used by researchers in a number of different fields. For example, <a href="https://www.theguardian.com/lifeandstyle/2015/oct/18/why-we-find-average-faces-most-attractive">psychologists have found</a> that people find averaged faces to be more attractive than the individual faces that make up the average. And artificial intelligence researchers use many images to automatically generate new images. For example, see these websites that use AI to generate images of imaginary <a href="https://www.thispersondoesnotexist.com/">people</a>, <a href="https://thiscatdoesnotexist.com/">cats</a>, and <a href="https://thisartworkdoesnotexist.com/">art</a>.</p>
+<p>You are to create a function called <code>merge</code> which takes four image objects as parameters and returns an image object which is the average of those four images. You can assume that all images passed to the function will have the same dimensions. Each pixel color in the merged image should be the average of the pixel colors at that position in the four given images.</p>
+<p>For example, given the following four faces:</p>
+<p><img src="figs/alex.gif" alt="alex.gif">
+<img src="figs/igor.gif" alt="igor.gif">
+<img src="figs/mike.gif" alt="mike.gif">
+<img src="figs/vincent.gif" alt="vincent.gif">
+&nbsp;</p>
+<p>This averaged face is created:</p>
+<p><img src="figs/face_merge.gif" alt="average of above four faces">
+&nbsp;</p>
+<p><strong>Note: You can modify the main function to display the merged faces, but you
+will not be able to save the merged faces image, because the cImage library
+only supports saving images with fewer than 256 unique colors.</strong></p>
+<p>The above four face images have been included in the <code>img</code> folder provided with this homework. You can download a .zip file containing more faces to try <a href="faces.zip">here</a>. These faces come from a <a href="https://osf.io/a3947/">dataset</a> released by the team from University of Glasgow. They have <a href="http://faceresearch.org/demos/average">a website</a> where you can select photos of people and view the average of those faces.</p>
+<p>This problem is based on an assignment created by Evan Peck at Bucknell University.</p>
+<h2 id="challenge-problem">Challenge Problem</h2>
+<p>Challenge problems are entirely optional extensions to the homework. If you complete them successfully, you are rewarded with a sense of accomplishment and a small number of extra points on the homework. They are intended for students who want to explore a little further; only pursue the challenge problem after you have successfully completed the homework.</p>
+<p>For this week, the challenge problem is to create your own image manipulation. For inspiration, you can investigate different filters and manipulations in apps or programs that modify photos. You can also create a new image by combining the various functions you&#39;ve written for image manipulation.</p>
+<p>If you choose to do the challenge problem, please write your additional function in the file <code>hw7_images.py</code>. The function should be called <code>challenge</code>, be sure to explain what your function does in the docstring! Have fun!</p>
+<h1 id="submission-instructions">Submission Instructions</h1>
+<p>Submit your completed assignment on <a href="https://moodle.colgate.edu">Moodle</a> under your course section&#39;s homework 7. You should upload only your <code>hw7_images.py</code> file. Remember to complete the questions at the top of the provided files and that the files you submit need to have these exact filenames.</p>
+<h1 id="grading">Grading</h1>
+<p>Your assignment will be graded on two criteria:</p>
+<ol>
+<li><p>Correctness: Be sure that you run your programs and make sure they work correctly. Be sure to test more than one image to verify that the image transformation works for other inputs, too --- you can be sure that we will do that! [80%]</p>
+<p> The correctness part of your grade is broken down as follows:</p>
+<p>
+  <table>
+    <tr>
+        <td>Category</td>
+        <td>Portion of Grade</td>
+    </tr>
+    <tr>
+        <td>Part 1 (Image Manipulation)</td>
+        <td>40%</td>
+    </tr>
+    <tr>
+        <td>Part 2 (Image Merge)</td>
+        <td>40%</td>
+    </tr>
+</table>
+
+</p>
+</li>
+</ol>
+<ol>
+<li><p>Program design and style [20%]: style and program design become
+ increasingly important the more complex your program becomes. For
+ these programs, adhere to the following guidelines:</p>
+<ul>
+<li><p>Variable names should be meaningful</p>
+</li>
+<li><p>Programs should contain at least a few descriptive comments. Do
+<em>not</em> comment every line of code with low level explanations of
+what each line does. Focus on high level ideas.</p>
+</li>
+<li><p>Any functions must have appropriate docstrings</p>
+</li>
+</ul>
+</li>
+</ol>
+
+</body>
+</html>

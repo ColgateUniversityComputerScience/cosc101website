@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>hw8</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="cosc-101-homework-8-spring-2022">COSC 101 Homework 8: Spring 2022</h1>
+<p>Due date: <strong>Thursday, April 14, 5:00pm</strong></p>
+<h2 id="clarifications">Clarifications</h2>
+<p><strong>Your program must also work with <code>categories</code> and <code>foods</code> lists that are different than those originally provided in <code>hw8_food.py</code>.</strong> To test with a different set of <code>categories</code> and <code>foods</code>, comment out the existing assignments to the <code>categories</code> and <code>foods</code> variables near the top of <code>hw8_food.py</code> and add the following alternative list definitions immediately beneath the originals:</p>
+<pre><code>categories = [&quot;Frozen&quot;, &quot;Produce&quot;, &quot;Canned&quot;, &quot;Frozen&quot;, &quot;Canned&quot;, &quot;Canned&quot;, &quot;Produce&quot;, &quot;Produce&quot;]
+foods = [&quot;Pizza&quot;, &quot;Oranges&quot;, &quot;Chickpeas&quot;, &quot;Popsicles&quot;, &quot;Beans&quot;, &quot;Olives&quot;, &quot;Pears&quot;, &quot;Grapes&quot;, &quot;Butter&quot;]</code></pre>
+<p>Here is program trace that uses this alternative data: <a href="https://colgateuniversitycomputerscience.github.io/cosc101/hw/hw08/trace3.txt">Trace 3</a></p>
+<h2 id="introduction">Introduction</h2>
+<p>According to <a href="https://map.feedingamerica.org/county/2019/overall/new-york/county/madison">data from Feeding America</a>, 9.9% of people in Madison county (which is where Hamilton is located) faced food insecurity in 2019, and <a href="https://feedingamericaaction.org/resources/state-by-state-resource-the-impact-of-coronavirus-on-food-insecurity/">Feeding America projected</a> the rate increased to 12.5% in 2020 due to the pandemic. The <a href="https://www.hamiltonfoodcupboard.org">Hamilton Food Cupboard</a> is a critical community resource for individuals facing food insecurity. They operate on a <a href="https://www.endhungerinamerica.org/getting-started/client-choice-food-pantries/">client choice food pantry model</a>, in which individuals can choose what products they receive, just like shopping at a grocery store.</p>
+<p>To make the Hamilton Food Cupboard even more convenient and welcoming to community members needing food assistance, the Food Cupboard has (fictitiously) decided to offer food pick-up/delivery service similar to companies like <a href="https://www.instacart.com">Instacart</a>. Your task is to write a program that clients can use to select which foods they would like to receive from the Food Cupboard.</p>
+<p>Please write your code in the template file <code>hw8_food.py</code> included with this homework. The file includes an empty <code>main</code> function and some global variables that have been pre-populated for your program to use.</p>
+<h2 id="required-functionality">Required functionality</h2>
+<h3 id="welcome-banner">Welcome banner</h3>
+<p>Your program should begin by displaying the welcome banner included in the <code>hw8_food.py</code> file:</p>
+<pre><code>                        WELCOME TO THE HAMILTON
+  ______              _    _____            _                         _ 
+ |  ____|            | |  / ____|          | |                       | |
+ | |__ ___   ___   __| | | |    _   _ _ __ | |__   ___   __ _ _ __ __| |
+ |  __/ _ \ / _ \ / _` | | |   | | | | &#39;_ \| &#39;_ \ / _ \ / _` | &#39;__/ _` |
+ | | | (_) | (_) | (_| | | |___| |_| | |_) | |_) | (_) | (_| | | | (_| |
+ |_|  \___/ \___/ \__,_|  \_____\__,_| .__/|_.__/ \___/ \__,_|_|  \__,_|
+                                     | |                                
+                                     |_|                                </code></pre>
+<h3 id="select-a-category">Select a category</h3>
+<p>Next, the program should <strong>display the categories of food</strong> from which a user can select. The categories should be <strong>displayed in the order they occur in the <code>categories</code> list</strong> included in <code>hw8_food.py</code> and should be <strong>numbered starting at 1</strong>. After listing the categories, the program should <strong>ask the user: <code>Which category do you want?</code></strong></p>
+<pre><code>Categories:
+1. Fruit
+2. Vegetable
+3. Grain
+4. Dairy
+Which category do you want?</code></pre>
+<p>If the user enters <strong>a non-numeric value or a number that is not one of the displayed options</strong>, then the program should <strong>print the message <code>Enter a number between 1 and _</code> (replacing <code>_</code> with the largest possible number) and again ask the user <code>Which category do you want?</code></strong>. The process should repeat until the user enters a valid choice. For example:</p>
+<pre><code>Which category do you want? F
+Enter a number between 1 and 4
+Which category do you want? Fruit
+Enter a number between 1 and 4
+Which category do you want? 10
+Enter a number between 1 and 4
+Which category do you want? 1</code></pre>
+<h3 id="select-a-food">Select a food</h3>
+<p>Next, the program should <strong>display the available foods in the selected category</strong>. The <code>foods</code> list included in the <code>hw8_food.py</code> includes foods across all categories. A food’s category can be determined by looking at the corresponding index in the <code>categories</code> list. For example, <code>foods[1]</code> is <code>"Cauliflower"</code> and <code>categories[1]</code> is <code>"Vegetable"</code>. Similar to above, the foods should be <strong>displayed in the order they occur in the <code>foods</code> list</strong> and should be <strong>numbered starting at 1</strong>. After listing the foods, the program should <strong>ask the user: <code>Which food do you want?</code></strong></p>
+<p>For example, if the user choose the “Fruit” category, the program would output the following:</p>
+<pre><code>Foods:
+1. Bananas
+2. Mangoes
+Which food do you want? </code></pre>
+<p>As above, if the user enters <strong>a non-numeric value or a number that is not one of the displayed options</strong>, then the program should <strong>print the message <code>Enter a number between 1 and _</code> (replacing <code>_</code> with the largest possible number) and again ask the user <code>Which food do you want?</code></strong></p>
+<h3 id="desired-units">Desired units</h3>
+<p>Next, the program should display the client’s remaining credits for selecting food. In the client choice food pantry model, clients are normally given a credit budget based on a number of factors (e.g., household size), and each item is assigned a “cost” in credits. For simplicity, your program will assume a client <strong>starts with 10 credits</strong> and <strong>each unit of a food costs one credit</strong> regardless of the category or specific food.</p>
+<p>The program should <strong>ask the user: <code>How many units do you want?</code></strong> If the user enters <strong>a non-numeric value or a number greater than their remaining credits</strong>, then the program should <strong>print the message <code>Enter a number between 1 and _</code> (replacing <code>_</code> with the number of remaining credits) and again ask the user <code>How many units do you want?</code></strong></p>
+<p>For example:</p>
+<pre><code>Remaining credits: 10
+How many units do you want? 12
+Enter a number between 1 and 10
+How many units do you want? five
+Enter a number between 1 and 10
+How many units do you want? 5</code></pre>
+<p>The number of units should be deducted from the client’s remaining credits. If the client still has remaining credits, then the user should again be asked to <a href="#select-a-category">select a category</a>, <a href="#select-a-food">select a food</a>, and enter the <a href="#desired-units">desired number of units</a>.</p>
+<h3 id="display-summary">Display summary</h3>
+<p>After the client has used all of their credits, the program should display the foods they requested and the number of each item. For example:</p>
+<pre><code>Foods requested:
+* Bananas (x8)
+* Milk (x2)</code></pre>
+<p>The items must be <strong>displayed in the order they were selected</strong> by the user.</p>
+<p>Note that a user may request some units of an item then request more units of the same item, but the item should only appear once in the order summary with the total amount requested.</p>
+<p>For example:</p>
+<pre><code>Categories:
+1. Fruit
+2. Vegetable
+3. Grain
+4. Dairy
+Which category do you want? 3
+Foods:
+1. Wheat bread
+2. Rice
+Which food do you want? 2
+Remaining credits: 10
+How many units do you want? 6
+
+Categories:
+1. Fruit
+2. Vegetable
+3. Grain
+4. Dairy
+Which category do you want? 3
+Foods:
+1. Wheat bread
+2. Rice
+Which food do you want? 2
+Remaining credits: 4
+How many units do you want? 4
+
+Foods requested:
+* Rice (x10)</code></pre>
+<h2 id="program-structure">Program structure</h2>
+<p>Past homeworks provided a (recommended) structure for your program. For this homework, <strong>you</strong> must decide how to structure your program. Your program <strong>must contain multiple functions</strong>. Also, your program <strong>should not contain repeated code</strong>—if you find yourself copying and pasting (nearly) the same code, should create a function that can be called from multiple points in your program. For all functions you write you should try to make sure that:</p>
+<ul>
+<li>any function you write does <em>one</em> thing (i.e., one specific task);</li>
+<li>any function function you write just takes parameters and returns a return value (or return values), but does <em>not</em> modify any global state or global variables;</li>
+<li>any function you write is fairly <em>short</em></li>
+</ul>
+<p>Write a little bit of code at a time (one function at most, but maybe just a couple lines in a function) and test as you go. Writing most all the code you think you need and testing afterward is a strategy that will often lead to frustration. Do a little bit at a time.</p>
+<h2 id="example-output">Example output</h2>
+<p>The following pages demonstrate what a correctly working program should look like. Study these examples closely!</p>
+<ul>
+<li><p><a href="https://colgateuniversitycomputerscience.github.io/cosc101/hw/hw08/trace1.txt">Trace 1</a></p></li>
+<li><p><a href="https://colgateuniversitycomputerscience.github.io/cosc101/hw/hw08/trace2.txt">Trace 2</a></p></li>
+</ul>
+<p><strong>Your program must also work with <code>categories</code> and <code>foods</code> lists that are different than those originally provided in <code>hw8_food.py</code>.</strong> To test with a different set of <code>categories</code> and <code>foods</code>, comment out the existing assignments to the <code>categories</code> and <code>foods</code> variables near the top of <code>hw8_food.py</code> and add the following alternative list definitions immediately beneath the originals:</p>
+<pre><code>categories = [&quot;Frozen&quot;, &quot;Produce&quot;, &quot;Canned&quot;, &quot;Frozen&quot;, &quot;Canned&quot;, &quot;Canned&quot;, &quot;Produce&quot;, &quot;Produce&quot;]
+foods = [&quot;Pizza&quot;, &quot;Oranges&quot;, &quot;Chickpeas&quot;, &quot;Popsicles&quot;, &quot;Beans&quot;, &quot;Olives&quot;, &quot;Pears&quot;, &quot;Grapes&quot;, &quot;Butter&quot;]</code></pre>
+<p>Here is program trace that uses this alternative data: <a href="https://colgateuniversitycomputerscience.github.io/cosc101/hw/hw08/trace3.txt">Trace 3</a></p>
+<h1 id="grading">Grading</h1>
+<p>Your assignment will be graded on two criteria:</p>
+<ol type="1">
+<li><p>Correctness (75%): your game must be implemented correctly. Refer to <a href="#required-funtionality">required functionality</a> and <a href="#example-output">example output</a> above to help ensure that your program works the way it should.</p></li>
+<li><p>Program design and style (25%): program design is particularly important for this assignment. Organize your functions so that each one is relatively short does <em>one</em> thing and takes few arguments. Think about how to break down the problem of “playing wheel of fortune” into smaller subtasks. And as usual:</p>
+<ul>
+<li>Functions should have meaningful docstrings</li>
+<li>Variable names should be meaningful</li>
+<li>Programs should contain at least a few descriptive comments. Do <em>not</em> comment every line of code with low level explanations of what each line does. Focus on high level ideas.</li>
+<li>All code should be structured so that the logic is clear and easy to follow.</li>
+<li>There should be <em>no global variables</em> except for the three included in the provided code: <code>banner</code>, <code>categories</code>, and <code>foods</code>. Any other information needed inside a function should be passed as parameters; anything done by a function that needs to be used by the caller of the function should be returned from the function.</li>
+</ul></li>
+</ol>
+<h1 id="testing">Testing</h1>
+<p>There are no automated tests for this homework. You’ll need to run your code and test it in a variety of ways to ensure that it behaves according to the specifications above. You are strongly encouraged to write <code>doctest</code> tests for your functions, but you are not required to do so.</p>
+<h1 id="submission">Submission</h1>
+<p>Please upload only your <code>food.py</code> file.</p>
+<h1 id="challenge-problems">Challenge problems</h1>
+<p>There are two options for challenge problems for this homework, as described below.</p>
+<h2 id="challenge-problem-option-1-only-display-foods-not-previously-selected">Challenge problem option 1: Only display foods not previously selected</h2>
+<p>Modify the program such that it only lists foods a user has <strong>not</strong> already selected. For example, if a user’s first selection is <code>Bananas</code>, then the next time the Fruit options are displayed, only <code>Mangoes</code> should be displayed. If the user has already selected all foods in a category, then the category should no longer be displayed. For example, if the user’s first choice is <code>Bananas</code> and their second choice is <code>Mangoes</code>, then the <code>Fruit</code> category should not be displayed for the user’s third choice and beyond.</p>
+<h2 id="challenge-program-option-2-group-order-summary-by-category">Challenge program option 2: Group order summary by category</h2>
+<p>Modify the program such that summary groups foods by category. For example:</p>
+<pre><code>Foods requested:
+* Fruits
+  * Bananas (x2)
+  * Mangoes (x1)
+* Grains
+  * Rice (x2)
+* Dairy
+  * Yogurt (x3)
+  * Milk (x2)</code></pre>
+</body>
+</html>

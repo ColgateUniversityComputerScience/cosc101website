@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>hw9</title>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="cosc-101-homework-9-fall-2020">COSC 101 Homework 9: Fall 2020</h1>
+<p>The due date for this homework is <strong>Friday, November 20, 5:00pm</strong>.</p>
+<p>This assignment is designed to give you practice with the following topics:</p>
+<ul>
+<li>Functions</li>
+<li>Strings</li>
+<li>Lists</li>
+<li>Files</li>
+<li>Exceptions</li>
+</ul>
+<h1 id="instructions">Instructions</h1>
+<p>Download <a href="hw9.zip"><code>hw9.zip</code></a> and unzip the compressed file to reveal the starter files for this assignment:</p>
+<ul>
+<li><code>hw9_crate-azon.py</code>: this file is where all your code for this assignment will be written</li>
+<li><code>hw9.pdf</code>: this description</li>
+<li><code>hw9tester.py</code>: a testing script for this assignment</li>
+<li><code>art.csv</code>, <code>toys.csv</code>, <code>clothes.csv</code>, <code>electronics.csv</code>: Comma-separated value inventory files</li>
+</ul>
+<p>Note that all starter files you work in have special headers at the top including form fields that you should fill out before submitting your assignment. Also, do not change the file names as we sometimes use programs to test your code and they will not be able to find your program and give you any credit if your file is named incorrectly.</p>
+<h2 id="overview">Overview</h2>
+<p>Crate-azon is a new online retailer that ships customer orders in wooden crates. Your task is to write a program in <code>hw9_crate-azon.py</code> that computes the total cost of purchasing a crate of items.</p>
+<p>The program must perform three tasks:</p>
+<ol type="1">
+<li>Load the list of items Crate-azon sells</li>
+<li>Display the list of items Crate-azon sells</li>
+<li>Ask the customer for the items they want to purchase</li>
+<li>Provide the customer a summary of their order</li>
+</ol>
+<h2 id="part-1-load-inventory">Part 1: Load inventory</h2>
+<p>The program should contain a function called <code>load_inventory</code> that loads a list of items from a comma-separated value (CSV) file. Each line of the CSV file contains the name and price of an item. For example <code>art.csv</code> contains:</p>
+<pre><code>Crayons,1.99
+Washable markers,0.99
+Permanent markers,2.99</code></pre>
+<p>The <code>load_inventory</code> function should ask the user for the category of items they want (e.g., <code>art</code>) and load the items from the corresponding CSV file (e.g., <code>art.csv</code>). If the user enters an invalid category (i.e., there is no corresponding CSV file), then the function should print <code>Invalid category</code> and return an empty list (<code>[]</code>). The program should <strong>not</strong> crash if the user enters an invalid category.</p>
+<p>The <code>load_inventory</code> function should return a list of lists, where each sublist contains the name (a string) and price (a float) of an item. For the example above, <code>load_inventory</code> should return:</p>
+<pre><code>[[&#39;Crayons&#39;, 1.99], [&#39;Washable markers&#39;, 0.99], [&#39;Permanent markers, 2.99]]</code></pre>
+<h2 id="part-2-display-inventory">Part 2: Display inventory</h2>
+<p>The program should contain a function called <code>display_inventory</code> that prints out the items Crate-azon sells. The items should be numbered, starting from 1. For the example above, <code>display_inventory</code> should output:</p>
+<pre><code>1. Crayons $1.99
+2. Washable markers $0.99
+3. Permanent markers $2.99</code></pre>
+<h2 id="part-3-select-items">Part 3: Select items</h2>
+<p>The program should contain a function called <code>select_items</code> that asks the customer to enter the item number for the items they want to purchase, separated by semicolons. For example, if a customer wanted to purchase one set of permanent markers and one box of crayons, they would enter: <code>3;1</code>.</p>
+<p>The <code>select_items</code> function should call the <code>input</code> function once, with the prompt string <code>'Enter item numbers: '</code>.</p>
+<p>The order of the item numbers does not matter.</p>
+<p>If a customer wants to purchase multiple of the same item, then they should enter the item number more than once. For example, if a customer wanted to purchase two sets of washable markers and one set of permanent markers, they would enter: <code>2;2;3</code>.</p>
+<p>The function should return a list of item numbers (as integers). For example, if the customer entered <code>2;2;3</code> the function should return <code>[2, 2, 3]</code>. If the user does not enter any item numbers (i.e., they just press Enter), then the function should return an empty list (<code>[]</code>).</p>
+<p>If the user enters an invalid item number, then the function should display an error message and exclude that item number from the list of item numbers. For example, if the customer entered <code>1;a;2;100;3</code> the function should output:</p>
+<pre><code>a is an invalid item number
+100 is an invalid item number</code></pre>
+<p>and return <code>[1, 2, 3]</code>. <strong>Note that the function will need to take the number of items in the inventory as a parameter in order to determine if an item number is invalid.</strong></p>
+<h2 id="part-4-display-order-summary">Part 4: Display order summary</h2>
+<p>Finally, the program must contain a function called <code>display_summary</code> that outputs a summary of the customer’s order. The function should print:</p>
+<ol type="1">
+<li>The number of items in the crate</li>
+<li>The name and price of each item in the crate — an item should be listed multiple times if the customer entered the item number multiple times</li>
+<li>The total cost of all items</li>
+<li>The shipping cost — there is a base shipping fee of $4.99 for the first five (or fewer) items, plus an additional $0.50 for each additional item; for example, the shipping fee for three items is $4.99, and the shipping fee for six items is $5.49</li>
+<li>The total cost of the order</li>
+</ol>
+<p>The output must exactly match the format of this example:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>Your crate contains <span class="dv">3</span> items:</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="op">----------</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>Washable markers: $<span class="fl">0.99</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>Permanent markers: $<span class="fl">2.99</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>Washable markers: $<span class="fl">0.99</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="op">----------</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>Item Total: $<span class="fl">4.97</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>Shipping: $<span class="fl">4.99</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="op">----------</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>Order Total: $<span class="fl">9.96</span></span></code></pre></div>
+<p>Your program should also contain an <a href="https://en.wikipedia.org/wiki/Easter_egg_(media)#Software">easter egg</a>: if the crate is completely empty, the program should print <code>Enjoy your Hamilton, NY air!</code> after the order total.</p>
+<h2 id="summary">Summary</h2>
+<p>To summarize, your program must contain the following functions:</p>
+<ul>
+<li><code>load_inventory</code></li>
+<li><code>display_inventory</code></li>
+<li><code>select_items</code></li>
+<li><code>display_summary</code></li>
+<li><code>main</code></li>
+</ul>
+<p><strong>Remember to include docstrings and comments in your code!</strong></p>
+<p>A sample run of the program is shown below. Make sure your program <strong>exactly</strong> matches this format.</p>
+<pre><code>
+       +--------+
+      /        /|    _____           _
+     /        / |   / ____|         | |
+    +--------+  |  | |     _ __ __ _| |_ ___ ______ __ _ _______  _ __
+    |        |  +  | |    | &#39;__/ _` | __/ _ \______/ _` |_  / _ \| &#39;_ \
+    |        | /   | |____| | | (_| | ||  __/     | (_| |/ / (_) | | | |
+    |        |/     \_____|_|  \__,_|\__\___|      \__,_/___\___/|_| |_|
+    +--------+
+
+Enter a category: art
+
+1. Crayons $1.99
+2. Washable markers $0.99
+3. Permanent markers $2.99
+
+Enter item numbers: 1;a;100;3
+a is an invalid item number
+100 is an invalid item number
+
+Your crate contains 2 items:
+----------
+Crayons: $1.99
+Permanent markers: $2.99
+----------
+Item Total: $4.98
+Shipping: $4.99
+----------
+Order Total: $9.97</code></pre>
+<h1 id="testing">Testing</h1>
+<p>As with some other homeworks, we are providing a program you can use to test that your homework is meeting the basic specifications of the assignment.</p>
+<p>Please note:</p>
+<ul>
+<li><p>The test program is <strong>extremely</strong> picky about spacing in the output (from print statements) your program produces. If it reports an error, it might just be the difference of a single space.</p></li>
+<li><p>The test program is <strong>NOT</strong> a complete test. You will still need to take responsibility for thoroughly testing your code before submitting. However, our hope is that this test program will at least catch minor errors and make it easier for our grading process and more likely for you to receive full credit.</p></li>
+</ul>
+<p>To use the test program, follow these steps:</p>
+<ol type="1">
+<li><p>Find the test program that is inside the zip file for this homework. The file name is <code>hw9tester.py</code>. Make sure that this file is in <em>exactly</em> the same folder as the homework files for this assignment.</p></li>
+<li><p>Make sure your homework files are named exactly as described in assignment.</p></li>
+<li><p>Open <code>hw9tester.py</code> in IDLE.</p></li>
+<li><p>In IDLE, select <code>Run</code> -&gt; <code>Run module</code></p></li>
+<li><p>If the output of your program does not precisely match the expected output, a test will fail. An HTML file (a web page) will be created to show the exact differences between what your program prints and the expected output. <strong>You should attempt to fix your program so it matches the expected output.</strong></p></li>
+</ol>
+<p>We hope you find this helpful!</p>
+<h1 id="submission">Submission</h1>
+<p>Submit your completed assignment on <a href="http://moodle.colgate.edu">Moodle</a> under your course section’s homework 9. You should upload the following file:</p>
+<ul>
+<li><code>hw9_crate-azon.py</code></li>
+</ul>
+<p>Remember to complete the questions at the top of the provided files and that the file you submit needs to have this exact filename.</p>
+<h1 id="grading">Grading</h1>
+<p>Your assignment will be graded on two criteria:</p>
+<ol type="1">
+<li><p>Correctness: this document contains details for how you must complete each function, including examples. Be sure that you run your functions once for each example and make sure they work correctly for each one, and use the <code>hw9tester.py</code> program. Be sure to test each function to verify that it works for other inputs, too — you can be sure that we will do that! [75%]</p>
+<p>The correctness part of your grade is broken down as follows:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Category</th>
+<th>Portion of grade</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Crate-azon (load_items)</td>
+<td>20%</td>
+</tr>
+<tr class="even">
+<td>Crate-azon (display_items)</td>
+<td>10%</td>
+</tr>
+<tr class="odd">
+<td>Crate-azon (select_items)</td>
+<td>20%</td>
+</tr>
+<tr class="even">
+<td>Crate-azon (display_summary)</td>
+<td>15%</td>
+</tr>
+<tr class="odd">
+<td>Crate-azon (main)</td>
+<td>10%</td>
+</tr>
+</tbody>
+</table></li>
+<li><p>Program design and style [25%]: style and program design become increasingly important the more complex your program becomes. For these programs, adhere to the following guidelines:</p>
+<ul>
+<li><p>Variable names should be meaningful</p></li>
+<li><p>Programs should contain at least a few descriptive comments. Do <em>not</em> comment every line of code with low level explanations of what each line does. Focus on high level ideas.</p></li>
+<li><p>Functions must have appropriate docstrings.</p></li>
+<li><p>Avoid duplication: if you find yourself copying-and-pasting code to do the same thing twice, you should consider instead writing a function to do that task and calling the function twice.</p></li>
+<li><p>Your program and functions should follow modular programming principles. This assignment description provides you with a function hierarchy that should result in good program design.</p></li>
+</ul></li>
+</ol>
+<h1 id="challenge-problem">Challenge problem</h1>
+<p>If you complete the Crate-azon program as describe above, then you can try to complete the optional challenge problem. Please make a copy of your program and name it <code>hw9_challenge.py</code>. Make any challenge problem edits to that file and <em>not</em> to the original homework file.</p>
+<p>Modify the program to allow customers to order multiple of the same item by including an <code>x</code> and the desired quantity after the item number. For example, to order three of item 1, one of item 2, and two of item 3, the customer could enter <code>1x3;2;3x2</code>. Notice that the customer does not need to include a quantity if they only want one of an item.</p>
+<p>Also modify the program to print each item only once in the order summary and include the quantity for each item. For example,</p>
+<pre><code>Your crate contains 6 items:
+----------
+3 Crayons: $1.99 x 3 = $5.97
+1 Washable markers: $0.99 x 1 = $0.99
+2 Permanent markers: $2.99 x 2 = $5.98
+----------</code></pre>
+</body>
+</html>

@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>hw1</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="cosc-101-homework-1-fall-2021">COSC 101 Homework 1: Fall 2021</h1>
+<p>The due date for this homework is <strong>Thursday, February 3, 5pm EDT</strong>.</p>
+<h2 id="introduction">Introduction</h2>
+<p>This assignment is designed to give you a first introduction to writing programs in Python! By completing this assignment, you will demonstrate that you understand a number of important concepts:</p>
+<ul>
+<li>print() function calls and creating well-formatted output</li>
+<li>working with different data types, including using type conversion functions and operators</li>
+<li>working with basic arithmetic and string expressions</li>
+</ul>
+<p>We encourage you to start early.</p>
+<h2 id="your-assignment">Your assignment</h2>
+<p>Your task is to complete following steps:</p>
+<ol type="1">
+<li>Download the <a href="https://colgateuniversitycomputerscience.github.io/cosc101/hw/hw01/hw1.zip">hw1.zip</a> file from the course website and open it. If you are using <strong>Replit</strong>, open the “Homework01” project for your class section. You will see four python files, <code>hw1_types.py</code>, <code>hw1_madlibs.py</code>, <code>hw1_garden.py</code>, and <code>hw1_roadtrip.py</code>, in either the unzipped folder or the Repl project. You are expected to write your programs in these files.</li>
+<li>Complete <code>hw1_types.py</code>. This file is used in <a href="#part-1">Part 1</a>.</li>
+<li>Complete <code>hw1_madlibs.py</code>. This file is used in <a href="#part-2">Part 2</a>.</li>
+<li>(OPTIONAL) Complete <code>hw1_garden.py</code>. This file is used in <a href="#part-3">Part 3</a>.</li>
+<li>Complete <code>hw1_roadtrip.py</code>. This file is used in <a href="#part-4">Part 4</a>.</li>
+<li>(OPTIONAL) Use the testing program to help check your work.</li>
+<li>Review the grading criteria at the end of this assignment.</li>
+<li>(OPTIONAL) Do the challenge problem for this homework.</li>
+<li>Submit your completed programs.</li>
+</ol>
+<p>Notice that each starter <code>.py</code> file has a header with some information for you to fill in. Please do so. Your feedback helps the instructors better understand your experiences doing the homeworks and where we can provide better assistance.</p>
+<h2 id="part-1">Part 1</h2>
+<p>In the <code>hw1_types.py</code> file, several variables are already defined. You will sometimes receive starter files that already contain some code; this is an example of what that might look like. This starter code will be denoted by comments and instructions as to whether you should modify the code or not. In this case the code should not be modified. You should write the rest of your code in the area designated by the comments.</p>
+<ol type="1">
+<li><p>Write code to print the type of each of the existing variables in same order in which they were assigned.</p></li>
+<li><p>Write code to convert the value of <code>b</code> to a float, add the value of <code>a</code>, and display the type of the result, <em>without</em> modifying the values of any of the variables.</p></li>
+<li><p>Next, write code to convert <code>c</code> to a string, concatenate it with <code>d</code>, repeat by the integer value of <code>e</code>, and save the result to a new variable named <code>z</code>.</p></li>
+<li><p>Print the value of the variable <code>z</code>.</p></li>
+<li><p>Update the variable <code>a</code> to be the remainder when <code>a</code> is divided by <code>b</code>.</p></li>
+<li><p>Print the new value of the variable <code>a</code>.</p></li>
+</ol>
+<p>The full output of your program should be exactly equivalent to the following:</p>
+<pre><code>&lt;class &#39;int&#39;&gt;
+&lt;class &#39;int&#39;&gt;
+&lt;class &#39;int&#39;&gt;
+&lt;class &#39;str&#39;&gt;
+&lt;class &#39;str&#39;&gt;
+&lt;class &#39;float&#39;&gt;
+18b18b18b18b18b18b
+0</code></pre>
+<h2 id="part-2">Part 2</h2>
+<p>In the <code>hw1_madlibs.py</code> file, write a short program that asks for a noun (string) and two verbs (both strings). (You can assume that both verbs are in third person form.) Using the three inputs, your program should print the sentence:</p>
+<p><code>If it &lt;verb 1&gt; like a &lt;noun&gt; and &lt;verb 2&gt; like a &lt;noun&gt;, it probably is a &lt;noun&gt;.</code></p>
+<p>For example:</p>
+<pre><code>What&#39;s the noun? duck
+What&#39;s the first verb? walks
+What&#39;s the second verb? talks
+If it walks like a duck and talks like a duck, it probably is a duck.</code></pre>
+<p>Here’s another example:</p>
+<pre><code>What&#39;s the noun? dragon
+What&#39;s the first verb? eats tacos
+What&#39;s the second verb? breathes fire
+If it eats tacos like a dragon and breathes fire like a dragon, it probably is a dragon.</code></pre>
+<p><strong>Note</strong>: the key challenge for this problem is to <em>get the spacing correct in the output</em>. Notice where there is a space following one of the nouns or verbs, and where there is punctuation (and no space between the word and punctuation). To get full credit on this problem you need to get those details correct.</p>
+<h2 id="part-3-optional">Part 3 (OPTIONAL)</h2>
+<p>For this problem, you will write a program to calculate the materials needed for an ornamental garden according to the design below. In this design, the blue areas represent flowerbeds and the yellow areas are filled with stone, mulch, or other fill material. The garden is a perfect square. The four outer flowerbeds are congruent semicircles and the central flowerbed is a perfect circle.</p>
+<p><img src="garden.png" /></p>
+<p>Your program should prompt the user for the following information:</p>
+<ol type="1">
+<li><p>The side length (in feet) of the finished garden.</p></li>
+<li><p>The recommended spacing (in feet) between plants.</p></li>
+<li><p>The depth (in feet) of the flowerbeds.</p></li>
+<li><p>The depth (in feet) of the filled areas.</p></li>
+</ol>
+<p>Next estimate the number of plants and the amount of fill and flowerbed soil needed. Recall that the formula for the area <em>A</em> of a circle is <em>A</em> = <span class="math inline"><em>π</em> * <em>r</em><sup>2</sup></span>, where <em>r</em> denotes the radius. For this calculation, you can simply use 3.14 as the value of π. (We will learn how to obtain a more precise value for π later in class.)</p>
+<p>To estimate the number of plants for a flowerbed, divide the area of the flowerbed by the area needed per plant (the square of the recommended distance between plants) and then truncate this result. To truncate a float, convert it to an int using the <code>int()</code> function which implicitly truncates the float. But be careful: the number of plants in a semicircle may not be exactly half of the plants in a full circle.</p>
+<p>Finally, it should report the following quantities needed for the garden:</p>
+<ol type="1">
+<li><p>Number of plants for each type of flowerbed (semicircle and circle) and total number of plants for the garden.</p></li>
+<li><p>Cubic <strong>yards</strong> of soil for each type of flowerbed (semicircle and circle) and total cubic yards of soil for the garden, rounded to one decimal place (use the <code>round()</code> function). Note that there are 3 (linear) feet in 1 (linear) yard.</p></li>
+<li><p>Total cubic <strong>yards</strong> of fill material for the garden, rounded to one decimal place (use the <code>round()</code> function). Again, note that there are 3 feet in 1 yard.</p></li>
+</ol>
+<p>You may assume that the user only enters numbers. That is, you don’t need to do error checking for bad input.</p>
+<p>Remember to convert fill to cubic yards.</p>
+<p>Here is an outline of the program you’ll write in <code>hw1_garden.py</code>:</p>
+<ol type="1">
+<li><p>Prompt for input (use <code>input()</code>)</p></li>
+<li><p>Convert the input strings to numbers (use <code>float()</code>)</p></li>
+<li><p>Do some mathematical calculations using the input numbers to get results. (See description above.)</p></li>
+<li><p>Print the results (use <code>print()</code>)</p></li>
+</ol>
+<p>Here are two examples of how the output of your program should look:</p>
+<p><strong>Example output 1</strong></p>
+<pre><code>Enter length of side of garden (feet): 10
+Enter spacing between plants (feet): 0.5
+Enter depth of garden soil (feet): 0.8333
+Enter depth of fill (feet): 0.8333
+
+Plants for each semicircle garden: 39
+Plants for the circle garden: 78
+Total plants for garden: 234
+Soil for each semicircle garden: 0.3 cubic yards
+Soil for the circle garden: 0.6 cubic yards
+Total soil for the garden: 1.8 cubic yards
+Total fill for the garden: 1.3 cubic yards</code></pre>
+<p><strong>Example output 2:</strong></p>
+<pre><code>Enter length of side of garden (feet): 13
+Enter spacing between plants (feet): 0.25
+Enter depth of garden soil (feet): 0.5
+Enter depth of fill (feet): 0.25
+
+Plants for each semicircle garden:  265
+Plants for the circle garden:  530
+Total plants for garden:  1590
+Soil for each semicircle garden: 0.3 cubic yards
+Soil for the circle garden: 0.6 cubic yards
+Total soil for the garden:  1.8 cubic yards
+Total fill for the garden: 0.6 cubic yards</code></pre>
+<h2 id="part-4">Part 4</h2>
+<p>Road trip! Write a program that asks for a driver’s name, the distance (in miles) and the speed (in miles per hour) and reports how long it will take the driver to arrive at the destination. The time should be reported in units of days, hours, minutes, and seconds, rounded to the nearest second. The printed numbers should be of type <code>int</code>, however, you may need to work with floats during the computation.</p>
+<p>Your program’s output should look like the examples provided below.</p>
+<p>Here is an example execution where the user types “Jack” for the driver’s name, “3000” for the distance and “50” for the speed:</p>
+<pre><code>Who is driving? Jack K.
+How far away is the destination (in miles)? 3000
+How fast is Jack K. driving (in mph)? 50
+It will take Jack K. 2 days, 12 hours, 0 minutes, and 0 seconds.</code></pre>
+<p>Another example. This time the user types “Ryan” for the driver’s name, “120” for the distance and “30” for the speed:</p>
+<pre><code>Who is driving? Ryan
+How far away is the destination (in miles)? 120
+How fast is Ryan driving (in mph)? 30
+It will take Ryan 0 days, 4 hours, 0 minutes, and 0 seconds.</code></pre>
+<p>Here is another example. The driver is only going 3 miles but he’s going 120 mph, which is equivalent to 2 miles per minute! Going 3 miles takes one and a half minutes, but notice how the program breaks it down into minutes and seconds:</p>
+<pre><code>Who is driving? Dwayne
+How far away is the destination (in miles)? 3
+How fast is Dwayne driving (in mph)? 120
+It will take Dwayne 0 days, 0 hours, 1 minutes, and 30 seconds.</code></pre>
+<p>One more example, where the driver is going a mile per minute. Notice how <span class="math inline">$\frac{3}{4}$</span> of a mile translates to 45 seconds, which is <span class="math inline">$\frac{3}{4}$</span> of a minute:</p>
+<pre><code>Who is driving? Vin D.
+How far away is the destination (in miles)? 45.75
+How fast is Vin D. driving (in mph)? 60
+It will take Vin D. 0 days, 0 hours, 45 minutes, and 45 seconds.</code></pre>
+<p>Some important details and a few hints:</p>
+<ul>
+<li>The driver’s name is used in the subsequent prompt about driving speed.</li>
+<li>One approach to solving this problem is to first figure out how long the trip will take in seconds. For example, to go 3000 miles at 50 mph will take 216,000 seconds! Given the total amount of time in seconds, break that number down into days, hours, minutes, and remaining seconds.</li>
+<li>To round to the nearest whole number, use the <code>round</code> function. Although the <code>round</code> function does round off the fractional part, it returns a number of type <code>float</code> whereas you probably want an <code>int</code>. Remember that you can use the <code>int</code> function to get an <code>int</code> from a <code>float</code>.</li>
+</ul>
+<h2 id="testing">Testing</h2>
+<p>For this homework, we are providing a program, <code>hw1tester.py</code>, that you can use to test that your homework is meeting the basic specifications of the assignment.</p>
+<p>Please note:</p>
+<ul>
+<li><p>The test program is <strong>extremely</strong> and intentionally picky about spacing in the output (from print statements) your program produces. If it reports an error, it might just be the difference of a single space.</p></li>
+<li><p>The test program is <strong>NOT</strong> a complete test. You will still need to take responsibility for thoroughly testing your code before submitting. However, our hope is that this test program will at least catch minor errors and make it easier for our grading process and more likely for you to receive full credit.</p></li>
+</ul>
+<p>To use the test program in <strong>IDLE</strong>, follow these steps:</p>
+<ol type="1">
+<li><p>Find the <code>hw1tester.py</code> program that is inside the zip file for this homework. Make sure that this file is in <em>exactly</em> the same folder as the four homework files containing your programs for this assignment.</p></li>
+<li><p>Make sure your homework files are named exactly as described in assignment. This <em>should</em> happen automatically when you decompress the zip file.</p></li>
+<li><p>Open <code>hw1tester.py</code> in IDLE and select “Run” -&gt; “Run module”</p></li>
+<li><p>Read the test messages that are printed and revise your work accordingly. If the output of your program does not precisely match the expected output, a test will fail and an error message will print.</p></li>
+</ol>
+<!--
+To use the test program in **Replit**, follow these steps: 
+
+1. Click on the `Shell` tab on the right side of the screen that is next to `Console` if it is not already selected. You should see a prompt with `~/Homework01$`
+
+2. Type `python hw1tester.py` after the prompt.
+
+3. Press the `Enter` key to run the test program. 
+
+4. Read the test messages that are printed and revise your work accordingly.  If the output of your program does not precisely match the expected output, a test will fail and an error message will print.
+-->
+<p>We hope you find this helpful!</p>
+<h2 id="submission-instructions">Submission Instructions</h2>
+<p>Submit four Python files to plataform indicated in your class section:</p>
+<ul>
+<li><code>hw1_types.py</code></li>
+<li><code>hw1_madlibs.py</code></li>
+<li><code>hw1_garden.py</code> (OPTIONAL)</li>
+<li><code>hw1_roadtrip.py</code></li>
+</ul>
+<p>Remember to complete the questions at the top of each file before submitting.</p>
+<!--
+### Moodle or Gradescope Submission
+If you are using **IDLE**, you can simply upload all four of these files from your computer. 
+
+If you are using **Replit**, you will first need to download these files from Replit to your computer:
+
+1. Click the file icon (paper with folded corner) on the top left side of the screen to open the Files menu (if it is not already open).
+2. Click the three vertical dots that appear next the "Files" header, then select "Download as zip".
+3. Upload the .zip file to Moodle or Gradescope.
+
+### Replit Submission
+Use the `Submit` button in Replit to submit your assignment.
+-->
+<h2 id="grading">Grading</h2>
+<p>Your assignment will be graded on two criteria:</p>
+<ol type="1">
+<li><p>Correctness: this document contains several examples for each program. Be sure that you run your program once for each example and make sure it works correctly for each one (run the <code>hw1tester.py</code> program, as described above)! [90%]</p>
+<p>The correctness part of your grade is broken down as follows:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Category</th>
+<th>Portion of grade</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Types</td>
+<td>20%</td>
+</tr>
+<tr class="even">
+<td>Madlibs</td>
+<td>30%</td>
+</tr>
+<tr class="odd">
+<td>Garden</td>
+<td>0%</td>
+</tr>
+<tr class="even">
+<td>Roadtrip</td>
+<td>40%</td>
+</tr>
+</tbody>
+</table></li>
+<li><p>Program design and style [10%]: style and program design become increasingly important the more complex your program becomes. For these first programs, adhere to the following guidelines:</p>
+<ul>
+<li>Variable names should be meaningful</li>
+<li>Programs should contain at least a few descriptive comments. Each of the programs for this homework involves multiple conceptual steps and should have comments that indicate to a reader what’s going on at a high level.</li>
+</ul></li>
+</ol>
+<h2 id="challenge-problem-optional">Challenge Problem (OPTIONAL)</h2>
+<p>Challenge problems are entirely optional extensions to the homework. If you complete them successfully, you are rewarded with a sense of accomplishment and a small number of extra points on the homework. Note that any extra points apply only to the homework on which the challenge problem is attempted, not to other homeworks or other grading categories. They are intended for students who want to explore a little further; only pursue the challenge problem after you have successfully completed the homework.</p>
+<p>For this challenge problem, you should write a program that prompts the user for a floating point number which stands for gallons of gasoline. You will reprint that value along with other information about gasoline and gasoline usage. In particular, you should print:</p>
+<ul>
+<li>The equivalent number of liters</li>
+<li>The equivalent number of barrels of oil required</li>
+<li>The number of pounds of <span class="math inline"><em>C</em><em>O</em><sub>2</sub></span> produced</li>
+</ul>
+<p>Some relevant conversion factors are:</p>
+<ul>
+<li>1 gallon is equivalent to 3.7854 liters</li>
+<li>1 barrel of oil produces 19.5 gallons of gas (approximately, can vary depending on the oil source). A barrel is 42 gallons.</li>
+<li>1 gallon of gas produces approximately 20 pounds of <span class="math inline"><em>C</em><em>O</em><sub>2</sub></span>.</li>
+</ul>
+<p>If you decide to do the challenge problem, please create a new file <code>hw1_challenge.py</code> and write your code inside that file.</p>
+<p>An example run of your program might be:</p>
+<pre><code>Please enter the number of gallons of gasoline: 100
+Original number of gallons is: 100.0
+100.0 gallons is equivalent to 378.54 liters
+100.0 gallons of gasoline requires 5.12820512821 barrels of oil
+100.0 gallons of gasoline produces 2000.0 pounds of CO2</code></pre>
+<p><em>Credit: This assignment was adapted from one created by Rich Enbody at Michigan State University.</em></p>
+</body>
+</html>
