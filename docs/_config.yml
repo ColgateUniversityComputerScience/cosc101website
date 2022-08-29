@@ -15,10 +15,10 @@ permalink: /404.html
 #build settings
 markdown: kramdown
 exclude: ["README.md"]
-theme: minima
+remote-theme: alexcarpenter/material-jekyll-theme
 
 #Material Jekyll Theme: http://alexcarpenter.github.io/material-jekyll-theme
-# themeColor: 'colgate' #options: purple, green, blue, orange, purple, grey
-# fixedNav: 'true' # true or false
-# sass:
-#   style: compressed
+themeColor: 'colgate' #options: purple, green, blue, orange, purple, grey
+fixedNav: 'true' # true or false
+sass:
+  style: compressed
