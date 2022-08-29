@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: default
 title: COSC 101&#58; Overview
 ---
 
@@ -17,11 +17,10 @@ The goal of this course is to introduce students to computer science and problem
 
 | Section | Instructor            | Room           | Time                  |
 | ------- | --------------------- | -------------- | --------------------- |
-| A       | Mario Graff Guerrero | McGregory 314  | MWF 8:20 – 9:10 AM    |
-| B       | Nick Diana         | McGregory 315  | MWF 9:20 - 10:10 AM   |
-| C       | Georgiana Haldeman | McGregory 314  | MWF 10:20 - 11:10 AM  |
-
-
+| A       | Nick Diana | McGregory 314  | MWF 9:20 – 10:10 AM |
+| B       | Grusha Sai Prasad | McGregory 315  | TR 8:30 - 9:45 AM |
+| C       | Grusha Sai Prasad | McGregory 315 | TR 1:20 - 2:35 PM |
+| D | Amir Manzourolajdad | McGregory 314 | TR 8:30 - 9:45 AM |
 
 ### Lab Meeting Times
 
@@ -29,10 +28,12 @@ The goal of this course is to introduce students to computer science and problem
 | ------- | -------------------- | ------------- | ------------------|
 | L_A     | Val Cucura           | McGregory 328 | M 11:20 – 1:10 PM |
 | L_B     | Val Cucura       | McGregory 328 | M 1:20 – 3:10 PM |
-| L_C     | Mario Graff Guerrero           | McGregory 329 | M 1:20 – 3:10 PM  |
+| L_C     | Grusha Sai Prasad | McGregory 329 | M 1:20 – 3:10 PM  |
 | L_D     | Nick Diana           | McGregory 328 | M 3:20 – 5:10 PM  |
 | L_E     | Val Cucura       | McGregory 328 | T 12:45 – 2:35 PM  |
-| L_F     | Mario Graff Guerrero  | McGregory 329 | T 2:45 – 4:35 PM  |
+| L_F     | Val Cucura | McGregory 328 | T 2:45 – 4:35 PM  |
+| L_G | Amir Manzourolajdad | McGregory 329 | M 11:20 - 1:10 PM |
+| L_H | Amir Manzourolajdad | McGregory 329 | M 3:20 - 5:10 PM |
 
 
 
@@ -75,7 +76,7 @@ This course (lecture + lab) count for a total of 1.25 credits. Therefore, you ar
   - You may occasionally be asked to read from other books and sources, they will be available freely online and linked from the course schedule.
 
 #### Websites
-  - [Course Webpage](https://cs.colgate.edu/cosc101): The main course website is located at [http://cs.colgate.edu/cosc101](https://cs.colgate.edu/cosc101). This page contains general course information: general policies, textbook, homework descriptions, exam preparation, and relevant links. You are responsible for keeping up with changes and updates to the site.
+  - This is the main course website. This site contains general course information: general policies, textbook, homework descriptions, exam preparation, and relevant links. You are responsible for keeping up with changes and updates to the site.
 
   - [Moodle](https://moodle.colgate.edu): Your course instructor will also have class-specific information (specific course syllabus and policies) and materials in Moodle. Grading breakdown and other grading policies are specific to your individual course.
 
