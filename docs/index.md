@@ -3,7 +3,7 @@ layout: default
 title: COSC 101&#58; Overview
 ---
 
-# Introduction to Computing I: Spring 2022
+# Introduction to Computing I: Fall 2022
 
 ## Description and Goals
 Computers and software are everywhere. Inside your mobile phone, your car, and quite possibly your toaster, hundreds, thousands, or millions of lines of software are running. Programs enable and mediate instant communication, global financial networks, a smoothly running engine, and a perfectly browned slice of sourdough. Writing software to instruct computers to do even simple tasks can be challenging, fun, and creative.
