@@ -15,6 +15,7 @@ permalink: /404.html
 #build settings
 markdown: kramdown
 exclude: ["README.md"]
+theme: minimal
 
 #Material Jekyll Theme: http://alexcarpenter.github.io/material-jekyll-theme
 themeColor: 'colgate' #options: purple, green, blue, orange, purple, grey
