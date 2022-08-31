@@ -2,12 +2,12 @@ Current and past homework:
 
 | **Assignment** | **Online Instructions** | **zipfile** (Download if using IDLE) | **Deadline** (Thursdays at 5pm) |
 | -------------- | ----------------------- | ------------------------------------ | ------------------------------- |
-| Homework 1     | [hw1 description](hw01) | [hw1 zipfile](hw01/hw1.zip)          | 3  February                     |
-| Homework 2     | [hw2 description](hw02) | [hw2 zipfile](hw02/HW02.zip)         | 10  February                    |
+| Homework 1     | [hw1 description](hw01) | [hw1 zipfile](hw01/hw1.zip)          | 8 September 					|
+<!-- | Homework 2     | [hw2 description](hw02) | [hw2 zipfile](hw02/HW02.zip)         | 10  February                    |
 | Homework 3     | [hw3 description](hw03) | [hw3 zipfile](hw03/hw3.zip)          | 24  February                    |
 | Homework 4     | [hw4 description](hw04) | [hw4 zipfile](hw04/hw4.zip)          | 3  March                        |
 | Homework 5     | [hw5 description](hw05) | [hw5 zipfile](hw05/hw5.zip)          | 10 March                        |
 | Homework 6     | [hw6 description](hw06) | [hw6 zipfile](hw06/hw6.zip)          | 31 March                        |
 | Homework 7     | [hw7 description](hw07) | [hw7 zipfile](hw07/hw7.zip)          | 7 April                         |
 | Homework 8     | [hw8 description](hw08) | [hw8 zipfile](hw08/hw8.zip)          | 14 April                        |
-| Homework 9     | [hw9 description](hw09) | [hw9 zipfile](hw09/hw9.zip)          | 28 April                        |
+| Homework 9     | [hw9 description](hw09) | [hw9 zipfile](hw09/hw9.zip)          | 28 April                        | -->
