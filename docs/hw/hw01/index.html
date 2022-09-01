@@ -1,400 +1,1036 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<!doctype html>
+<html>
 <head>
-  <meta charset="utf-8" />
-  <meta name="generator" content="pandoc" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>hw1</title>
-  <style>
-    html {
-      line-height: 1.5;
-      font-family: Georgia, serif;
-      font-size: 20px;
-      color: #1a1a1a;
-      background-color: #fdfdfd;
-    }
-    body {
-      margin: 0 auto;
-      max-width: 36em;
-      padding-left: 50px;
-      padding-right: 50px;
-      padding-top: 50px;
-      padding-bottom: 50px;
-      hyphens: auto;
-      word-wrap: break-word;
-      text-rendering: optimizeLegibility;
-      font-kerning: normal;
-    }
-    @media (max-width: 600px) {
-      body {
-        font-size: 0.9em;
-        padding: 1em;
-      }
-    }
-    @media print {
-      body {
-        background-color: transparent;
-        color: black;
-        font-size: 12pt;
-      }
-      p, h2, h3 {
-        orphans: 3;
-        widows: 3;
-      }
-      h2, h3, h4 {
-        page-break-after: avoid;
-      }
-    }
-    p {
-      margin: 1em 0;
-    }
-    a {
-      color: #1a1a1a;
-    }
-    a:visited {
-      color: #1a1a1a;
-    }
-    img {
-      max-width: 100%;
-    }
-    h1, h2, h3, h4, h5, h6 {
-      margin-top: 1.4em;
-    }
-    h5, h6 {
-      font-size: 1em;
-      font-style: italic;
-    }
-    h6 {
-      font-weight: normal;
-    }
-    ol, ul {
-      padding-left: 1.7em;
-      margin-top: 1em;
-    }
-    li > ol, li > ul {
-      margin-top: 0;
-    }
-    blockquote {
-      margin: 1em 0 1em 1.7em;
-      padding-left: 1em;
-      border-left: 2px solid #e6e6e6;
-      color: #606060;
-    }
-    code {
-      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
-      font-size: 85%;
-      margin: 0;
-    }
-    pre {
-      margin: 1em 0;
-      overflow: auto;
-    }
-    pre code {
-      padding: 0;
-      overflow: visible;
-    }
-    .sourceCode {
-     background-color: transparent;
-     overflow: visible;
-    }
-    hr {
-      background-color: #1a1a1a;
-      border: none;
-      height: 1px;
-      margin: 1em 0;
-    }
-    table {
-      margin: 1em 0;
-      border-collapse: collapse;
-      width: 100%;
-      overflow-x: auto;
-      display: block;
-      font-variant-numeric: lining-nums tabular-nums;
-    }
-    table caption {
-      margin-bottom: 0.75em;
-    }
-    tbody {
-      margin-top: 0.5em;
-      border-top: 1px solid #1a1a1a;
-      border-bottom: 1px solid #1a1a1a;
-    }
-    th {
-      border-top: 1px solid #1a1a1a;
-      padding: 0.25em 0.5em 0.25em 0.5em;
-    }
-    td {
-      padding: 0.125em 0.5em 0.25em 0.5em;
-    }
-    header {
-      margin-bottom: 4em;
-      text-align: center;
-    }
-    #TOC li {
-      list-style: none;
-    }
-    #TOC a:not(:hover) {
-      text-decoration: none;
-    }
-    code{white-space: pre-wrap;}
-    span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
-    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    ul.task-list{list-style: none;}
-    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
-  </style>
-  <!--[if lt IE 9]>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
-  <![endif]-->
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+
+<link href='https://fonts.loli.net/css?family=PT+Serif:400,400italic,700,700italic&subset=latin,cyrillic-ext,cyrillic,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; --title-bar-height: 20px; }
+.mac-os-11 { --title-bar-height: 28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 1rem; line-height: 1.42857143; overflow-x: hidden; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; tab-size: 4; background-position: inherit inherit; background-repeat: inherit inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; word-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) { 
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font-family: inherit; font-size: inherit; font-style: inherit; font-variant-caps: inherit; font-weight: inherit; font-stretch: inherit; line-height: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right-width: 0px; background-color: inherit; }
+.CodeMirror-linenumber { }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; position: relative !important; background-position: inherit inherit; background-repeat: inherit inherit; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; background-position: 0px 0px; background-repeat: initial initial; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print { 
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background-color: rgb(204, 204, 204); display: block; overflow-x: hidden; background-position: initial initial; background-repeat: initial initial; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) { 
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background-color: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; background-position: initial initial; background-repeat: initial initial; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; }
+a.md-print-anchor { white-space: pre !important; border: none !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; text-shadow: initial !important; background-position: 0px 0px !important; background-repeat: initial initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom-width: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background-color: rgb(255, 255, 0); color: rgb(0, 0, 0); background-position: initial initial; background-repeat: initial initial; }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print { 
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; background-position: inherit inherit; background-repeat: inherit inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex: 2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) { 
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) { 
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.428571429rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ''; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ''; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left-width: 28px; border-left-style: solid; border-left-color: transparent; border-right-width: 28px; border-right-style: solid; border-right-color: transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ''; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right-width: 8px; border-right-style: solid; border-right-color: transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: '−'; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+
+
+.CodeMirror { height: auto; }
+.CodeMirror.cm-s-inner { background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; background-position: inherit inherit; background-repeat: inherit inherit; }
+.CodeMirror-scroll { overflow: auto hidden; z-index: 3; }
+.CodeMirror-gutter-filler, .CodeMirror-scrollbar-filler { background-color: rgb(255, 255, 255); }
+.CodeMirror-gutters { border-right-width: 1px; border-right-style: solid; border-right-color: rgb(221, 221, 221); background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; white-space: nowrap; background-position: inherit inherit; background-repeat: inherit inherit; }
+.CodeMirror-linenumber { padding: 0px 3px 0px 5px; text-align: right; color: rgb(153, 153, 153); }
+.cm-s-inner .cm-keyword { color: rgb(119, 0, 136); }
+.cm-s-inner .cm-atom, .cm-s-inner.cm-atom { color: rgb(34, 17, 153); }
+.cm-s-inner .cm-number { color: rgb(17, 102, 68); }
+.cm-s-inner .cm-def { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-variable { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-variable-2 { color: rgb(0, 85, 170); }
+.cm-s-inner .cm-variable-3 { color: rgb(0, 136, 85); }
+.cm-s-inner .cm-string { color: rgb(170, 17, 17); }
+.cm-s-inner .cm-property { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-operator { color: rgb(152, 26, 26); }
+.cm-s-inner .cm-comment, .cm-s-inner.cm-comment { color: rgb(170, 85, 0); }
+.cm-s-inner .cm-string-2 { color: rgb(255, 85, 0); }
+.cm-s-inner .cm-meta { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-qualifier { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-builtin { color: rgb(51, 0, 170); }
+.cm-s-inner .cm-bracket { color: rgb(153, 153, 119); }
+.cm-s-inner .cm-tag { color: rgb(17, 119, 0); }
+.cm-s-inner .cm-attribute { color: rgb(0, 0, 204); }
+.cm-s-inner .cm-header, .cm-s-inner.cm-header { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-quote, .cm-s-inner.cm-quote { color: rgb(0, 153, 0); }
+.cm-s-inner .cm-hr, .cm-s-inner.cm-hr { color: rgb(153, 153, 153); }
+.cm-s-inner .cm-link, .cm-s-inner.cm-link { color: rgb(0, 0, 204); }
+.cm-negative { color: rgb(221, 68, 68); }
+.cm-positive { color: rgb(34, 153, 34); }
+.cm-header, .cm-strong { font-weight: 700; }
+.cm-del { text-decoration: line-through; }
+.cm-em { font-style: italic; }
+.cm-link { text-decoration: underline; }
+.cm-error { color: red; }
+.cm-invalidchar { color: red; }
+.cm-constant { color: rgb(38, 139, 210); }
+.cm-defined { color: rgb(181, 137, 0); }
+div.CodeMirror span.CodeMirror-matchingbracket { color: rgb(0, 255, 0); }
+div.CodeMirror span.CodeMirror-nonmatchingbracket { color: rgb(255, 34, 34); }
+.cm-s-inner .CodeMirror-activeline-background { background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; background-position: inherit inherit; background-repeat: inherit inherit; }
+.CodeMirror { position: relative; overflow: hidden; }
+.CodeMirror-scroll { height: 100%; outline: 0px; position: relative; box-sizing: content-box; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; background-position: inherit inherit; background-repeat: inherit inherit; }
+.CodeMirror-sizer { position: relative; }
+.CodeMirror-gutter-filler, .CodeMirror-hscrollbar, .CodeMirror-scrollbar-filler, .CodeMirror-vscrollbar { position: absolute; z-index: 6; display: none; outline: 0px; }
+.CodeMirror-vscrollbar { right: 0px; top: 0px; overflow: hidden; }
+.CodeMirror-hscrollbar { bottom: 0px; left: 0px; overflow: auto hidden; }
+.CodeMirror-scrollbar-filler { right: 0px; bottom: 0px; }
+.CodeMirror-gutter-filler { left: 0px; bottom: 0px; }
+.CodeMirror-gutters { position: absolute; left: 0px; top: 0px; padding-bottom: 10px; z-index: 3; overflow-y: hidden; }
+.CodeMirror-gutter { white-space: normal; height: 100%; box-sizing: content-box; padding-bottom: 30px; margin-bottom: -32px; display: inline-block; }
+.CodeMirror-gutter-wrapper { position: absolute; z-index: 4; border: none !important; background-position: 0px 0px !important; background-repeat: initial initial !important; }
+.CodeMirror-gutter-background { position: absolute; top: 0px; bottom: 0px; z-index: 4; }
+.CodeMirror-gutter-elt { position: absolute; cursor: default; z-index: 4; }
+.CodeMirror-lines { cursor: text; }
+.CodeMirror pre { border-top-left-radius: 0px; border-top-right-radius: 0px; border-bottom-right-radius: 0px; border-bottom-left-radius: 0px; border-width: 0px; font-family: inherit; font-size: inherit; margin: 0px; white-space: pre; word-wrap: normal; color: inherit; z-index: 2; position: relative; overflow: visible; background-position: 0px 0px; background-repeat: initial initial; }
+.CodeMirror-wrap pre { word-wrap: break-word; white-space: pre-wrap; word-break: normal; }
+.CodeMirror-code pre { border-right-width: 30px; border-right-style: solid; border-right-color: transparent; width: fit-content; }
+.CodeMirror-wrap .CodeMirror-code pre { border-right-style: none; width: auto; }
+.CodeMirror-linebackground { position: absolute; left: 0px; right: 0px; top: 0px; bottom: 0px; z-index: 0; }
+.CodeMirror-linewidget { position: relative; z-index: 2; overflow: auto; }
+.CodeMirror-wrap .CodeMirror-scroll { overflow-x: hidden; }
+.CodeMirror-measure { position: absolute; width: 100%; height: 0px; overflow: hidden; visibility: hidden; }
+.CodeMirror-measure pre { position: static; }
+.CodeMirror div.CodeMirror-cursor { position: absolute; visibility: hidden; border-right-style: none; width: 0px; }
+.CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+.CodeMirror-focused div.CodeMirror-cursor { visibility: inherit; }
+.cm-searching { background-color: rgba(255, 255, 0, 0.4); background-position: initial initial; background-repeat: initial initial; }
+span.cm-underlined { text-decoration: underline; }
+span.cm-strikethrough { text-decoration: line-through; }
+.cm-tw-syntaxerror { color: rgb(255, 255, 255); background-color: rgb(153, 0, 0); }
+.cm-tw-deleted { text-decoration: line-through; }
+.cm-tw-header5 { font-weight: 700; }
+.cm-tw-listitem:first-child { padding-left: 10px; }
+.cm-tw-box { border-style: solid; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-color: inherit; border-top-width: 0px !important; }
+.cm-tw-underline { text-decoration: underline; }
+@media print { 
+  .CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+}
+
+
+/* meyer reset -- http://meyerweb.com/eric/tools/css/reset/ , v2.0 | 20110126 | License: none (public domain) */
+
+@include-when-export url(https://fonts.loli.net/css?family=PT+Serif:400,400italic,700,700italic&subset=latin,cyrillic-ext,cyrillic,latin-ext);
+
+/* =========== */
+
+/* pt-serif-regular - latin */
+/* pt-serif-italic - latin */
+/* pt-serif-700 - latin */
+/* pt-serif-700italic - latin */
+:root {
+	--active-file-bg-color: #dadada;
+	--active-file-bg-color: rgba(32, 43, 51, 0.63);
+	--active-file-text-color: white;
+	--bg-color: #fff;
+	--text-color: #1f0909;
+	--control-text-color: #444;
+	--rawblock-edit-panel-bd: #e5e5e5;
+
+	--select-text-bg-color: rgba(32, 43, 51, 0.63);
+  --select-text-font-color: white;
+}
+
+pre {
+	--select-text-bg-color: #36284e;
+	--select-text-font-color: #fff;
+}
+
+html {
+	font-size: 16px;
+}
+
+html, body {
+	background-color: #fff;
+	font-family: "PT Serif", 'Times New Roman', Times, serif;
+	color: #1f0909;
+	line-height: 1.5em;
+}
+
+/*#write {
+	overflow-x: auto;
+    max-width: initial;
+	padding-left: calc(50% - 17em);
+    padding-right: calc(50% - 17em);
+}
+
+@media (max-width: 36em) {
+ 	#write {
+ 		padding-left: 1em;
+    	padding-right: 1em;
+ 	}
+}*/
+
+#write {
+	max-width: 40em;
+}
+
+@media only screen and (min-width: 1400px) {
+	#write {
+			max-width: 914px;
+	}
+}
+
+ol li {
+	list-style-type: decimal;
+	list-style-position: outside;
+}
+ul li {
+	list-style-type: disc;
+	list-style-position: outside;
+}
+
+ol,
+ul {
+	list-style: none;
+}
+
+blockquote,
+q {
+	quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* styles */
+
+/* ====== */
+
+/* headings */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: bold;
+}
+h1 {
+	font-size: 1.875em;
+	/*30 / 16*/
+	line-height: 1.6em;
+	/* 48 / 30*/
+	margin-top: 2em;
+}
+h2,
+h3 {
+	font-size: 1.3125em;
+	/*21 / 16*/
+	line-height: 1.15;
+	/*24 / 21*/
+	margin-top: 2.285714em;
+	/*48 / 21*/
+	margin-bottom: 1.15em;
+	/*24 / 21*/
+}
+h3 {
+	font-weight: normal;
+}
+h4 {
+	font-size: 1.125em;
+	/*18 / 16*/
+	margin-top: 2.67em;
+	/*48 / 18*/
+}
+h5,
+h6 {
+	font-size: 1em;
+	/*16*/
+}
+h1 {
+	border-bottom: 1px solid;
+	margin-bottom: 1.875em;
+	padding-bottom: 0.8125em;
+}
+/* links */
+
+a {
+	text-decoration: none;
+	color: #065588;
+}
+a:hover,
+a:active {
+	text-decoration: underline;
+}
+/* block spacing */
+
+p,
+blockquote,
+.md-fences {
+	margin-bottom: 1.5em;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin-bottom: 1.5em;
+}
+/* blockquote */
+
+blockquote {
+	font-style: italic;
+	border-left: 5px solid;
+	margin-left: 2em;
+	padding-left: 1em;
+}
+/* lists */
+
+ul,
+ol {
+	margin: 0 0 1.5em 1.5em;
+}
+/* tables */
+.md-meta,.md-before, .md-after {
+	color:#999;
+}
+
+table {
+	margin-bottom: 1.5em;
+	/*24 / 16*/
+	font-size: 1em;
+	/* width: 100%; */
+}
+thead th,
+tfoot th {
+	padding: .25em .25em .25em .4em;
+	text-transform: uppercase;
+}
+th {
+	text-align: left;
+}
+td {
+	vertical-align: top;
+	padding: .25em .25em .25em .4em;
+}
+
+code,
+.md-fences {
+	background-color: #dadada;
+}
+
+code {
+	padding-left: 2px;
+	padding-right: 2px;
+}
+
+.md-fences {
+	margin-left: 2em;
+	margin-bottom: 3em;
+	padding-left: 1ch;
+	padding-right: 1ch;
+}
+
+pre,
+code,
+tt {
+	font-size: .875em;
+	line-height: 1.714285em;
+}
+/* some fixes */
+
+h1 {
+	line-height: 1.3em;
+	font-weight: normal;
+	margin-bottom: 0.5em;
+}
+
+p + ul,
+p + ol{
+	margin-top: .5em;
+}
+
+h3 + ul,
+h4 + ul,
+h5 + ul,
+h6 + ul,
+h3 + ol,
+h4 + ol,
+h5 + ol,
+h6 + ol {
+	margin-top: .5em;
+}
+
+li > ul,
+li > ol {
+	margin-top: inherit;
+	margin-bottom: 0;
+}
+
+li ol>li {
+	list-style-type: lower-alpha;
+}
+
+li li ol>li{
+	list-style-type: lower-roman;
+}
+
+h2,
+h3 {
+	margin-bottom: .75em;
+}
+hr {
+	border-top: none;
+	border-right: none;
+	border-bottom: 1px solid;
+	border-left: none;
+}
+h1 {
+	border-color: #c5c5c5;
+}
+blockquote {
+	border-color: #bababa;
+	color: #656565;
+}
+
+blockquote ul,
+blockquote ol {
+	margin-left:0;
+}
+
+.ty-table-edit {
+	background-color: transparent;
+}
+thead {
+	background-color: #dadada;
+}
+tr:nth-child(even) {
+	background: #e8e7e7;
+}
+hr {
+	border-color: #c5c5c5;
+}
+.task-list{
+	padding-left: 1rem;
+}
+
+.md-task-list-item {
+	padding-left: 1.5rem;
+	list-style-type: none;
+}
+
+.md-task-list-item > input:before {
+	content: '\221A';
+	display: inline-block;
+	width: 1.25rem;
+  	height: 1.6rem;
+	vertical-align: middle;
+	text-align: center;
+	color: #ddd;
+	background-color: #F3F2EE;
+}
+
+.md-task-list-item > input:checked:before,
+.md-task-list-item > input[checked]:before{
+	color: inherit;
+}
+
+#write pre.md-meta-block {
+	min-height: 1.875rem;
+	color: #555;
+	border: 0px;
+	background: transparent;
+	margin-top: -4px;
+	margin-left: 1em;
+	margin-top: 1em;
+}
+
+.md-image>.md-meta {
+	color: #9B5146;
+}
+
+.md-image>.md-meta{
+	font-family: Menlo, 'Ubuntu Mono', Consolas, 'Courier New', 'Microsoft Yahei', 'Hiragino Sans GB', 'WenQuanYi Micro Hei', serif;
+}
+
+
+#write>h3.md-focus:before{
+	left: -1.5rem;
+	color:#999;
+	border-color:#999;
+}
+#write>h4.md-focus:before{
+	left: -1.5rem;
+	top: .25rem;
+	color:#999;
+	border-color:#999;
+}
+#write>h5.md-focus:before{
+	left: -1.5rem;
+	top: .0.3125rem;
+	color:#999;
+	border-color:#999;
+}
+#write>h6.md-focus:before{
+	left: -1.5rem;
+	top: 0.3125rem;
+	color:#999;
+	border-color:#999;
+}
+
+.md-toc:focus .md-toc-content{
+	margin-top: 19px;
+}
+
+.md-toc-content:empty:before{
+	color: #065588;
+}
+.md-toc-item {
+	color: #065588;
+}
+#write div.md-toc-tooltip {
+	background-color: #f3f2ee;
+}
+
+#typora-sidebar {
+	background-color: #f3f2ee;
+	-webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.375);
+  	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.375);
+}
+
+.pin-outline #typora-sidebar {
+	background: inherit;
+	box-shadow: none;
+	border-right: 1px dashed;
+}
+
+.pin-outline #typora-sidebar:hover .outline-title-wrapper {
+	border-left:1px dashed;
+}
+
+.outline-item:hover {
+  background-color: #dadada;
+  border-left: 28px solid #dadada;
+  border-right: 18px solid #dadada;
+}
+
+.typora-node .outline-item:hover {
+  	border-right: 28px solid #dadada;
+}
+
+.outline-expander:before {
+  content: "\f0da";
+  font-family: FontAwesome;
+  font-size:14px;
+  top: 1px;
+}
+
+.outline-expander:hover:before,
+.outline-item-open>.outline-item>.outline-expander:before {
+  content: "\f0d7";
+}
+
+.modal-content {
+	background-color: #f3f2ee;
+}
+
+.auto-suggest-container ul li {
+	list-style-type: none;
+}
+
+/** UI for electron */
+
+.megamenu-menu,
+#top-titlebar, #top-titlebar *,
+.megamenu-content {
+	background: #f3f2ee;
+	color: #1f0909;
+}
+
+.megamenu-menu-header {
+	border-bottom: 1px dashed #202B33;
+}
+
+.megamenu-menu {
+	box-shadow: none;
+	border-right: 1px dashed;
+}
+
+header, .context-menu, .megamenu-content, footer {
+	font-family: "PT Serif", 'Times New Roman', Times, serif;
+    color: #1f0909;
+}
+
+#megamenu-back-btn {
+	color: #1f0909;
+	border-color: #1f0909;
+}
+
+.megamenu-menu-header #megamenu-menu-header-title:before {
+	color: #1f0909;
+}
+
+.megamenu-menu-list li a:hover, .megamenu-menu-list li a.active {
+	color: inherit;
+	background-color: #e8e7df;
+}
+
+.long-btn:hover {
+	background-color: #e8e7df;
+}
+
+#recent-file-panel tbody tr:nth-child(2n-1) {
+    background-color: transparent !important;
+}
+
+.megamenu-menu-panel tbody tr:hover td:nth-child(2) {
+    color: inherit;
+}
+
+.megamenu-menu-panel .btn {
+	background-color: #D2D1D1;
+}
+
+.btn-default {
+	background-color: transparent;
+}
+
+.typora-sourceview-on #toggle-sourceview-btn,
+.ty-show-word-count #footer-word-count {
+	background: #c7c5c5;
+}
+
+#typora-quick-open {
+    background-color: inherit;
+}
+
+.md-diagram-panel {
+	margin-top: 8px;
+}
+
+.file-list-item-file-name {
+	font-weight: initial;
+}
+
+.file-list-item-summary {
+	opacity: 1;
+}
+
+.file-list-item {
+	color: #777;
+}
+
+.file-list-item.active {
+	background-color: inherit;
+	color: black;
+}
+
+.ty-side-sort-btn.active {
+	background-color: inherit;
+}
+
+.file-list-item.active .file-list-item-file-name  {
+	font-weight: bold;
+}
+
+.file-list-item{
+    opacity:1 !important;
+}
+
+.file-library-node.active>.file-node-background{
+	background-color: rgba(32, 43, 51, 0.63);
+	background-color: var(--active-file-bg-color);
+}
+
+.file-tree-node.active>.file-node-content{
+	color: white;
+	color: var(--active-file-text-color);
+}
+
+.md-task-list-item>input {
+	margin-left: -1.7em;
+	margin-top: calc(1rem - 12px);
+}
+
+input {
+	border: 1px solid #aaa;
+}
+
+.megamenu-menu-header #megamenu-menu-header-title,
+.megamenu-menu-header:hover, 
+.megamenu-menu-header:focus {
+	color: inherit;
+}
+
+.dropdown-menu .divider {
+	border-color: #e5e5e5;
+}
+
+/* https://github.com/typora/typora-issues/issues/2046 */
+.os-windows-7 strong,
+.os-windows-7 strong  {
+	font-weight: 760;
+}
+
+.ty-preferences .btn-default {
+	background: transparent;
+}
+
+.ty-preferences .window-header {
+	border-bottom: 1px dashed #202B33;
+	box-shadow: none;
+}
+
+#sidebar-loading-template, #sidebar-loading-template.file-list-item {
+	color: #777;
+}
+
+.searchpanel-search-option-btn.active {
+	background: #777;
+	color: white;
+}
+
+
+mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+  min-height: 1px;
+  min-width: 1px;
+}
+
+mjx-container[jax="SVG"] > svg a {
+  fill: blue;
+  stroke: blue;
+}
+
+mjx-assistive-mml {
+  position: absolute !important;
+  top: 0px;
+  left: 0px;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 1px 0px 0px 0px !important;
+  border: 0px !important;
+  display: block !important;
+  width: auto !important;
+  overflow: hidden !important;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+mjx-assistive-mml[display="block"] {
+  width: 100% !important;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][display="true"][width="full"] {
+  display: flex;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line], svg[data-table] > g > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame], svg[data-table] > g > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed, svg[data-table] > g > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted, svg[data-table] > g > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > g > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"] path[data-c], mjx-container[jax="SVG"] use[data-c] {
+  stroke-width: 3;
+}
+
+g[data-mml-node="xypic"] path {
+  stroke-width: inherit;
+}
+
+.MathJax g[data-mml-node="xypic"] path {
+  stroke-width: inherit;
+}
+mjx-container[jax="SVG"] path[data-c], mjx-container[jax="SVG"] use[data-c] {
+							stroke-width: 0;
+						} @media print { @page {margin: 0 0 0 0;} body.typora-export {padding-left: 0; padding-right: 0;} #write {padding:0;}}
+</style><title>hw1</title>
 </head>
-<body>
-<h1 id="cosc-101-homework-1-fall-2021">COSC 101 Homework 1: Fall 2021</h1>
-<p>The due date for this homework is <strong>Thursday, February 3, 5pm EDT</strong>.</p>
-<h2 id="introduction">Introduction</h2>
-<p>This assignment is designed to give you a first introduction to writing programs in Python! By completing this assignment, you will demonstrate that you understand a number of important concepts:</p>
-<ul>
-<li>print() function calls and creating well-formatted output</li>
-<li>working with different data types, including using type conversion functions and operators</li>
-<li>working with basic arithmetic and string expressions</li>
-</ul>
-<p>We encourage you to start early.</p>
-<h2 id="your-assignment">Your assignment</h2>
-<p>Your task is to complete following steps:</p>
-<ol type="1">
-<li>Download the <a href="https://colgateuniversitycomputerscience.github.io/cosc101/hw/hw01/hw1.zip">hw1.zip</a> file from the course website and open it. If you are using <strong>Replit</strong>, open the “Homework01” project for your class section. You will see four python files, <code>hw1_types.py</code>, <code>hw1_madlibs.py</code>, <code>hw1_garden.py</code>, and <code>hw1_roadtrip.py</code>, in either the unzipped folder or the Repl project. You are expected to write your programs in these files.</li>
-<li>Complete <code>hw1_types.py</code>. This file is used in <a href="#part-1">Part 1</a>.</li>
-<li>Complete <code>hw1_madlibs.py</code>. This file is used in <a href="#part-2">Part 2</a>.</li>
-<li>(OPTIONAL) Complete <code>hw1_garden.py</code>. This file is used in <a href="#part-3">Part 3</a>.</li>
-<li>Complete <code>hw1_roadtrip.py</code>. This file is used in <a href="#part-4">Part 4</a>.</li>
-<li>(OPTIONAL) Use the testing program to help check your work.</li>
-<li>Review the grading criteria at the end of this assignment.</li>
-<li>(OPTIONAL) Do the challenge problem for this homework.</li>
-<li>Submit your completed programs.</li>
-</ol>
-<p>Notice that each starter <code>.py</code> file has a header with some information for you to fill in. Please do so. Your feedback helps the instructors better understand your experiences doing the homeworks and where we can provide better assistance.</p>
-<h2 id="part-1">Part 1</h2>
-<p>In the <code>hw1_types.py</code> file, several variables are already defined. You will sometimes receive starter files that already contain some code; this is an example of what that might look like. This starter code will be denoted by comments and instructions as to whether you should modify the code or not. In this case the code should not be modified. You should write the rest of your code in the area designated by the comments.</p>
-<ol type="1">
-<li><p>Write code to print the type of each of the existing variables in same order in which they were assigned.</p></li>
-<li><p>Write code to convert the value of <code>b</code> to a float, add the value of <code>a</code>, and display the type of the result, <em>without</em> modifying the values of any of the variables.</p></li>
-<li><p>Next, write code to convert <code>c</code> to a string, concatenate it with <code>d</code>, repeat by the integer value of <code>e</code>, and save the result to a new variable named <code>z</code>.</p></li>
-<li><p>Print the value of the variable <code>z</code>.</p></li>
-<li><p>Update the variable <code>a</code> to be the remainder when <code>a</code> is divided by <code>b</code>.</p></li>
-<li><p>Print the new value of the variable <code>a</code>.</p></li>
-</ol>
-<p>The full output of your program should be exactly equivalent to the following:</p>
-<pre><code>&lt;class &#39;int&#39;&gt;
-&lt;class &#39;int&#39;&gt;
-&lt;class &#39;int&#39;&gt;
-&lt;class &#39;str&#39;&gt;
-&lt;class &#39;str&#39;&gt;
-&lt;class &#39;float&#39;&gt;
-18b18b18b18b18b18b
-0</code></pre>
-<h2 id="part-2">Part 2</h2>
-<p>In the <code>hw1_madlibs.py</code> file, write a short program that asks for a noun (string) and two verbs (both strings). (You can assume that both verbs are in third person form.) Using the three inputs, your program should print the sentence:</p>
-<p><code>If it &lt;verb 1&gt; like a &lt;noun&gt; and &lt;verb 2&gt; like a &lt;noun&gt;, it probably is a &lt;noun&gt;.</code></p>
-<p>For example:</p>
-<pre><code>What&#39;s the noun? duck
-What&#39;s the first verb? walks
-What&#39;s the second verb? talks
-If it walks like a duck and talks like a duck, it probably is a duck.</code></pre>
-<p>Here’s another example:</p>
-<pre><code>What&#39;s the noun? dragon
-What&#39;s the first verb? eats tacos
-What&#39;s the second verb? breathes fire
-If it eats tacos like a dragon and breathes fire like a dragon, it probably is a dragon.</code></pre>
-<p><strong>Note</strong>: the key challenge for this problem is to <em>get the spacing correct in the output</em>. Notice where there is a space following one of the nouns or verbs, and where there is punctuation (and no space between the word and punctuation). To get full credit on this problem you need to get those details correct.</p>
-<h2 id="part-3-optional">Part 3 (OPTIONAL)</h2>
-<p>For this problem, you will write a program to calculate the materials needed for an ornamental garden according to the design below. In this design, the blue areas represent flowerbeds and the yellow areas are filled with stone, mulch, or other fill material. The garden is a perfect square. The four outer flowerbeds are congruent semicircles and the central flowerbed is a perfect circle.</p>
-<p><img src="garden.png" /></p>
-<p>Your program should prompt the user for the following information:</p>
-<ol type="1">
-<li><p>The side length (in feet) of the finished garden.</p></li>
-<li><p>The recommended spacing (in feet) between plants.</p></li>
-<li><p>The depth (in feet) of the flowerbeds.</p></li>
-<li><p>The depth (in feet) of the filled areas.</p></li>
-</ol>
-<p>Next estimate the number of plants and the amount of fill and flowerbed soil needed. Recall that the formula for the area <em>A</em> of a circle is <em>A</em> = <span class="math inline"><em>π</em> * <em>r</em><sup>2</sup></span>, where <em>r</em> denotes the radius. For this calculation, you can simply use 3.14 as the value of π. (We will learn how to obtain a more precise value for π later in class.)</p>
-<p>To estimate the number of plants for a flowerbed, divide the area of the flowerbed by the area needed per plant (the square of the recommended distance between plants) and then truncate this result. To truncate a float, convert it to an int using the <code>int()</code> function which implicitly truncates the float. But be careful: the number of plants in a semicircle may not be exactly half of the plants in a full circle.</p>
-<p>Finally, it should report the following quantities needed for the garden:</p>
-<ol type="1">
-<li><p>Number of plants for each type of flowerbed (semicircle and circle) and total number of plants for the garden.</p></li>
-<li><p>Cubic <strong>yards</strong> of soil for each type of flowerbed (semicircle and circle) and total cubic yards of soil for the garden, rounded to one decimal place (use the <code>round()</code> function). Note that there are 3 (linear) feet in 1 (linear) yard.</p></li>
-<li><p>Total cubic <strong>yards</strong> of fill material for the garden, rounded to one decimal place (use the <code>round()</code> function). Again, note that there are 3 feet in 1 yard.</p></li>
-</ol>
-<p>You may assume that the user only enters numbers. That is, you don’t need to do error checking for bad input.</p>
-<p>Remember to convert fill to cubic yards.</p>
-<p>Here is an outline of the program you’ll write in <code>hw1_garden.py</code>:</p>
-<ol type="1">
-<li><p>Prompt for input (use <code>input()</code>)</p></li>
-<li><p>Convert the input strings to numbers (use <code>float()</code>)</p></li>
-<li><p>Do some mathematical calculations using the input numbers to get results. (See description above.)</p></li>
-<li><p>Print the results (use <code>print()</code>)</p></li>
-</ol>
-<p>Here are two examples of how the output of your program should look:</p>
-<p><strong>Example output 1</strong></p>
-<pre><code>Enter length of side of garden (feet): 10
-Enter spacing between plants (feet): 0.5
-Enter depth of garden soil (feet): 0.8333
-Enter depth of fill (feet): 0.8333
-
-Plants for each semicircle garden: 39
-Plants for the circle garden: 78
-Total plants for garden: 234
-Soil for each semicircle garden: 0.3 cubic yards
-Soil for the circle garden: 0.6 cubic yards
-Total soil for the garden: 1.8 cubic yards
-Total fill for the garden: 1.3 cubic yards</code></pre>
-<p><strong>Example output 2:</strong></p>
-<pre><code>Enter length of side of garden (feet): 13
-Enter spacing between plants (feet): 0.25
-Enter depth of garden soil (feet): 0.5
-Enter depth of fill (feet): 0.25
-
-Plants for each semicircle garden:  265
-Plants for the circle garden:  530
-Total plants for garden:  1590
-Soil for each semicircle garden: 0.3 cubic yards
-Soil for the circle garden: 0.6 cubic yards
-Total soil for the garden:  1.8 cubic yards
-Total fill for the garden: 0.6 cubic yards</code></pre>
-<h2 id="part-4">Part 4</h2>
-<p>Road trip! Write a program that asks for a driver’s name, the distance (in miles) and the speed (in miles per hour) and reports how long it will take the driver to arrive at the destination. The time should be reported in units of days, hours, minutes, and seconds, rounded to the nearest second. The printed numbers should be of type <code>int</code>, however, you may need to work with floats during the computation.</p>
-<p>Your program’s output should look like the examples provided below.</p>
-<p>Here is an example execution where the user types “Jack” for the driver’s name, “3000” for the distance and “50” for the speed:</p>
-<pre><code>Who is driving? Jack K.
-How far away is the destination (in miles)? 3000
-How fast is Jack K. driving (in mph)? 50
-It will take Jack K. 2 days, 12 hours, 0 minutes, and 0 seconds.</code></pre>
-<p>Another example. This time the user types “Ryan” for the driver’s name, “120” for the distance and “30” for the speed:</p>
-<pre><code>Who is driving? Ryan
-How far away is the destination (in miles)? 120
-How fast is Ryan driving (in mph)? 30
-It will take Ryan 0 days, 4 hours, 0 minutes, and 0 seconds.</code></pre>
-<p>Here is another example. The driver is only going 3 miles but he’s going 120 mph, which is equivalent to 2 miles per minute! Going 3 miles takes one and a half minutes, but notice how the program breaks it down into minutes and seconds:</p>
-<pre><code>Who is driving? Dwayne
-How far away is the destination (in miles)? 3
-How fast is Dwayne driving (in mph)? 120
-It will take Dwayne 0 days, 0 hours, 1 minutes, and 30 seconds.</code></pre>
-<p>One more example, where the driver is going a mile per minute. Notice how <span class="math inline">$\frac{3}{4}$</span> of a mile translates to 45 seconds, which is <span class="math inline">$\frac{3}{4}$</span> of a minute:</p>
-<pre><code>Who is driving? Vin D.
-How far away is the destination (in miles)? 45.75
-How fast is Vin D. driving (in mph)? 60
-It will take Vin D. 0 days, 0 hours, 45 minutes, and 45 seconds.</code></pre>
-<p>Some important details and a few hints:</p>
-<ul>
-<li>The driver’s name is used in the subsequent prompt about driving speed.</li>
-<li>One approach to solving this problem is to first figure out how long the trip will take in seconds. For example, to go 3000 miles at 50 mph will take 216,000 seconds! Given the total amount of time in seconds, break that number down into days, hours, minutes, and remaining seconds.</li>
-<li>To round to the nearest whole number, use the <code>round</code> function. Although the <code>round</code> function does round off the fractional part, it returns a number of type <code>float</code> whereas you probably want an <code>int</code>. Remember that you can use the <code>int</code> function to get an <code>int</code> from a <code>float</code>.</li>
-</ul>
-<h2 id="testing">Testing</h2>
-<p>For this homework, we are providing a program, <code>hw1tester.py</code>, that you can use to test that your homework is meeting the basic specifications of the assignment.</p>
-<p>Please note:</p>
-<ul>
-<li><p>The test program is <strong>extremely</strong> and intentionally picky about spacing in the output (from print statements) your program produces. If it reports an error, it might just be the difference of a single space.</p></li>
-<li><p>The test program is <strong>NOT</strong> a complete test. You will still need to take responsibility for thoroughly testing your code before submitting. However, our hope is that this test program will at least catch minor errors and make it easier for our grading process and more likely for you to receive full credit.</p></li>
-</ul>
-<p>To use the test program in <strong>IDLE</strong>, follow these steps:</p>
-<ol type="1">
-<li><p>Find the <code>hw1tester.py</code> program that is inside the zip file for this homework. Make sure that this file is in <em>exactly</em> the same folder as the four homework files containing your programs for this assignment.</p></li>
-<li><p>Make sure your homework files are named exactly as described in assignment. This <em>should</em> happen automatically when you decompress the zip file.</p></li>
-<li><p>Open <code>hw1tester.py</code> in IDLE and select “Run” -&gt; “Run module”</p></li>
-<li><p>Read the test messages that are printed and revise your work accordingly. If the output of your program does not precisely match the expected output, a test will fail and an error message will print.</p></li>
-</ol>
-<!--
-To use the test program in **Replit**, follow these steps: 
-
-1. Click on the `Shell` tab on the right side of the screen that is next to `Console` if it is not already selected. You should see a prompt with `~/Homework01$`
-
-2. Type `python hw1tester.py` after the prompt.
-
-3. Press the `Enter` key to run the test program. 
-
-4. Read the test messages that are printed and revise your work accordingly.  If the output of your program does not precisely match the expected output, a test will fail and an error message will print.
--->
-<p>We hope you find this helpful!</p>
-<h2 id="submission-instructions">Submission Instructions</h2>
-<p>Submit four Python files to plataform indicated in your class section:</p>
-<ul>
-<li><code>hw1_types.py</code></li>
-<li><code>hw1_madlibs.py</code></li>
-<li><code>hw1_garden.py</code> (OPTIONAL)</li>
-<li><code>hw1_roadtrip.py</code></li>
-</ul>
-<p>Remember to complete the questions at the top of each file before submitting.</p>
-<!--
-### Moodle or Gradescope Submission
-If you are using **IDLE**, you can simply upload all four of these files from your computer. 
-
-If you are using **Replit**, you will first need to download these files from Replit to your computer:
-
-1. Click the file icon (paper with folded corner) on the top left side of the screen to open the Files menu (if it is not already open).
-2. Click the three vertical dots that appear next the "Files" header, then select "Download as zip".
-3. Upload the .zip file to Moodle or Gradescope.
-
-### Replit Submission
-Use the `Submit` button in Replit to submit your assignment.
--->
-<h2 id="grading">Grading</h2>
-<p>Your assignment will be graded on two criteria:</p>
-<ol type="1">
-<li><p>Correctness: this document contains several examples for each program. Be sure that you run your program once for each example and make sure it works correctly for each one (run the <code>hw1tester.py</code> program, as described above)! [90%]</p>
-<p>The correctness part of your grade is broken down as follows:</p>
-<table>
-<thead>
-<tr class="header">
-<th>Category</th>
-<th>Portion of grade</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Types</td>
-<td>20%</td>
-</tr>
-<tr class="even">
-<td>Madlibs</td>
-<td>30%</td>
-</tr>
-<tr class="odd">
-<td>Garden</td>
-<td>0%</td>
-</tr>
-<tr class="even">
-<td>Roadtrip</td>
-<td>40%</td>
-</tr>
-</tbody>
-</table></li>
-<li><p>Program design and style [10%]: style and program design become increasingly important the more complex your program becomes. For these first programs, adhere to the following guidelines:</p>
-<ul>
-<li>Variable names should be meaningful</li>
-<li>Programs should contain at least a few descriptive comments. Each of the programs for this homework involves multiple conceptual steps and should have comments that indicate to a reader what’s going on at a high level.</li>
-</ul></li>
-</ol>
-<h2 id="challenge-problem-optional">Challenge Problem (OPTIONAL)</h2>
-<p>Challenge problems are entirely optional extensions to the homework. If you complete them successfully, you are rewarded with a sense of accomplishment and a small number of extra points on the homework. Note that any extra points apply only to the homework on which the challenge problem is attempted, not to other homeworks or other grading categories. They are intended for students who want to explore a little further; only pursue the challenge problem after you have successfully completed the homework.</p>
-<p>For this challenge problem, you should write a program that prompts the user for a floating point number which stands for gallons of gasoline. You will reprint that value along with other information about gasoline and gasoline usage. In particular, you should print:</p>
-<ul>
-<li>The equivalent number of liters</li>
-<li>The equivalent number of barrels of oil required</li>
-<li>The number of pounds of <span class="math inline"><em>C</em><em>O</em><sub>2</sub></span> produced</li>
-</ul>
-<p>Some relevant conversion factors are:</p>
-<ul>
-<li>1 gallon is equivalent to 3.7854 liters</li>
-<li>1 barrel of oil produces 19.5 gallons of gas (approximately, can vary depending on the oil source). A barrel is 42 gallons.</li>
-<li>1 gallon of gas produces approximately 20 pounds of <span class="math inline"><em>C</em><em>O</em><sub>2</sub></span>.</li>
-</ul>
-<p>If you decide to do the challenge problem, please create a new file <code>hw1_challenge.py</code> and write your code inside that file.</p>
-<p>An example run of your program might be:</p>
-<pre><code>Please enter the number of gallons of gasoline: 100
-Original number of gallons is: 100.0
-100.0 gallons is equivalent to 378.54 liters
-100.0 gallons of gasoline requires 5.12820512821 barrels of oil
-100.0 gallons of gasoline produces 2000.0 pounds of CO2</code></pre>
-<p><em>Credit: This assignment was adapted from one created by Rich Enbody at Michigan State University.</em></p>
+<body class='typora-export'><div class='typora-export-content'>
+<div id='write'  class=''><h1 id='cosc-101-homework-1-fall-2022'><span>COSC 101 Homework 1: Fall 2022</span></h1><p><span>The due date for this homework is </span><strong><span>Thursday, September 8, 5pm EDT</span></strong><span>.</span></p><h2 id='introduction'><span>Introduction</span></h2><p><span>This assignment is designed to give you a first introduction to writing</span>
+<span>programs in Python! By completing this assignment, you will demonstrate</span>
+<span>that you understand a number of important concepts:</span></p><ul><li><span>print() function calls and creating well-formatted output</span></li><li><span>working with different data types, including using type conversion functions</span>
+<span>and operators</span></li><li><span>working with basic arithmetic and string expressions</span></li></ul><h2 id='important-things-to-know-about-homework-in-cosc101'><span>Important things to know about homework in COSC101</span></h2><ul><li><strong><span>Match your output to the output given.</span></strong><span> Precision is important in computer science, and we expect your answers to match the provided example output exactly for full credit.</span></li><li><strong><span>Don&#39;t change file names.</span></strong><span> You&#39;re generally given </span><code>.py</code><span> files to work in. Don&#39;t change the filenames of those files.</span></li><li><strong><span>Start early.</span></strong><span> You&#39;re given a full week to do the homework, and some of the more challenge homework assignments will require that full time.</span></li></ul><h2 id='your-assignment'><span>Your assignment</span></h2><p><span>Your task is to complete following steps:</span></p><ol start='' ><li><span>Download the </span><a href='https://colgateuniversitycomputerscience.github.io/cosc101/hw/hw01/hw1.zip'><span>hw1.zip</span></a><span> file from the course website and open it. You will see four python files, </span><code>hw1_types.py</code><span>, </span><code>hw1_madlibs.py</code><span>, </span><code>hw1_garden.py</code><span>, and </span><code>hw1_roadtrip.py</code><span>, in either the unzipped folder or the Repl project. You are expected to write your programs in these files. If you are using </span><strong><span>Replit</span></strong><span>, you can create a new Repl and upload the files included in hw1.zip to it.</span></li><li><span>Complete </span><code>hw1_types.py</code><span>. This file is used in </span><a href='#part-1-1'><span>Part 1</span></a><span>.</span></li><li><span>Complete </span><code>hw1_madlibs.py</code><span>. This file is used in </span><a href='#part-2-2'><span>Part 2</span></a><span>.</span></li><li><span>(OPTIONAL) Complete </span><code>hw1_garden.py</code><span>. This file is used in </span><a href='#part-3'><span>Part 3</span></a><span>.</span></li><li><span>Complete </span><code>hw1_roadtrip.py</code><span>. This file is used in </span><a href='#part-4-4'><span>Part 4</span></a><span>.</span></li><li><span>(OPTIONAL) Use the testing program to help check your work.</span></li><li><span>Review the grading criteria at the end of this assignment.</span></li><li><span>(OPTIONAL) Do the challenge problem for this homework.</span></li><li><span>Submit your completed programs.</span></li></ol><p><span>Notice that each starter </span><code>.py</code><span> file has a header with some information for you to fill in.  Please do so.  Your feedback helps the instructors better understand your experiences doing the homeworks and where we can provide better assistance.</span></p><h2 id='part-1'><span>Part 1</span></h2><p><span>In the </span><code>hw1_types.py</code><span> file, several variables are already defined.  You will sometimes receive starter files that already contain some code; this is an example of what that might look like.  This starter code will be denoted by comments and instructions as to whether you should modify the code or not.  In this case the code should not be modified.  You should write the rest of your code in the area designated by the comments.</span></p><ol start='' ><li><span>Write code to print the type of each of the existing variables in same order in which they were assigned.</span></li><li><span>Write code to convert the value of </span><code>b</code><span> to a float, add the value of </span><code>a</code><span>, and display the type of the result, </span><em><span>without</span></em><span> modifying the values of any of the variables.</span></li><li><span>Next, write code to convert </span><code>c</code><span> to a string, concatenate it with </span><code>d</code><span>, repeat by the integer value of </span><code>e</code><span>, and save the result to a new variable named </span><code>z</code><span>.</span></li><li><span>Print the value of the variable </span><code>z</code><span>.</span></li><li><span>Update the variable </span><code>a</code><span> to be the remainder when </span><code>a</code><span> is divided by </span><code>b</code><span>.</span></li><li><span>Print the new value of the variable </span><code>a</code><span>.</span></li></ol><p><span>The full output of your program should be exactly equivalent to the following:</span></p><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang=""><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 10px; left: 4px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">&lt;class 'int'&gt;</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">&lt;class 'int'&gt;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">&lt;class 'int'&gt;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">&lt;class 'str'&gt;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">&lt;class 'str'&gt;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">&lt;class 'float'&gt;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">18b18b18b18b18b18b</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">0</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 192px;"></div><div class="CodeMirror-gutters" style="display: none; height: 192px;"></div></div></div></pre><h2 id='part-2'><span>Part 2</span></h2><p><span>In the </span><code>hw1_madlibs.py</code><span> file, write a short program that asks for a noun (string) and two verbs (both strings).  (You can assume that both verbs are in third person form.)  Using the three inputs, your program should print the sentence:</span></p><p><code>If it &lt;verb 1&gt; like a &lt;noun&gt; and &lt;verb 2&gt; like a &lt;noun&gt;, it probably is a &lt;noun&gt;.</code></p><p><span>For example:</span></p><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang=""><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 10px; left: 4px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">What's the noun? duck</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">What's the first verb? walks</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">What's the second verb? talks</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">If it walks like a duck and talks like a duck, it probably is a duck.</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 96px;"></div><div class="CodeMirror-gutters" style="display: none; height: 96px;"></div></div></div></pre><p><span>Here&#39;s another example:</span></p><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang=""><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 10px; left: 4px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">What's the noun? dragon</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">What's the first verb? eats tacos</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">What's the second verb? breathes fire</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">If it eats tacos like a dragon and breathes fire like a dragon, it probably is a dragon.</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 96px;"></div><div class="CodeMirror-gutters" style="display: none; height: 96px;"></div></div></div></pre><p><strong><span>Note</span></strong><span>: the key challenge for this problem is to </span><em><span>get the spacing correct in the output</span></em><span>.  Notice where there is a space following one of the nouns or verbs, and where there is punctuation (and no space between the word and punctuation).  To get full credit on this problem you need to get those details correct.</span></p><h2 id='part-3-optional'><span>Part 3 (OPTIONAL)</span></h2><p><span>For this problem, you will write a program to calculate the materials needed for an ornamental garden according to the design below. In this design, the blue areas represent flowerbeds and the yellow areas are filled with stone, mulch, or other fill material. The garden is a perfect square. The four outer flowerbeds are congruent semicircles and</span>
+<span>the central flowerbed is a perfect circle.</span></p><p><img src="garden.png" referrerpolicy="no-referrer"></p><p><span>Your program should prompt the user for the following information:</span></p><ol start='' ><li><span>The side length (in feet) of the finished garden.</span></li><li><span>The recommended spacing (in feet) between plants.</span></li><li><span>The depth (in feet) of the flowerbeds.</span></li><li><span>The depth (in feet) of the filled areas.</span></li></ol><p><span>Next estimate the number of plants and the amount of fill and flowerbed soil needed. Recall that the formula for the area </span><em><span>A</span></em><span> of a circle is </span><em><span>A</span></em><span> = </span><mjx-container class="MathJax" jax="SVG" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="5.434ex" height="1.912ex" role="img" focusable="false" viewBox="0 -833.9 2402 844.9" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -0.025ex;"><defs><path id="MJX-6-TEX-I-1D70B" d="M132 -11Q98 -11 98 22V33L111 61Q186 219 220 334L228 358H196Q158 358 142 355T103 336Q92 329 81 318T62 297T53 285Q51 284 38 284Q19 284 19 294Q19 300 38 329T93 391T164 429Q171 431 389 431Q549 431 553 430Q573 423 573 402Q573 371 541 360Q535 358 472 358H408L405 341Q393 269 393 222Q393 170 402 129T421 65T431 37Q431 20 417 5T381 -10Q370 -10 363 -7T347 17T331 77Q330 86 330 121Q330 170 339 226T357 318T367 358H269L268 354Q268 351 249 275T206 114T175 17Q164 -11 132 -11Z"></path><path id="MJX-6-TEX-N-2217" d="M229 286Q216 420 216 436Q216 454 240 464Q241 464 245 464T251 465Q263 464 273 456T283 436Q283 419 277 356T270 286L328 328Q384 369 389 372T399 375Q412 375 423 365T435 338Q435 325 425 315Q420 312 357 282T289 250L355 219L425 184Q434 175 434 161Q434 146 425 136T401 125Q393 125 383 131T328 171L270 213Q283 79 283 63Q283 53 276 44T250 35Q231 35 224 44T216 63Q216 80 222 143T229 213L171 171Q115 130 110 127Q106 124 100 124Q87 124 76 134T64 161Q64 166 64 169T67 175T72 181T81 188T94 195T113 204T138 215T170 230T210 250L74 315Q65 324 65 338Q65 353 74 363T98 374Q106 374 116 368T171 328L229 286Z"></path><path id="MJX-6-TEX-I-1D45F" d="M21 287Q22 290 23 295T28 317T38 348T53 381T73 411T99 433T132 442Q161 442 183 430T214 408T225 388Q227 382 228 382T236 389Q284 441 347 441H350Q398 441 422 400Q430 381 430 363Q430 333 417 315T391 292T366 288Q346 288 334 299T322 328Q322 376 378 392Q356 405 342 405Q286 405 239 331Q229 315 224 298T190 165Q156 25 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 114 189T154 366Q154 405 128 405Q107 405 92 377T68 316T57 280Q55 278 41 278H27Q21 284 21 287Z"></path><path id="MJX-6-TEX-N-32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><use data-c="1D70B" xlink:href="#MJX-6-TEX-I-1D70B"></use></g><g data-mml-node="mo" transform="translate(792.2,0)"><use data-c="2217" xlink:href="#MJX-6-TEX-N-2217"></use></g><g data-mml-node="msup" transform="translate(1514.4,0)"><g data-mml-node="mi"><use data-c="1D45F" xlink:href="#MJX-6-TEX-I-1D45F"></use></g><g data-mml-node="mn" transform="translate(484,363) scale(0.707)"><use data-c="32" xlink:href="#MJX-6-TEX-N-32"></use></g></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>π</mi><mo>∗</mo><msup><mi>r</mi><mn>2</mn></msup></math></mjx-assistive-mml></mjx-container><script type="math/tex">\pi*r^2</script><span>, where </span><em><span>r</span></em><span> denotes the radius. For this calculation, you can simply use 3.14 as the value of π.  (We will learn how to obtain a more precise value for π later in class.)</span></p><p><span>To estimate the number of plants for a flowerbed, divide the area of the flowerbed by the area needed per plant (the square of the recommended distance between plants) and then truncate this result. To truncate a float, convert it to an int using the </span><code>int()</code><span> function which implicitly truncates the float.  But be careful: the number of plants in a semicircle may not be exactly half of the plants in a full circle.</span></p><p><span>Finally, it should report the following quantities needed for the garden:</span></p><ol start='' ><li><span>Number of plants for each type of flowerbed (semicircle and circle) and total number of plants for the garden.</span></li><li><span>Cubic </span><strong><span>yards</span></strong><span> of soil for each type of flowerbed (semicircle and circle) and total cubic yards of soil for the garden, rounded to one decimal place (use the </span><code>round()</code><span> function).  Note that there are 3 (linear) feet in 1 (linear) yard.</span></li><li><span>Total cubic </span><strong><span>yards</span></strong><span> of fill material for the garden, rounded to one decimal place (use the </span><code>round()</code><span> function).  Again, note that there are 3 feet in 1 yard.</span></li></ol><p><span>You may assume that the user only enters numbers. That is, you don&#39;t need to do error checking for bad input.</span></p><p><span>Remember to convert fill to cubic yards.</span></p><p><span>Here is an outline of the program you&#39;ll write in </span><code>hw1_garden.py</code><span>:</span></p><ol start='' ><li><span>Prompt for input (use </span><code>input()</code><span>)</span></li><li><span>Convert the input strings to numbers (use </span><code>float()</code><span>)</span></li><li><span>Do some mathematical calculations using the input numbers to get results.  (See description above.)</span></li><li><span>Print the results (use </span><code>print()</code><span>)</span></li></ol><p><span>Here are two examples of how the output of your program should look:</span></p><p><strong><span>Example output 1</span></strong></p><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang=""><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 10px; left: 4px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">Enter length of side of garden (feet): 10</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">Enter spacing between plants (feet): 0.5</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">Enter depth of garden soil (feet): 0.8333</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">Enter depth of fill (feet): 0.8333</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">Plants for each semicircle garden: 39</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">Plants for the circle garden: 78</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">Total plants for garden: 234</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">Soil for each semicircle garden: 0.3 cubic yards</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">Soil for the circle garden: 0.6 cubic yards</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">Total soil for the garden: 1.8 cubic yards</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">Total fill for the garden: 1.3 cubic yards</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 288px;"></div><div class="CodeMirror-gutters" style="display: none; height: 288px;"></div></div></div></pre><p><strong><span>Example output 2:</span></strong></p><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang=""><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 10px; left: 4px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">Enter length of side of garden (feet): 13</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">Enter spacing between plants (feet): 0.25</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">Enter depth of garden soil (feet): 0.5</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">Enter depth of fill (feet): 0.25</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">Plants for each semicircle garden:  265</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">Plants for the circle garden:  530</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">Total plants for garden:  1590</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">Soil for each semicircle garden: 0.3 cubic yards</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">Soil for the circle garden: 0.6 cubic yards</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">Total soil for the garden:  1.8 cubic yards</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">Total fill for the garden: 0.6 cubic yards</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 288px;"></div><div class="CodeMirror-gutters" style="display: none; height: 288px;"></div></div></div></pre><h2 id='part-4'><span>Part 4</span></h2><p><span>Road trip!  Write a program that asks for a driver&#39;s name, the distance (in miles) and the speed (in miles per hour) and reports how long it will take the driver to arrive at the destination. The time should be reported in units of days, hours, minutes, and seconds, rounded to the nearest second. The printed numbers should be of type </span><code>int</code><span>, however, you may need to work with floats during the computation.</span></p><p><span>Your program&#39;s output should look like the examples provided below.</span></p><p><span>Here is an example execution where the user types &quot;Jack&quot; for the driver&#39;s name, &quot;3000&quot; for the distance and &quot;50&quot; for the speed:</span></p><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang=""><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 10px; left: 4px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">Who is driving? Jack K.</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">How far away is the destination (in miles)? 3000</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">How fast is Jack K. driving (in mph)? 50</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">It will take Jack K. 2 days, 12 hours, 0 minutes, and 0 seconds.</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 96px;"></div><div class="CodeMirror-gutters" style="display: none; height: 96px;"></div></div></div></pre><p><span>Another example. This time the user types &quot;Ryan&quot; for the driver&#39;s name, &quot;120&quot; for the distance and &quot;30&quot; for the speed:</span></p><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang=""><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 10px; left: 4px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">Who is driving? Ryan</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">How far away is the destination (in miles)? 120</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">How fast is Ryan driving (in mph)? 30</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">It will take Ryan 0 days, 4 hours, 0 minutes, and 0 seconds.</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 96px;"></div><div class="CodeMirror-gutters" style="display: none; height: 96px;"></div></div></div></pre><p><span>Here is another example. The driver is only going 3 miles but he&#39;s going 120 mph, which is equivalent to 2 miles per minute! Going 3 miles takes one and a half minutes, but notice how the program breaks it down into minutes and seconds:</span></p><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang=""><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 10px; left: 4px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">Who is driving? Dwayne</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">How far away is the destination (in miles)? 3</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">How fast is Dwayne driving (in mph)? 120</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">It will take Dwayne 0 days, 0 hours, 1 minutes, and 30 seconds.</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 96px;"></div><div class="CodeMirror-gutters" style="display: none; height: 96px;"></div></div></div></pre><p><span>One more example, where the driver is going a mile per minute. Notice how </span><mjx-container class="MathJax" jax="SVG" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="1.795ex" height="2.736ex" role="img" focusable="false" viewBox="0 -864.2 793.6 1209.2" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -0.781ex;"><defs><path id="MJX-8-TEX-N-33" d="M127 463Q100 463 85 480T69 524Q69 579 117 622T233 665Q268 665 277 664Q351 652 390 611T430 522Q430 470 396 421T302 350L299 348Q299 347 308 345T337 336T375 315Q457 262 457 175Q457 96 395 37T238 -22Q158 -22 100 21T42 130Q42 158 60 175T105 193Q133 193 151 175T169 130Q169 119 166 110T159 94T148 82T136 74T126 70T118 67L114 66Q165 21 238 21Q293 21 321 74Q338 107 338 175V195Q338 290 274 322Q259 328 213 329L171 330L168 332Q166 335 166 348Q166 366 174 366Q202 366 232 371Q266 376 294 413T322 525V533Q322 590 287 612Q265 626 240 626Q208 626 181 615T143 592T132 580H135Q138 579 143 578T153 573T165 566T175 555T183 540T186 520Q186 498 172 481T127 463Z"></path><path id="MJX-8-TEX-N-34" d="M462 0Q444 3 333 3Q217 3 199 0H190V46H221Q241 46 248 46T265 48T279 53T286 61Q287 63 287 115V165H28V211L179 442Q332 674 334 675Q336 677 355 677H373L379 671V211H471V165H379V114Q379 73 379 66T385 54Q393 47 442 46H471V0H462ZM293 211V545L74 212L183 211H293Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mfrac"><g data-mml-node="mn" transform="translate(220,394) scale(0.707)"><use data-c="33" xlink:href="#MJX-8-TEX-N-33"></use></g><g data-mml-node="mn" transform="translate(220,-345) scale(0.707)"><use data-c="34" xlink:href="#MJX-8-TEX-N-34"></use></g><rect width="553.6" height="60" x="120" y="220"></rect></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mfrac><mn>3</mn><mn>4</mn></mfrac></math></mjx-assistive-mml></mjx-container><script type="math/tex">\frac{3}{4}</script><span> of a mile translates to 45 seconds, which is </span><mjx-container class="MathJax" jax="SVG" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="1.795ex" height="2.736ex" role="img" focusable="false" viewBox="0 -864.2 793.6 1209.2" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -0.781ex;"><defs><path id="MJX-8-TEX-N-33" d="M127 463Q100 463 85 480T69 524Q69 579 117 622T233 665Q268 665 277 664Q351 652 390 611T430 522Q430 470 396 421T302 350L299 348Q299 347 308 345T337 336T375 315Q457 262 457 175Q457 96 395 37T238 -22Q158 -22 100 21T42 130Q42 158 60 175T105 193Q133 193 151 175T169 130Q169 119 166 110T159 94T148 82T136 74T126 70T118 67L114 66Q165 21 238 21Q293 21 321 74Q338 107 338 175V195Q338 290 274 322Q259 328 213 329L171 330L168 332Q166 335 166 348Q166 366 174 366Q202 366 232 371Q266 376 294 413T322 525V533Q322 590 287 612Q265 626 240 626Q208 626 181 615T143 592T132 580H135Q138 579 143 578T153 573T165 566T175 555T183 540T186 520Q186 498 172 481T127 463Z"></path><path id="MJX-8-TEX-N-34" d="M462 0Q444 3 333 3Q217 3 199 0H190V46H221Q241 46 248 46T265 48T279 53T286 61Q287 63 287 115V165H28V211L179 442Q332 674 334 675Q336 677 355 677H373L379 671V211H471V165H379V114Q379 73 379 66T385 54Q393 47 442 46H471V0H462ZM293 211V545L74 212L183 211H293Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mfrac"><g data-mml-node="mn" transform="translate(220,394) scale(0.707)"><use data-c="33" xlink:href="#MJX-8-TEX-N-33"></use></g><g data-mml-node="mn" transform="translate(220,-345) scale(0.707)"><use data-c="34" xlink:href="#MJX-8-TEX-N-34"></use></g><rect width="553.6" height="60" x="120" y="220"></rect></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mfrac><mn>3</mn><mn>4</mn></mfrac></math></mjx-assistive-mml></mjx-container><script type="math/tex">\frac{3}{4}</script><span> of a minute:</span></p><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang=""><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 10px; left: 4px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">Who is driving? Vin D.</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">How far away is the destination (in miles)? 45.75</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">How fast is Vin D. driving (in mph)? 60</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">It will take Vin D. 0 days, 0 hours, 45 minutes, and 45 seconds.</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 96px;"></div><div class="CodeMirror-gutters" style="display: none; height: 96px;"></div></div></div></pre><p><span>Some important details and a few hints:</span></p><ul><li><span>The driver&#39;s name is used in the subsequent prompt about driving speed.</span></li><li><span>One approach to solving this problem is to first figure out how long the trip will take in seconds. For example, to go 3000 miles at 50 mph will take 216,000 seconds! Given the total amount of time in seconds, break that number down into days, hours, minutes, and remaining seconds.</span></li><li><span>To round to the nearest whole number, use the </span><code>round</code><span> function. Although the </span><code>round</code><span> function does round off the fractional part, it returns a number of type </span><code>float</code><span> whereas you probably want an </span><code>int</code><span>. Remember that you can use the </span><code>int</code><span> function to get an </span><code>int</code><span> from a </span><code>float</code><span>.</span></li></ul><h2 id='testing'><span>Testing</span></h2><p><span>For this homework, we are providing a program, </span><code>hw1tester.py</code><span>, that you can use to test that your homework is meeting the basic specifications of the assignment. </span></p><p><span>Please note:</span></p><ul><li><span>The test program is </span><strong><span>extremely</span></strong><span> and intentionally picky about spacing in the output (from print statements) your program produces.  If it reports an error, it might just be the difference of a single space.  </span></li><li><span>The test program is </span><strong><span>NOT</span></strong><span> a complete test.  You will still need to take responsibility for thoroughly testing your code before submitting.  However, our hope is that this test program will at least catch minor errors and make it easier for our grading process and more likely for you to receive full credit.</span></li></ul><p><span>To use the test program in </span><strong><span>IDLE</span></strong><span>, follow these steps:</span></p><ol start='' ><li><span>Find the </span><code>hw1tester.py</code><span> program that is inside the zip file for this homework. Make sure that this file is in </span><em><span>exactly</span></em><span> the same folder as the four homework files containing your programs for this assignment.</span></li><li><span>Make sure your homework files are named exactly as described in assignment.  This </span><em><span>should</span></em><span> happen automatically when you decompress the zip file.</span></li><li><span>Open </span><code>hw1tester.py</code><span> in IDLE and select &quot;Run&quot; -&gt; &quot;Run module&quot;</span></li><li><span>Read the test messages that are printed and revise your work accordingly.  If the output of your program does not precisely match the expected output, a test will fail and an error message will print. </span></li></ol><p><span>&lt;!--</span>
+<span>To use the test program in </span><strong><span>Replit</span></strong><span>, follow these steps: </span></p><ol start='' ><li><span>Click on the </span><code>Shell</code><span> tab on the right side of the screen that is next to </span><code>Console</code><span> if it is not already selected. You should see a prompt with </span><code>~/Homework01$</code></li><li><span>Type </span><code>python hw1tester.py</code><span> after the prompt.</span></li><li><span>Press the </span><code>Enter</code><span> key to run the test program. </span></li><li><span>Read the test messages that are printed and revise your work accordingly.  If the output of your program does not precisely match the expected output, a test will fail and an error message will print.</span>
+<span>--&gt;</span></li></ol><p><span>We hope you find this helpful!</span></p><h2 id='submission-instructions'><span>Submission Instructions</span></h2><p><span>Submit four Python files to platform indicated in your class section:</span></p><ul><li><code>hw1_types.py</code><span> </span></li><li><code>hw1_madlibs.py</code></li><li><code>hw1_garden.py</code><span> (OPTIONAL)</span></li><li><code>hw1_roadtrip.py</code></li></ul><p><span>Remember to complete the questions at the top of each file before submitting.</span></p><h3 id='moodle-or-gradescope-submission'><span>Moodle or Gradescope Submission</span></h3><p><span>If you are using </span><strong><span>IDLE</span></strong><span>, you can simply upload all four of these files from your computer. </span></p><p><span>If you are using </span><strong><span>Replit</span></strong><span>, you will first need to download these files from Replit to your computer:</span></p><ol start='' ><li><span>Click the file icon (paper with folded corner) on the top left side of the screen to open the Files menu (if it is not already open).</span></li><li><span>Click the three vertical dots that appear next the &quot;Files&quot; header, then select &quot;Download as zip&quot;.</span></li><li><span>Upload the .zip file to Moodle or Gradescope.</span></li></ol><h3 id='replit-submission'><span>Replit Submission</span></h3><p><span>Use the </span><code>Submit</code><span> button in Replit to submit your assignment.</span></p><h2 id='grading'><span>Grading</span></h2><p><span>Your assignment will be graded on two criteria:</span></p><ol start='' ><li><p><span>Correctness: this document contains several examples for each program. Be sure that you run your program once for each example and make sure it works correctly for each one (run the </span><code>hw1tester.py</code><span> program, as described above)!  [90%]</span></p><p><span>The correctness part of your grade is broken down as follows:</span></p><figure><table><thead><tr><th><span>Category</span></th><th><span>Portion of grade</span></th></tr></thead><tbody><tr><td><span>Types</span></td><td><span>20%</span></td></tr><tr><td><span>Madlibs</span></td><td><span>30%</span></td></tr><tr><td><span>Garden</span></td><td><span>0%</span></td></tr><tr><td><span>Roadtrip</span></td><td><span>40%</span></td></tr></tbody></table></figure></li><li><p><span>Program design and style [10%]: style and program design become increasingly important the more complex your program becomes. For these first programs, adhere to the following guidelines:</span></p><ul><li><span>Variable names should be meaningful</span></li><li><span>Programs should contain at least a few descriptive comments.  Each of the programs for this homework involves multiple conceptual steps and should have comments that indicate to a reader what&#39;s going on at a high level.</span></li></ul></li></ol><h2 id='challenge-problem-optional'><span>Challenge Problem (OPTIONAL)</span></h2><p><span>Challenge problems are entirely optional extensions to the homework. If</span>
+<span>you complete them successfully, you are rewarded with a sense of</span>
+<span>accomplishment and a small number of extra points on the homework.</span>
+<span>Note that any extra points apply only to the homework on which the</span>
+<span>challenge problem is attempted, not to other homeworks or other grading</span>
+<span>categories.  They are intended for students who want to explore a little</span>
+<span>further; only pursue the challenge problem after you have successfully</span>
+<span>completed the homework.</span></p><p><span>For this challenge problem, you should write a program that prompts the user for a floating point number which stands for gallons of gasoline. You will reprint that value along with other information about gasoline and gasoline usage.  In particular, you should print:</span></p><ul><li><span>The equivalent number of liters</span></li><li><span>The equivalent number of barrels of oil required</span></li><li><span>The number of pounds of </span><mjx-container class="MathJax" jax="SVG" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="4.433ex" height="1.934ex" role="img" focusable="false" viewBox="0 -705 1959.6 855" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -0.339ex;"><defs><path id="MJX-10-TEX-I-1D436" d="M50 252Q50 367 117 473T286 641T490 704Q580 704 633 653Q642 643 648 636T656 626L657 623Q660 623 684 649Q691 655 699 663T715 679T725 690L740 705H746Q760 705 760 698Q760 694 728 561Q692 422 692 421Q690 416 687 415T669 413H653Q647 419 647 422Q647 423 648 429T650 449T651 481Q651 552 619 605T510 659Q484 659 454 652T382 628T299 572T226 479Q194 422 175 346T156 222Q156 108 232 58Q280 24 350 24Q441 24 512 92T606 240Q610 253 612 255T628 257Q648 257 648 248Q648 243 647 239Q618 132 523 55T319 -22Q206 -22 128 53T50 252Z"></path><path id="MJX-10-TEX-I-1D442" d="M740 435Q740 320 676 213T511 42T304 -22Q207 -22 138 35T51 201Q50 209 50 244Q50 346 98 438T227 601Q351 704 476 704Q514 704 524 703Q621 689 680 617T740 435ZM637 476Q637 565 591 615T476 665Q396 665 322 605Q242 542 200 428T157 216Q157 126 200 73T314 19Q404 19 485 98T608 313Q637 408 637 476Z"></path><path id="MJX-10-TEX-N-32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><use data-c="1D436" xlink:href="#MJX-10-TEX-I-1D436"></use></g><g data-mml-node="msub" transform="translate(760,0)"><g data-mml-node="mi"><use data-c="1D442" xlink:href="#MJX-10-TEX-I-1D442"></use></g><g data-mml-node="mn" transform="translate(796,-150) scale(0.707)"><use data-c="32" xlink:href="#MJX-10-TEX-N-32"></use></g></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>C</mi><msub><mi>O</mi><mn>2</mn></msub></math></mjx-assistive-mml></mjx-container><script type="math/tex">CO_2</script><span> produced</span></li></ul><p><span>Some relevant conversion factors are:</span></p><ul><li><span>1 gallon is equivalent to 3.7854 liters</span></li><li><span>1 barrel of oil produces 19.5 gallons of gas (approximately, can vary depending on the oil source).  A barrel is 42 gallons.</span></li><li><span>1 gallon of gas produces approximately 20 pounds of </span><mjx-container class="MathJax" jax="SVG" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="4.433ex" height="1.934ex" role="img" focusable="false" viewBox="0 -705 1959.6 855" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -0.339ex;"><defs><path id="MJX-10-TEX-I-1D436" d="M50 252Q50 367 117 473T286 641T490 704Q580 704 633 653Q642 643 648 636T656 626L657 623Q660 623 684 649Q691 655 699 663T715 679T725 690L740 705H746Q760 705 760 698Q760 694 728 561Q692 422 692 421Q690 416 687 415T669 413H653Q647 419 647 422Q647 423 648 429T650 449T651 481Q651 552 619 605T510 659Q484 659 454 652T382 628T299 572T226 479Q194 422 175 346T156 222Q156 108 232 58Q280 24 350 24Q441 24 512 92T606 240Q610 253 612 255T628 257Q648 257 648 248Q648 243 647 239Q618 132 523 55T319 -22Q206 -22 128 53T50 252Z"></path><path id="MJX-10-TEX-I-1D442" d="M740 435Q740 320 676 213T511 42T304 -22Q207 -22 138 35T51 201Q50 209 50 244Q50 346 98 438T227 601Q351 704 476 704Q514 704 524 703Q621 689 680 617T740 435ZM637 476Q637 565 591 615T476 665Q396 665 322 605Q242 542 200 428T157 216Q157 126 200 73T314 19Q404 19 485 98T608 313Q637 408 637 476Z"></path><path id="MJX-10-TEX-N-32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><use data-c="1D436" xlink:href="#MJX-10-TEX-I-1D436"></use></g><g data-mml-node="msub" transform="translate(760,0)"><g data-mml-node="mi"><use data-c="1D442" xlink:href="#MJX-10-TEX-I-1D442"></use></g><g data-mml-node="mn" transform="translate(796,-150) scale(0.707)"><use data-c="32" xlink:href="#MJX-10-TEX-N-32"></use></g></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>C</mi><msub><mi>O</mi><mn>2</mn></msub></math></mjx-assistive-mml></mjx-container><script type="math/tex">CO_2</script><span>. </span></li></ul><p><span>If you decide to do the challenge problem, please create a new file </span><code>hw1_challenge.py</code><span> and write your code inside that file.</span></p><p><span>An example run of your program might be:</span></p><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang=""><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 10px; left: 4px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">Please enter the number of gallons of gasoline: 100</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">Original number of gallons is: 100.0</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">100.0 gallons is equivalent to 378.54 liters</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">100.0 gallons of gasoline requires 5.12820512821 barrels of oil</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">100.0 gallons of gasoline produces 2000.0 pounds of CO2</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 120px;"></div><div class="CodeMirror-gutters" style="display: none; height: 120px;"></div></div></div></pre><p><em><span>Credit: This assignment was adapted from one created by Rich Enbody at Michigan State University.</span></em></p></div></div>
 </body>
 </html>
