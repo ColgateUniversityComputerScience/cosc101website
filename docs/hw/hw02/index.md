@@ -82,7 +82,7 @@ You owe $14661.3 in federal taxes
 What is your gross income? 525600
 What is your total deduction? 15000
 Your taxable income is $510600.0
-You owe $164703.0 in federal taxes
+You owe $152463.0 in federal taxes
 ```
 
 
