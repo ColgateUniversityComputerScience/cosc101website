@@ -139,9 +139,12 @@ Guidelines and hints for drawing the letters are given below, as well as example
     middle row and extend to the top corners. You should have no more than 2
     `for` loops in your code to draw the Y.  
 
--------------------------------------------- ---------------------------------------------
-                  Letter Y at scale 7                          Letter Y at scale 13
-<img src="y_scale7.png" width="15%" height="15%" />   <img src="y_scale13.png" width="25%" height="25%" /> 
+
+ Letter Y at scale 7                          
+<img src="y_scale7.png" width='600'>  
+
+Letter Y at scale 13
+ <img src="y_scale13.png" width='600'> 
 -------------------------------------------- ---------------------------------------------
 
 **Z**:   The letter Z should extend to the corners of the window. You should 
