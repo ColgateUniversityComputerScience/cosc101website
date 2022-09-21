@@ -124,8 +124,8 @@ Guidelines and hints for drawing the letters are given below, as well as example
 Letter E at scale 7
 <img src="e_scale7.png" width='200' >
 
- Letter E at scale 13
-<img src="n_scale7.png" width='400' >
+Letter E at scale 13
+<img src="e_scale13.png" width='400' >
 -------------------------------------------- ---------------------------------------------
 
 **N**:   The letter N should extend to the corners of the window. You should 
