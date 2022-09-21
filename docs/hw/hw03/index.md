@@ -120,17 +120,22 @@ Guidelines and hints for drawing the letters are given below, as well as example
     13\*2/3=8. You should have no more than 2 `for` loops in your code to draw
     the E.  
 
--------------------------------------------- ---------------------------------------------
-                  Letter E at scale 7                          Letter E at scale 13
-![image](e_scale7.png){width="1.5in"}   ![image](e_scale13.png){width="1.5in"}
+
+Letter E at scale 7
+<img src="e_scale7.png" width='200' >
+
+ Letter E at scale 13
+<img src="n_scale7.png" width='400' >
 -------------------------------------------- ---------------------------------------------
 
 **N**:   The letter N should extend to the corners of the window. You should 
     have no more than 1 `for` loop in your code to draw the N.  
 
--------------------------------------------- ---------------------------------------------
-                  Letter N at scale 7                          Letter N at scale 13
-<img src="n_scale7.png" width='600' >   <img src="n_scale13.png" width='600'> 
+Letter N at scale 7                          
+<img src="n_scale7.png" width='200' >
+
+Letter N at scale 13
+<img src="n_scale13.png" width='400'> 
 -------------------------------------------- ---------------------------------------------
 
 
@@ -140,19 +145,21 @@ Guidelines and hints for drawing the letters are given below, as well as example
     `for` loops in your code to draw the Y.  
 
 
- Letter Y at scale 7                          
-<img src="y_scale7.png" width='600'>  
+Letter Y at scale 7                          
+<img src="y_scale7.png" width='200'>  
 
 Letter Y at scale 13
- <img src="y_scale13.png" width='600'> 
+<img src="y_scale13.png" width='400'> 
 -------------------------------------------- ---------------------------------------------
 
 **Z**:   The letter Z should extend to the corners of the window. You should 
     have no more than 1 `for` loop in your code to draw the Z.  
 
--------------------------------------------- ---------------------------------------------
-                  Letter Z at scale 7                          Letter Z at scale 13
-<img src="z_scale7.png" width="15%" height="15%" />   <img src="z_scale13.png" width="25%" height="25%" /> 
+Letter Z at scale 7                          
+<img src="z_scale7.png" width='200'>
+
+Letter Z at scale 13
+<img src="z_scale13.png" width='400'> 
 -------------------------------------------- ---------------------------------------------
 
 Lastly, note that if you attempt to draw in a location that is beyond the extent of the window, your program will crash. The crash message will include the line number of your code and the specific coordinate value that caused the problem. In the example trace below, an attempt was made to draw using X coordinate 14 (at line 52 in the program `example_error.py`), which was beyond the edge of the window:
@@ -180,9 +187,11 @@ The program should then draw the symbol. Your program only prompts the user for 
 
 **Symbol**:   The symbol consist of a `plus` sign which extends to the sides of the window and whose four corners are connected with diagonal lines (see figures below). 
 
--------------------------------------------- ---------------------------------------------
-                  Symbol at scale 7                          Symbol at scale 13
-<img src="symbol_scale7.png" width="15%" height="15%" />   <img src="symbol_scale13.png" width="25%" height="25%" /> 
+Symbol at scale 7                         
+<img src="symbol_scale7.png" width='200'> 
+
+Symbol at scale 13
+<img src="symbol_scale13.png" width='400'> 
 -------------------------------------------- ---------------------------------------------
 
 ## Part 4: Extra credit
