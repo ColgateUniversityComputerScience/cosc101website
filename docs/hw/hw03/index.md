@@ -141,7 +141,7 @@ Guidelines and hints for drawing the letters are given below, as well as example
 
 -------------------------------------------- ---------------------------------------------
                   Letter Y at scale 7                          Letter Y at scale 13
-<img src="figs/y_scale7.png" width="15%" height="15%" />   <img src="figs/y_scale13.png" width="25%" height="25%" /> 
+<img src="y_scale7.png" width="15%" height="15%" />   <img src="y_scale13.png" width="25%" height="25%" /> 
 -------------------------------------------- ---------------------------------------------
 
 **Z**:   The letter Z should extend to the corners of the window. You should 
@@ -149,7 +149,7 @@ Guidelines and hints for drawing the letters are given below, as well as example
 
 -------------------------------------------- ---------------------------------------------
                   Letter Z at scale 7                          Letter Z at scale 13
-<img src="figs/z_scale7.png" width="15%" height="15%" />   <img src="figs/z_scale13.png" width="25%" height="25%" /> 
+<img src="z_scale7.png" width="15%" height="15%" />   <img src="z_scale13.png" width="25%" height="25%" /> 
 -------------------------------------------- ---------------------------------------------
 
 Lastly, note that if you attempt to draw in a location that is beyond the extent of the window, your program will crash. The crash message will include the line number of your code and the specific coordinate value that caused the problem. In the example trace below, an attempt was made to draw using X coordinate 14 (at line 52 in the program `example_error.py`), which was beyond the edge of the window:
@@ -179,7 +179,7 @@ The program should then draw the symbol. Your program only prompts the user for 
 
 -------------------------------------------- ---------------------------------------------
                   Symbol at scale 7                          Symbol at scale 13
-<img src="figs/symbol_scale7.png" width="15%" height="15%" />   <img src="figs/symbol_scale13.png" width="25%" height="25%" /> 
+<img src="symbol_scale7.png" width="15%" height="15%" />   <img src="symbol_scale13.png" width="25%" height="25%" /> 
 -------------------------------------------- ---------------------------------------------
 
 ## Part 4: Extra credit
