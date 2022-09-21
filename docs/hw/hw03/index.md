@@ -130,7 +130,7 @@ Guidelines and hints for drawing the letters are given below, as well as example
 
 -------------------------------------------- ---------------------------------------------
                   Letter N at scale 7                          Letter N at scale 13
-<img src="n_scale7.png" width=600 >   <img src="n_scale13.png" width="25%" height="25%" /> 
+<img src="n_scale7.png" width='600' >   <img src="n_scale13.png" width='600'> 
 -------------------------------------------- ---------------------------------------------
 
 
