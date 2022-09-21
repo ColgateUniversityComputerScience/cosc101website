@@ -122,7 +122,7 @@ Guidelines and hints for drawing the letters are given below, as well as example
 
 -------------------------------------------- ---------------------------------------------
                   Letter E at scale 7                          Letter E at scale 13
-![image](/figs/e_scale7.png){width="1.5in"}   ![image](/figs/e_scale13.png){width="1.5in"}
+![image](e_scale7.png){width="1.5in"}   ![image](e_scale13.png){width="1.5in"}
 -------------------------------------------- ---------------------------------------------
 
 **N**:   The letter N should extend to the corners of the window. You should 
@@ -130,7 +130,7 @@ Guidelines and hints for drawing the letters are given below, as well as example
 
 -------------------------------------------- ---------------------------------------------
                   Letter N at scale 7                          Letter N at scale 13
-<img src="/figs/n_scale7.png" width="15%" height="15%" />   <img src="/figs/n_scale13.png" width="25%" height="25%" /> 
+<img src="n_scale7.png" width="15%" height="15%" />   <img src="n_scale13.png" width="25%" height="25%" /> 
 -------------------------------------------- ---------------------------------------------
 
 
