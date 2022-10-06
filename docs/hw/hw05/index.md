@@ -233,6 +233,7 @@ You will submit two files for this assignment.
 
 2. A `description.txt` which describes what the program is and why you chose to do what you did. 
 
+You can download the blank files from [hw5.zip](https://colgateuniversitycomputerscience.github.io/cosc101website/hw/hw05/hw5.zip)
 
 # Grading
 
