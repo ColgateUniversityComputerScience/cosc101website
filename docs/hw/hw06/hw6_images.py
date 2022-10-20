@@ -206,11 +206,11 @@ def main():
         else:
             print("incomplete: to_negative is not implemented or still returns None")
 
-        gray_img = to_grayscale(original_img)
-        if gray_img is not None:
-            display_image(gray_img)
+        bnw_img = to_blacknwhite(original_img, intensity = 100)
+        if bnw_img is not None:
+            display_image(bnw_img)
         else:
-            print("incomplete: to_grayscale is not implemented or still returns None")
+            print("incomplete: to_blacknwhite is not implemented or still returns None")
         up_img = scale_up(original_img)
         if up_img is not None:
             display_image(up_img)
@@ -224,7 +224,7 @@ def main():
             print("incomplete: scale_down is not implemented or still returns None")
 
 
-    for imgname in ['house','rose','grid']:
+    for imgname in ['colgate','rose','grid']:
         original_img = image.Image(f'img/{imgname}.gif')
         display_image(original_img)
 
