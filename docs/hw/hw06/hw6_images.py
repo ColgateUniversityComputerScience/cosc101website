@@ -78,7 +78,7 @@ def to_negative(img):
     return None
     
 
-def to_grayscale(img):
+def to_blacknwhite(img, intensity):
     ''' (ImageObject) -> ImageObject
 
     '''
