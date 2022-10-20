@@ -7,3 +7,4 @@ Current and past homework:
 | Homework 3     | [hw3 description](hw03) | [hw3 zipfile](hw03/hw3.zip)          | 29 September                    |
 | Homework 4     | [hw4 description](hw04) | [hw4 zipfile](hw04/hw4.zip)          | 6 October 
 | Homework 5     | [hw5 description](hw05) | [hw5 zipfile](hw05/hw5.zip)          | 13 October                       |
+| Homework 6     | [hw6 description](hw06) | [hw6 zipfile](hw06/hw6.zip)          | 27 October                       |
