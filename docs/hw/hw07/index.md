@@ -151,6 +151,6 @@ There are two challenge problems for this homework. Create a separate file calle
 Consider the case described above where the correct word is "THINK" and the guessed word is "TRUST". As specified earlier, the correct state for the first T would be correct, and the last T would be incorrect (because there isn't an additional T in the input). Currently your code treats the second T as being partially correct. Edit your code to get the correct behavior where the second T is incorrect. 
 
 
-##$ Keeping track of guessed words
+### Keeping track of guessed words
 
 Currently your code does not check if the user has already guessed a certain word. Edit your code such that the following message is printed if the user guesses the same word twice: "You have already tried this word. Please enter a new word!"
