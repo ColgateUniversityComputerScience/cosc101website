@@ -14,7 +14,7 @@ The goal of this homework is to re-create [Wordle](https://www.nytimes.com/games
 6. Conditionals
 
 
-Download the [hw7.zip](https://colgateuniversitycomputerscience.github.io/cosc101website/hw/hw07/hw7.zip) file from the course website. Please write your code in the included template file ``hw7_wordle.py``. This file already imports the `random` module. You do not need to import any other modules or install any other packages. You can 
+Download the [hw7.zip](https://colgateuniversitycomputerscience.github.io/cosc101website/hw/hw07/hw7.zip) file from the course website. Please write your code in the included template file ``hw7_wordle.py``. This file already imports the `random` module. You do not need to import any other modules or install any other packages. 
 
 
 Note that the file includes a function for adding a background color to characters (which you will use to indicate correct, partially correct or incorrect guesses).
