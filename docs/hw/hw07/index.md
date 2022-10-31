@@ -39,7 +39,7 @@ Note the program should end after one game of Wordle has been played -- just lik
 
 ## Suggested program structure
 
-The design of the program to play *Wheel of Fortune* is up to you, but here is a suggested structure.  This is a *suggestion*; if you deviate from it, that's up to you, but for all functions you write you should try to make sure that:
+The design of the program to play *Wordle* is up to you, but here is a suggested structure.  This is a *suggestion*; if you deviate from it, that's up to you, but for all functions you write you should try to make sure that:
 
  - any function you write does _one_ thing (i.e., one specific task);
  - any function function you write just takes parameters and returns or prints value(s), but does _not_ modify any global state or global variables; 
