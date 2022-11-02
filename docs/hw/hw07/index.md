@@ -99,13 +99,13 @@ This function ties together all of the other functions and plays an entire game.
 
 - A player gets only **six** tries. 
 - After every word, the code must print the current guess along with the previous guesses (see format)
-- If the player guesses the word correctly, you should print "You won!". If the player fails to guess the word in siz tries, you should print "Better luck next time!"
+- If the player guesses the word correctly, you should print "You won!". If the player fails to guess the word in six tries, you should print "Better luck next time!"
 
 An example function header might be
 
 ```python
-def format_guess(word, valid_words):
-  """Returns a string where every character is formatted as per its state"""
+def play_game(word, valid_words):
+  """Plays one game of Wordle given a correct word and list of valid words"""
 ```
 
 ### 5. A main function
