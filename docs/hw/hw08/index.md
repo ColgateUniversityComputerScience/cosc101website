@@ -18,7 +18,7 @@ According to [data from Feeding America](https://map.feedingamerica.org/county/2
 
 To make the Hamilton Food Cupboard even more convenient and welcoming to community members needing food assistance, the Food Cupboard has (fictitiously) decided to offer food pick-up/delivery service similar to companies like [Instacart](https://www.instacart.com). Your task is to write a program that clients can use to select which foods they would like to receive from the Food Cupboard.  
 
-Please write your code in the template file `hw8_food.py` included with this homework. The file includes an empty `main` function and some global variables that have been pre-populated for your program to use.
+Please write your code in the template file `hw8_food.py` included with this homework. The file includes an empty `main` function and some global variables that have been pre-populated for your program to use. The zip file contains all the files: [Zip file](hw8.zip)
 
 ## Required functionality
 
