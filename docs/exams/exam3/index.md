@@ -52,8 +52,6 @@ The *new* concepts since the last exam include:
  - Problems 1a, and 5 from [Fall 2019 Exam 3](2019-fall-exam3.pdf)
     - [Fall 2019 Exam 3 with Solutions](2019-fall-exam3-solutions.pdf)
 
- - Problems in [Spring 22 Exam 3](../exam3/2022-spring-exam3.pdf)
-
  - [Practice Problems](practice_problems)
  
  - [Practice Problem Solutions](practice_solutions)
